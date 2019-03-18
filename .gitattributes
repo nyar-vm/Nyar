@@ -1,0 +1,5 @@
+*.nr linguist-language=nyar
+*.nyar linguist-language=nyar
+*.md linguist-language=arc
+*.interp linguist-language=antlr
+*.tokens linguist-language=antlr
