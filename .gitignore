@@ -7,3 +7,7 @@
 # Node
 node_modules
 yarn.lock
+yarn-error.log
+
+# Build
+Projects/Antlr4/.antlr
