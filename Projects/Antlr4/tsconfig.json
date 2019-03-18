@@ -1,0 +1,25 @@
+{
+    "version": "2.1.4",
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "commonjs",
+        "declaration": true,
+        "sourceMap": true,
+        "emitDecoratorMetadata": false,
+        "experimentalDecorators": true,
+        "lib": [
+            "es2015",
+            "dom"
+        ],
+        "removeComments": true,
+        "noImplicitAny": false,
+        "outDir": "dist/"
+    },
+    "include": [
+        "./source/**/*"
+    ],
+    "exclude": [
+        "node_modules/*",
+        "source/gramma/*"
+    ]
+}
