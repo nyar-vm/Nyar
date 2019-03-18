@@ -1,32 +1,20 @@
 grammar Nyar;
 import NyarLexers;
 
-prog: stat+;
+program: statement? EOF;
 
-stat: exprStat | assignStat;
+statement:
+	expressionStatement
+	| assignStatement
+	| macroStatement
+	| templateStatement
+	| interfaceStatement
+	| classStatement;
 
-exprStat: expression SEMI;
+expressionStatement: expression ';';
+assignStatement: Symbol AssignmentOperator expression ';';
+macroStatement: Macro expression ';';
+templateStatement: Template expression ';';
+interfaceStatement: Interface expression ';';
+classStatement: Class expression ';';
 
-assignStat: ID '=' expression SEMI;
-
-expression:
-	expression op = (MUL | DIV) expression		# MulDivExpr
-	| expression op = (ADD | SUB) expression	# AddSubExpr
-	| Integer									# IntegerExpression
-	| ID										# IdExpr
-	| LPAREN expression RPAREN					# ParenExpr;
-
-MUL: '*';
-DIV: '/';
-ADD: '+';
-SUB: '-';
-LPAREN: '(';
-RPAREN: ')';
-
-ID: LETTER (LETTER | DIGIT)*;
-
-SEMI: ';';
-
-
-fragment LETTER: [a-zA-Z];
-fragment DIGIT: [0-9];

@@ -24,31 +24,35 @@ lexer grammar NyarOperators;
 
 // Angle Brackets
 Output: '>>>';
-Exposing: '>>';
 RightShift: '>>';
 Grater: '>';
 Import: '<<<';
-Using: '<<';
+LeftShift: '<<';
 Less: '<';
 
 /* Remark
  Comment %%% defined in Keywords
- String "" defined in Keywords
- */
+ String " defined in Keywords
+*/
 
 Plus3: '+++';
 Plus2: '++';
-Plus: '+';
+Add: '+';
 Minus3: '---';
 Minus2: '--';
-Minus: '-';
+Subtract: '-';
 BlankNullSequence: '***';
 BlankSequence: '**';
-Blank: '*'; //Times
-TIMES: '\u00d7';
+Times: '*'; //Times
+Multiply: '\u00d7';
 Div: '//';
-DIVIDE: '\u00f7'; //Division symbol (obelus)
+Divide: '\u00f7'; //Division symbol (obelus)
+NumberedOutput: '%%';
 Mod: '%';
+Caret3: '^^^';
+BaseInput: '^^';
+Power: '^';
+
 
 //Lambda
 SlotSequence: '##';
@@ -69,16 +73,14 @@ Colon: ':';
 Quote3: '```';
 Quote2: '``';
 Quote: '`';
-Caret3: '^^^';
-Caret2: '^^';
-Caret: '^';
+
 
 At3: '@@@';
 At2: '@@';
 At: '@';
 Bang3: '!!!';
 Bang2: '!!';
-BANG: '!';
+Bang: '!';
 
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 

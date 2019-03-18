@@ -3,15 +3,20 @@
 
 import { ParseTreeListener } from "antlr4ts/tree/ParseTreeListener";
 
-import { MulDivExprContext } from "./NyarParser";
-import { AddSubExprContext } from "./NyarParser";
-import { IntegerExpressionContext } from "./NyarParser";
-import { IdExprContext } from "./NyarParser";
-import { ParenExprContext } from "./NyarParser";
-import { ProgContext } from "./NyarParser";
-import { StatContext } from "./NyarParser";
-import { ExprStatContext } from "./NyarParser";
-import { AssignStatContext } from "./NyarParser";
+import { StringContext } from "./NyarParser";
+import { IntegerContext } from "./NyarParser";
+import { SymbolContext } from "./NyarParser";
+import { Multiply_Divide_Context } from "./NyarParser";
+import { Add_Subtract_Context } from "./NyarParser";
+import { PriorityOperationContext } from "./NyarParser";
+import { ProgramContext } from "./NyarParser";
+import { StatementContext } from "./NyarParser";
+import { ExpressionStatementContext } from "./NyarParser";
+import { AssignStatementContext } from "./NyarParser";
+import { MacroStatementContext } from "./NyarParser";
+import { TemplateStatementContext } from "./NyarParser";
+import { InterfaceStatementContext } from "./NyarParser";
+import { ClassStatementContext } from "./NyarParser";
 import { ExpressionContext } from "./NyarParser";
 
 
@@ -21,113 +26,170 @@ import { ExpressionContext } from "./NyarParser";
  */
 export interface NyarListener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by the `MulDivExpr`
+	 * Enter a parse tree produced by the `String`
 	 * labeled alternative in `NyarParser.expression`.
 	 * @param ctx the parse tree
 	 */
-	enterMulDivExpr?: (ctx: MulDivExprContext) => void;
+	enterString?: (ctx: StringContext) => void;
 	/**
-	 * Exit a parse tree produced by the `MulDivExpr`
+	 * Exit a parse tree produced by the `String`
 	 * labeled alternative in `NyarParser.expression`.
 	 * @param ctx the parse tree
 	 */
-	exitMulDivExpr?: (ctx: MulDivExprContext) => void;
+	exitString?: (ctx: StringContext) => void;
 
 	/**
-	 * Enter a parse tree produced by the `AddSubExpr`
+	 * Enter a parse tree produced by the `Integer`
 	 * labeled alternative in `NyarParser.expression`.
 	 * @param ctx the parse tree
 	 */
-	enterAddSubExpr?: (ctx: AddSubExprContext) => void;
+	enterInteger?: (ctx: IntegerContext) => void;
 	/**
-	 * Exit a parse tree produced by the `AddSubExpr`
+	 * Exit a parse tree produced by the `Integer`
 	 * labeled alternative in `NyarParser.expression`.
 	 * @param ctx the parse tree
 	 */
-	exitAddSubExpr?: (ctx: AddSubExprContext) => void;
+	exitInteger?: (ctx: IntegerContext) => void;
 
 	/**
-	 * Enter a parse tree produced by the `IntegerExpression`
+	 * Enter a parse tree produced by the `Symbol`
 	 * labeled alternative in `NyarParser.expression`.
 	 * @param ctx the parse tree
 	 */
-	enterIntegerExpression?: (ctx: IntegerExpressionContext) => void;
+	enterSymbol?: (ctx: SymbolContext) => void;
 	/**
-	 * Exit a parse tree produced by the `IntegerExpression`
+	 * Exit a parse tree produced by the `Symbol`
 	 * labeled alternative in `NyarParser.expression`.
 	 * @param ctx the parse tree
 	 */
-	exitIntegerExpression?: (ctx: IntegerExpressionContext) => void;
+	exitSymbol?: (ctx: SymbolContext) => void;
 
 	/**
-	 * Enter a parse tree produced by the `IdExpr`
+	 * Enter a parse tree produced by the `Multiply_Divide_`
 	 * labeled alternative in `NyarParser.expression`.
 	 * @param ctx the parse tree
 	 */
-	enterIdExpr?: (ctx: IdExprContext) => void;
+	enterMultiply_Divide_?: (ctx: Multiply_Divide_Context) => void;
 	/**
-	 * Exit a parse tree produced by the `IdExpr`
+	 * Exit a parse tree produced by the `Multiply_Divide_`
 	 * labeled alternative in `NyarParser.expression`.
 	 * @param ctx the parse tree
 	 */
-	exitIdExpr?: (ctx: IdExprContext) => void;
+	exitMultiply_Divide_?: (ctx: Multiply_Divide_Context) => void;
 
 	/**
-	 * Enter a parse tree produced by the `ParenExpr`
+	 * Enter a parse tree produced by the `Add_Subtract_`
 	 * labeled alternative in `NyarParser.expression`.
 	 * @param ctx the parse tree
 	 */
-	enterParenExpr?: (ctx: ParenExprContext) => void;
+	enterAdd_Subtract_?: (ctx: Add_Subtract_Context) => void;
 	/**
-	 * Exit a parse tree produced by the `ParenExpr`
+	 * Exit a parse tree produced by the `Add_Subtract_`
 	 * labeled alternative in `NyarParser.expression`.
 	 * @param ctx the parse tree
 	 */
-	exitParenExpr?: (ctx: ParenExprContext) => void;
+	exitAdd_Subtract_?: (ctx: Add_Subtract_Context) => void;
 
 	/**
-	 * Enter a parse tree produced by `NyarParser.prog`.
+	 * Enter a parse tree produced by the `PriorityOperation`
+	 * labeled alternative in `NyarParser.expression`.
 	 * @param ctx the parse tree
 	 */
-	enterProg?: (ctx: ProgContext) => void;
+	enterPriorityOperation?: (ctx: PriorityOperationContext) => void;
 	/**
-	 * Exit a parse tree produced by `NyarParser.prog`.
+	 * Exit a parse tree produced by the `PriorityOperation`
+	 * labeled alternative in `NyarParser.expression`.
 	 * @param ctx the parse tree
 	 */
-	exitProg?: (ctx: ProgContext) => void;
+	exitPriorityOperation?: (ctx: PriorityOperationContext) => void;
 
 	/**
-	 * Enter a parse tree produced by `NyarParser.stat`.
+	 * Enter a parse tree produced by `NyarParser.program`.
 	 * @param ctx the parse tree
 	 */
-	enterStat?: (ctx: StatContext) => void;
+	enterProgram?: (ctx: ProgramContext) => void;
 	/**
-	 * Exit a parse tree produced by `NyarParser.stat`.
+	 * Exit a parse tree produced by `NyarParser.program`.
 	 * @param ctx the parse tree
 	 */
-	exitStat?: (ctx: StatContext) => void;
+	exitProgram?: (ctx: ProgramContext) => void;
 
 	/**
-	 * Enter a parse tree produced by `NyarParser.exprStat`.
+	 * Enter a parse tree produced by `NyarParser.statement`.
 	 * @param ctx the parse tree
 	 */
-	enterExprStat?: (ctx: ExprStatContext) => void;
+	enterStatement?: (ctx: StatementContext) => void;
 	/**
-	 * Exit a parse tree produced by `NyarParser.exprStat`.
+	 * Exit a parse tree produced by `NyarParser.statement`.
 	 * @param ctx the parse tree
 	 */
-	exitExprStat?: (ctx: ExprStatContext) => void;
+	exitStatement?: (ctx: StatementContext) => void;
 
 	/**
-	 * Enter a parse tree produced by `NyarParser.assignStat`.
+	 * Enter a parse tree produced by `NyarParser.expressionStatement`.
 	 * @param ctx the parse tree
 	 */
-	enterAssignStat?: (ctx: AssignStatContext) => void;
+	enterExpressionStatement?: (ctx: ExpressionStatementContext) => void;
 	/**
-	 * Exit a parse tree produced by `NyarParser.assignStat`.
+	 * Exit a parse tree produced by `NyarParser.expressionStatement`.
 	 * @param ctx the parse tree
 	 */
-	exitAssignStat?: (ctx: AssignStatContext) => void;
+	exitExpressionStatement?: (ctx: ExpressionStatementContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `NyarParser.assignStatement`.
+	 * @param ctx the parse tree
+	 */
+	enterAssignStatement?: (ctx: AssignStatementContext) => void;
+	/**
+	 * Exit a parse tree produced by `NyarParser.assignStatement`.
+	 * @param ctx the parse tree
+	 */
+	exitAssignStatement?: (ctx: AssignStatementContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `NyarParser.macroStatement`.
+	 * @param ctx the parse tree
+	 */
+	enterMacroStatement?: (ctx: MacroStatementContext) => void;
+	/**
+	 * Exit a parse tree produced by `NyarParser.macroStatement`.
+	 * @param ctx the parse tree
+	 */
+	exitMacroStatement?: (ctx: MacroStatementContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `NyarParser.templateStatement`.
+	 * @param ctx the parse tree
+	 */
+	enterTemplateStatement?: (ctx: TemplateStatementContext) => void;
+	/**
+	 * Exit a parse tree produced by `NyarParser.templateStatement`.
+	 * @param ctx the parse tree
+	 */
+	exitTemplateStatement?: (ctx: TemplateStatementContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `NyarParser.interfaceStatement`.
+	 * @param ctx the parse tree
+	 */
+	enterInterfaceStatement?: (ctx: InterfaceStatementContext) => void;
+	/**
+	 * Exit a parse tree produced by `NyarParser.interfaceStatement`.
+	 * @param ctx the parse tree
+	 */
+	exitInterfaceStatement?: (ctx: InterfaceStatementContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `NyarParser.classStatement`.
+	 * @param ctx the parse tree
+	 */
+	enterClassStatement?: (ctx: ClassStatementContext) => void;
+	/**
+	 * Exit a parse tree produced by `NyarParser.classStatement`.
+	 * @param ctx the parse tree
+	 */
+	exitClassStatement?: (ctx: ClassStatementContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `NyarParser.expression`.
