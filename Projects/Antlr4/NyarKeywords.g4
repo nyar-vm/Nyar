@@ -2,8 +2,8 @@ lexer grammar NyarKeywords;
 // $antlr-format useTab false; reflowComments false;
 // $antlr-format alignColons trailing;
 STRING  : '"' .*? '"';
-INTEGER : [0-9]+;
-REAL    : ('0' .. '9')+ ('.' ('0' .. '9')+)?;
+INTEGER : DIGIT+;
+REAL    : DIGIT+ ('.' DIGIT+)?;
 
 WhiteSpace : [\n\t\r]+ -> channel(HIDDEN);
 NewLine    : ('\r'? '\n' | '\r')+ -> channel(HIDDEN);
@@ -16,10 +16,12 @@ With     : 'With';
 As       : 'As';
 
 /* Macro */
-Macro : 'Macro';
+Macro      : 'Macro';
+MacroApply : '\u00A7'; // U+00A7 §
 
 /* Template */
-Template : 'Template';
+Template      : 'Template';
+TemplayeApply : '\u00B6'; // U+00B6 ¶
 
 /* Class */
 Interface : 'Interface';
@@ -50,11 +52,11 @@ fragment NameCharacter
     | '\u0300' ..'\u036F'
     | '\u203F' ..'\u2040';
 fragment NameStartCharacter
-    : [:a-zA-Z]
+    : [:a-zA-Z] // Letter
     | '_'
-    | '$'
     | '\u2070' ..'\u218F'
     | '\u2C00' ..'\u2FEF'
     | '\u3001' ..'\uD7FF'
     | '\uF900' ..'\uFDCF'
     | '\uFDF0' ..'\uFFFD';
+// May Allow # $ % with special meaning English + Chinese + Japanese + Greeks
