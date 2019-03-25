@@ -1,0 +1,2 @@
+*.interp linguist-language=antlr
+*.tokens linguist-language=antlr
