@@ -1,0 +1,75 @@
+Using Initlizer
+Using Type.Alias With { eps, pos ,real }
+
+%%% Type input TensorT  %%%
+dimension::vec{Dimension}
+
+input::TensorT(
+    n::pos,
+    c::pos,
+    d::dimension,
+    real
+)
+
+output::TensorT{
+    n::pos,
+    c::pos,
+    d::dimension,
+    real
+}
+
+§Inline{  }
+
+¶NetGraph(BatchNorm) {
+    Inputs: { "In": input }
+    Outputs: { "Out": output }
+    % Construct: Auto
+    Construct: {
+        Dimension:
+        Axis:
+        Epliose: eps = 2
+        Bias = Initlizer.Zeros
+        Weight = Initlizer.Ones
+    }
+    Writers {
+        tvm: {
+            op: "tvm.relay.op.nn.nn.batch_norm"
+            aux:{
+
+
+            }
+
+            arg:{
+
+
+            }
+
+            params:{
+
+
+
+            }
+
+
+
+        }
+
+        nyar:{
+            json:{
+
+
+            }
+            params:{
+
+
+
+            }
+        }
+
+
+    }
+
+}
+
+
+Export { BatchNorm }

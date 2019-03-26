@@ -1,4 +1,4 @@
-// Generated from D:/Hybrid/Nyar/Projects/Antlr4\Nyar.g4 by ANTLR 4.7.2
+// Generated from Projects/Antlr4/Nyar.g4 by ANTLR 4.7.2
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -286,6 +286,18 @@ public class NyarBaseListener implements NyarListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitKeyValue(NyarParser.KeyValueContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMathAlias(NyarParser.MathAliasContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMathAlias(NyarParser.MathAliasContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

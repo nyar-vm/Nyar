@@ -1,4 +1,4 @@
-// Generated from D:/Hybrid/Nyar/Projects/Antlr4\Nyar.g4 by ANTLR 4.7.2
+// Generated from Projects/Antlr4/Nyar.g4 by ANTLR 4.7.2
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
 /**
@@ -171,4 +171,11 @@ public class NyarBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements N
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitKeyValue(NyarParser.KeyValueContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitMathAlias(NyarParser.MathAliasContext ctx) { return visitChildren(ctx); }
 }

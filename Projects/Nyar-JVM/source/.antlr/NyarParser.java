@@ -1,4 +1,4 @@
-// Generated from D:/Hybrid/Nyar/Projects/Antlr4\Nyar.g4 by ANTLR 4.7.2
+// Generated from Projects/Antlr4/Nyar.g4 by ANTLR 4.7.2
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -17,32 +17,35 @@ public class NyarParser extends Parser {
 		new PredictionContextCache();
 	public static final int
 		T__0=1, STRING=2, INTEGER=3, REAL=4, WhiteSpace=5, NewLine=6, Comment=7, 
-		Using=8, Exposing=9, With=10, As=11, Macro=12, Template=13, Interface=14, 
-		Class=15, Extends=16, Mixin=17, Setter=18, Getter=19, Public=20, Private=21, 
-		Protected=22, Final=23, Try=24, Catch=25, For=26, In=27, SYMBOL=28, LS=29, 
-		RS=30, LM=31, RM=32, LL=33, RL=34, Export=35, RightShift=36, Grater=37, 
-		Import=38, LeftShift=39, Less=40, Plus3=41, Increase=42, Add=43, Unknow1=44, 
-		Minus3=45, Decrease=46, Subtract=47, Unknow2=48, NullSequence=49, Sequence=50, 
-		Times=51, Multiply=52, Kronecker=53, Unknow3=54, Remainder=55, Divide=56, 
-		Unknow4=57, Quotient=58, Output=59, Mod=60, BaseInput=61, Power=62, Root=63, 
-		Equivalent=64, Equal=65, Set=66, NotEqual=67, NotEquivalent=68, GraterEqual=69, 
-		LessEqual=70, Bar3=71, Bar2=72, Bar=73, SlotSequence=74, Slot=75, PostfixFunction=76, 
-		AnonymousFunction=77, Curry=78, Apply=79, At=80, Type=81, Colon=82, Accuracy=83, 
-		Quote=84, Bang2=85, Bang=86, Dot=87, Comma=88, Quotation=89, SetConstant=90, 
-		DelayedSet=91, UpSet=92, SetAddTo=93, SetMinusFrom=94, Map=95, MapAll=96, 
-		To=97, Infer=98, Concat=99, Unknow5=100, Unknow6=101, AssignmentOperator=102, 
-		BinaryOperator=103, LogicOperator=104, PowerLike=105, MultiplyLike=106, 
-		AddLike=107, ListOperator=108;
+		Using=8, Exposing=9, With=10, As=11, Macro=12, MacroApply=13, Template=14, 
+		TemplayeApply=15, Interface=16, Class=17, Extends=18, Mixin=19, Setter=20, 
+		Getter=21, Public=22, Private=23, Protected=24, Final=25, Try=26, Catch=27, 
+		For=28, In=29, Pi=30, E=31, I=32, EulerGamma=33, Plank=34, Reciprocal=35, 
+		Derivative=36, IntegerField=37, RealField=38, ComplexField=39, SYMBOL=40, 
+		Math=41, LS=42, RS=43, LM=44, RM=45, LL=46, RL=47, LCeil=48, RCeil=49, 
+		LFloor=50, RFloor=51, LAngle=52, RAngle=53, Import=54, Export=55, LeftShift=56, 
+		RightShift=57, Less=58, Grater=59, Plus3=60, Increase=61, Add=62, Minus3=63, 
+		Decrease=64, Subtract=65, NullSequence=66, Sequence=67, Times=68, Remainder=69, 
+		Divide=70, Quotient=71, Output=72, Mod=73, BaseInput=74, Power=75, Root=76, 
+		Equivalent=77, Equal=78, Set=79, NotEqual=80, NotEquivalent=81, GraterEqual=82, 
+		LessEqual=83, Bar3=84, Bar2=85, Bar=86, SlotSequence=87, Slot=88, PostfixFunction=89, 
+		AnonymousFunction=90, Curry=91, Apply=92, At=93, Type=94, Colon=95, Quote=96, 
+		Bang=97, Dot=98, Comma=99, Quotation=100, SetConstant=101, DelayedSet=102, 
+		SetAddTo=103, SetMinusFrom=104, SetTimesTo=105, SetDivideFrom=106, SetModTo=107, 
+		SetPowerTo=108, Clean=109, Map=110, MapAll=111, To=112, Infer=113, Concat=114, 
+		Unknow5=115, Unknow6=116, Multiply=117, Kronecker=118, TensorProduct=119, 
+		AssignmentOperator=120, BinaryOperator=121, LogicOperator=122, PowerLike=123, 
+		MultiplyLike=124, AddLike=125, ListOperator=126;
 	public static final int
 		RULE_program = 0, RULE_statement = 1, RULE_expressionStatement = 2, RULE_moduleStatement = 3, 
 		RULE_assignStatement = 4, RULE_macroStatement = 5, RULE_templateStatement = 6, 
 		RULE_interfaceStatement = 7, RULE_classStatement = 8, RULE_expression = 9, 
-		RULE_list = 10, RULE_record = 11, RULE_keyValue = 12;
+		RULE_list = 10, RULE_record = 11, RULE_keyValue = 12, RULE_mathAlias = 13;
 	private static String[] makeRuleNames() {
 		return new String[] {
 			"program", "statement", "expressionStatement", "moduleStatement", "assignStatement", 
 			"macroStatement", "templateStatement", "interfaceStatement", "classStatement", 
-			"expression", "list", "record", "keyValue"
+			"expression", "list", "record", "keyValue", "mathAlias"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
@@ -50,39 +53,44 @@ public class NyarParser extends Parser {
 	private static String[] makeLiteralNames() {
 		return new String[] {
 			null, "';'", null, null, null, null, null, null, "'Using'", "'Exposing'", 
-			"'With'", "'As'", "'Macro'", "'Template'", "'Interface'", "'Class'", 
-			"'Extends'", "'Mixin'", "'Setter'", "'Getter'", "'Public'", "'Private'", 
-			"'Protected'", "'Final'", "'Try'", "'Catch'", "'For'", "'In'", null, 
-			"'('", "')'", "'['", "']'", "'{'", "'}'", "'>>>'", "'>>'", "'>'", "'<<<'", 
-			"'<<'", "'<'", "'+++'", "'++'", "'+'", "'\u2295'", "'---'", "'--'", "'-'", 
-			"'\u2296'", "'***'", "'**'", "'*'", "'\u00D7'", "'\u2297'", "'\u2299'", 
-			"'//'", "'/'", "'\u2298'", "'\u00F7'", "'%%'", "'%'", "'^^'", "'^'", 
-			"'\u221A'", "'==='", "'=='", "'='", null, "'=!='", "'>='", "'<='", "'|||'", 
-			"'||'", "'|'", "'##'", "'#'", "'$$'", "'$'", "'@@@'", "'@@'", "'@'", 
-			"'::'", "':'", "'``'", "'`'", "'!!'", "'!'", "'.'", "','", "'''", "'=<'", 
-			"':='", "'^='", "'+='", "'-='", "'/@'", "'//@'", null, null, "'<>'", 
-			"'<->'"
+			"'With'", "'As'", "'Macro'", "'\u00A7'", "'Template'", "'\u00B6'", "'Interface'", 
+			"'Class'", "'Extends'", "'Mixin'", "'Setter'", "'Getter'", "'Public'", 
+			"'Private'", "'Protected'", "'Final'", "'Try'", "'Catch'", "'For'", "'In'", 
+			"'\u213C'", "'\u2147'", "'\u2148'", "'\u213D'", "'\u210E'", "'\u215F'", 
+			"'\u2146'", "'\u2124'", "'\u211D'", "'\u2102'", null, null, "'('", "')'", 
+			"'['", "']'", "'{'", "'}'", "'\u2308'", "'\u2309'", "'\u230A'", "'\u230B'", 
+			"'\u27E8'", "'\u27E9'", null, null, null, null, "'<'", "'>'", "'+++'", 
+			"'++'", "'+'", "'---'", "'--'", "'-'", "'***'", "'**'", "'*'", "'//'", 
+			"'/'", "'\u00F7'", "'%%'", "'%'", "'^^'", "'^'", "'\u221A'", "'==='", 
+			"'=='", "'='", null, "'=!='", "'>='", "'<='", "'|||'", "'||'", "'|'", 
+			"'##'", "'#'", "'$$'", "'$'", "'@@@'", "'@@'", "'@'", null, "':'", "'`'", 
+			"'!'", "'.'", "','", "'''", "'=<'", null, "'+='", "'-='", "'*='", "'/='", 
+			"'%='", "'^='", "'=.'", "'/@'", "'//@'", null, null, "'<>'", "'<->'", 
+			null, "'\u00D7'", "'\u2297'", "'\u2299'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
 			null, null, "STRING", "INTEGER", "REAL", "WhiteSpace", "NewLine", "Comment", 
-			"Using", "Exposing", "With", "As", "Macro", "Template", "Interface", 
-			"Class", "Extends", "Mixin", "Setter", "Getter", "Public", "Private", 
-			"Protected", "Final", "Try", "Catch", "For", "In", "SYMBOL", "LS", "RS", 
-			"LM", "RM", "LL", "RL", "Export", "RightShift", "Grater", "Import", "LeftShift", 
-			"Less", "Plus3", "Increase", "Add", "Unknow1", "Minus3", "Decrease", 
-			"Subtract", "Unknow2", "NullSequence", "Sequence", "Times", "Multiply", 
-			"Kronecker", "Unknow3", "Remainder", "Divide", "Unknow4", "Quotient", 
-			"Output", "Mod", "BaseInput", "Power", "Root", "Equivalent", "Equal", 
-			"Set", "NotEqual", "NotEquivalent", "GraterEqual", "LessEqual", "Bar3", 
-			"Bar2", "Bar", "SlotSequence", "Slot", "PostfixFunction", "AnonymousFunction", 
-			"Curry", "Apply", "At", "Type", "Colon", "Accuracy", "Quote", "Bang2", 
-			"Bang", "Dot", "Comma", "Quotation", "SetConstant", "DelayedSet", "UpSet", 
-			"SetAddTo", "SetMinusFrom", "Map", "MapAll", "To", "Infer", "Concat", 
-			"Unknow5", "Unknow6", "AssignmentOperator", "BinaryOperator", "LogicOperator", 
-			"PowerLike", "MultiplyLike", "AddLike", "ListOperator"
+			"Using", "Exposing", "With", "As", "Macro", "MacroApply", "Template", 
+			"TemplayeApply", "Interface", "Class", "Extends", "Mixin", "Setter", 
+			"Getter", "Public", "Private", "Protected", "Final", "Try", "Catch", 
+			"For", "In", "Pi", "E", "I", "EulerGamma", "Plank", "Reciprocal", "Derivative", 
+			"IntegerField", "RealField", "ComplexField", "SYMBOL", "Math", "LS", 
+			"RS", "LM", "RM", "LL", "RL", "LCeil", "RCeil", "LFloor", "RFloor", "LAngle", 
+			"RAngle", "Import", "Export", "LeftShift", "RightShift", "Less", "Grater", 
+			"Plus3", "Increase", "Add", "Minus3", "Decrease", "Subtract", "NullSequence", 
+			"Sequence", "Times", "Remainder", "Divide", "Quotient", "Output", "Mod", 
+			"BaseInput", "Power", "Root", "Equivalent", "Equal", "Set", "NotEqual", 
+			"NotEquivalent", "GraterEqual", "LessEqual", "Bar3", "Bar2", "Bar", "SlotSequence", 
+			"Slot", "PostfixFunction", "AnonymousFunction", "Curry", "Apply", "At", 
+			"Type", "Colon", "Quote", "Bang", "Dot", "Comma", "Quotation", "SetConstant", 
+			"DelayedSet", "SetAddTo", "SetMinusFrom", "SetTimesTo", "SetDivideFrom", 
+			"SetModTo", "SetPowerTo", "Clean", "Map", "MapAll", "To", "Infer", "Concat", 
+			"Unknow5", "Unknow6", "Multiply", "Kronecker", "TensorProduct", "AssignmentOperator", 
+			"BinaryOperator", "LogicOperator", "PowerLike", "MultiplyLike", "AddLike", 
+			"ListOperator"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -170,21 +178,21 @@ public class NyarParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(29);
+			setState(31);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << STRING) | (1L << INTEGER) | (1L << REAL) | (1L << Using) | (1L << Exposing) | (1L << Macro) | (1L << Template) | (1L << Interface) | (1L << Class) | (1L << SYMBOL) | (1L << LS))) != 0)) {
 				{
 				{
-				setState(26);
+				setState(28);
 				statement();
 				}
 				}
-				setState(31);
+				setState(33);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(32);
+			setState(34);
 			match(EOF);
 			}
 		}
@@ -244,55 +252,55 @@ public class NyarParser extends Parser {
 		StatementContext _localctx = new StatementContext(_ctx, getState());
 		enterRule(_localctx, 2, RULE_statement);
 		try {
-			setState(41);
+			setState(43);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,1,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(34);
+				setState(36);
 				expressionStatement();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(35);
+				setState(37);
 				moduleStatement();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(36);
+				setState(38);
 				assignStatement();
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(37);
+				setState(39);
 				macroStatement();
 				}
 				break;
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(38);
+				setState(40);
 				templateStatement();
 				}
 				break;
 			case 6:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(39);
+				setState(41);
 				interfaceStatement();
 				}
 				break;
 			case 7:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(40);
+				setState(42);
 				classStatement();
 				}
 				break;
@@ -338,9 +346,9 @@ public class NyarParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(43);
+			setState(45);
 			expression(0);
-			setState(44);
+			setState(46);
 			match(T__0);
 			}
 		}
@@ -388,50 +396,50 @@ public class NyarParser extends Parser {
 		ModuleStatementContext _localctx = new ModuleStatementContext(_ctx, getState());
 		enterRule(_localctx, 6, RULE_moduleStatement);
 		try {
-			setState(58);
+			setState(60);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,2,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(46);
+				setState(48);
 				match(Using);
-				setState(47);
+				setState(49);
 				((ModuleStatementContext)_localctx).core = match(SYMBOL);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(48);
-				match(Using);
-				setState(49);
-				((ModuleStatementContext)_localctx).source = match(STRING);
 				setState(50);
-				match(As);
+				match(Using);
 				setState(51);
+				((ModuleStatementContext)_localctx).source = match(STRING);
+				setState(52);
+				match(As);
+				setState(53);
 				((ModuleStatementContext)_localctx).name = match(SYMBOL);
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(52);
-				match(Using);
-				setState(53);
-				((ModuleStatementContext)_localctx).source = match(STRING);
 				setState(54);
-				match(With);
+				match(Using);
 				setState(55);
+				((ModuleStatementContext)_localctx).source = match(STRING);
+				setState(56);
+				match(With);
+				setState(57);
 				((ModuleStatementContext)_localctx).name = match(SYMBOL);
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(56);
+				setState(58);
 				match(Exposing);
-				setState(57);
+				setState(59);
 				((ModuleStatementContext)_localctx).source = match(STRING);
 				}
 				break;
@@ -479,13 +487,13 @@ public class NyarParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(60);
-			match(SYMBOL);
-			setState(61);
-			match(AssignmentOperator);
 			setState(62);
-			expression(0);
+			match(SYMBOL);
 			setState(63);
+			match(AssignmentOperator);
+			setState(64);
+			expression(0);
+			setState(65);
 			match(T__0);
 			}
 		}
@@ -530,11 +538,11 @@ public class NyarParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(65);
-			match(Macro);
-			setState(66);
-			expression(0);
 			setState(67);
+			match(Macro);
+			setState(68);
+			expression(0);
+			setState(69);
 			match(T__0);
 			}
 		}
@@ -579,11 +587,11 @@ public class NyarParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(69);
-			match(Template);
-			setState(70);
-			expression(0);
 			setState(71);
+			match(Template);
+			setState(72);
+			expression(0);
+			setState(73);
 			match(T__0);
 			}
 		}
@@ -628,11 +636,11 @@ public class NyarParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(73);
-			match(Interface);
-			setState(74);
-			expression(0);
 			setState(75);
+			match(Interface);
+			setState(76);
+			expression(0);
+			setState(77);
 			match(T__0);
 			}
 		}
@@ -677,11 +685,11 @@ public class NyarParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(77);
-			match(Class);
-			setState(78);
-			expression(0);
 			setState(79);
+			match(Class);
+			setState(80);
+			expression(0);
+			setState(81);
 			match(T__0);
 			}
 		}
@@ -972,7 +980,7 @@ public class NyarParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(90);
+			setState(92);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case STRING:
@@ -981,7 +989,7 @@ public class NyarParser extends Parser {
 				_ctx = _localctx;
 				_prevctx = _localctx;
 
-				setState(82);
+				setState(84);
 				((StringContext)_localctx).atom = match(STRING);
 				}
 				break;
@@ -990,7 +998,7 @@ public class NyarParser extends Parser {
 				_localctx = new RealContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(83);
+				setState(85);
 				((RealContext)_localctx).atom = match(REAL);
 				}
 				break;
@@ -999,7 +1007,7 @@ public class NyarParser extends Parser {
 				_localctx = new IntegerContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(84);
+				setState(86);
 				((IntegerContext)_localctx).atom = match(INTEGER);
 				}
 				break;
@@ -1008,7 +1016,7 @@ public class NyarParser extends Parser {
 				_localctx = new SymbolContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(85);
+				setState(87);
 				((SymbolContext)_localctx).atom = match(SYMBOL);
 				}
 				break;
@@ -1017,11 +1025,11 @@ public class NyarParser extends Parser {
 				_localctx = new PriorityOperationContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(86);
-				match(LS);
-				setState(87);
-				expression(0);
 				setState(88);
+				match(LS);
+				setState(89);
+				expression(0);
+				setState(90);
 				match(RS);
 				}
 				break;
@@ -1029,7 +1037,7 @@ public class NyarParser extends Parser {
 				throw new NoViableAltException(this);
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(112);
+			setState(114);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,5,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
@@ -1037,7 +1045,7 @@ public class NyarParser extends Parser {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
-					setState(110);
+					setState(112);
 					_errHandler.sync(this);
 					switch ( getInterpreter().adaptivePredict(_input,4,_ctx) ) {
 					case 1:
@@ -1045,11 +1053,11 @@ public class NyarParser extends Parser {
 						_localctx = new Binary_Context(new ExpressionContext(_parentctx, _parentState));
 						((Binary_Context)_localctx).left = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(92);
-						if (!(precpred(_ctx, 11))) throw new FailedPredicateException(this, "precpred(_ctx, 11)");
-						setState(93);
-						((Binary_Context)_localctx).op = match(BinaryOperator);
 						setState(94);
+						if (!(precpred(_ctx, 11))) throw new FailedPredicateException(this, "precpred(_ctx, 11)");
+						setState(95);
+						((Binary_Context)_localctx).op = match(BinaryOperator);
+						setState(96);
 						((Binary_Context)_localctx).right = expression(12);
 						}
 						break;
@@ -1058,11 +1066,11 @@ public class NyarParser extends Parser {
 						_localctx = new Logic_Context(new ExpressionContext(_parentctx, _parentState));
 						((Logic_Context)_localctx).left = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(95);
-						if (!(precpred(_ctx, 10))) throw new FailedPredicateException(this, "precpred(_ctx, 10)");
-						setState(96);
-						((Logic_Context)_localctx).op = match(LogicOperator);
 						setState(97);
+						if (!(precpred(_ctx, 10))) throw new FailedPredicateException(this, "precpred(_ctx, 10)");
+						setState(98);
+						((Logic_Context)_localctx).op = match(LogicOperator);
+						setState(99);
 						((Logic_Context)_localctx).right = expression(11);
 						}
 						break;
@@ -1071,11 +1079,11 @@ public class NyarParser extends Parser {
 						_localctx = new Power_Context(new ExpressionContext(_parentctx, _parentState));
 						((Power_Context)_localctx).left = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(98);
-						if (!(precpred(_ctx, 9))) throw new FailedPredicateException(this, "precpred(_ctx, 9)");
-						setState(99);
-						((Power_Context)_localctx).op = match(PowerLike);
 						setState(100);
+						if (!(precpred(_ctx, 9))) throw new FailedPredicateException(this, "precpred(_ctx, 9)");
+						setState(101);
+						((Power_Context)_localctx).op = match(PowerLike);
+						setState(102);
 						((Power_Context)_localctx).right = expression(9);
 						}
 						break;
@@ -1084,11 +1092,11 @@ public class NyarParser extends Parser {
 						_localctx = new Multiply_Divide_Context(new ExpressionContext(_parentctx, _parentState));
 						((Multiply_Divide_Context)_localctx).left = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(101);
-						if (!(precpred(_ctx, 8))) throw new FailedPredicateException(this, "precpred(_ctx, 8)");
-						setState(102);
-						((Multiply_Divide_Context)_localctx).op = match(MultiplyLike);
 						setState(103);
+						if (!(precpred(_ctx, 8))) throw new FailedPredicateException(this, "precpred(_ctx, 8)");
+						setState(104);
+						((Multiply_Divide_Context)_localctx).op = match(MultiplyLike);
+						setState(105);
 						((Multiply_Divide_Context)_localctx).right = expression(9);
 						}
 						break;
@@ -1097,11 +1105,11 @@ public class NyarParser extends Parser {
 						_localctx = new Add_Subtract_Context(new ExpressionContext(_parentctx, _parentState));
 						((Add_Subtract_Context)_localctx).left = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(104);
-						if (!(precpred(_ctx, 7))) throw new FailedPredicateException(this, "precpred(_ctx, 7)");
-						setState(105);
-						((Add_Subtract_Context)_localctx).op = match(AddLike);
 						setState(106);
+						if (!(precpred(_ctx, 7))) throw new FailedPredicateException(this, "precpred(_ctx, 7)");
+						setState(107);
+						((Add_Subtract_Context)_localctx).op = match(AddLike);
+						setState(108);
 						((Add_Subtract_Context)_localctx).right = expression(8);
 						}
 						break;
@@ -1110,18 +1118,18 @@ public class NyarParser extends Parser {
 						_localctx = new List_Context(new ExpressionContext(_parentctx, _parentState));
 						((List_Context)_localctx).left = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(107);
-						if (!(precpred(_ctx, 6))) throw new FailedPredicateException(this, "precpred(_ctx, 6)");
-						setState(108);
-						((List_Context)_localctx).op = match(ListOperator);
 						setState(109);
+						if (!(precpred(_ctx, 6))) throw new FailedPredicateException(this, "precpred(_ctx, 6)");
+						setState(110);
+						((List_Context)_localctx).op = match(ListOperator);
+						setState(111);
 						((List_Context)_localctx).right = expression(7);
 						}
 						break;
 					}
 					} 
 				}
-				setState(114);
+				setState(116);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,5,_ctx);
 			}
@@ -1177,33 +1185,33 @@ public class NyarParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(115);
+			setState(117);
 			match(LM);
-			setState(122);
+			setState(124);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << STRING) | (1L << INTEGER) | (1L << REAL) | (1L << SYMBOL) | (1L << LS))) != 0)) {
 				{
 				{
-				setState(116);
-				expression(0);
 				setState(118);
+				expression(0);
+				setState(120);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==Comma) {
 					{
-					setState(117);
+					setState(119);
 					match(Comma);
 					}
 				}
 
 				}
 				}
-				setState(124);
+				setState(126);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(125);
+			setState(127);
 			match(RM);
 			}
 		}
@@ -1257,33 +1265,33 @@ public class NyarParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(127);
+			setState(129);
 			match(LL);
-			setState(134);
+			setState(136);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==SYMBOL) {
 				{
 				{
-				setState(128);
-				keyValue();
 				setState(130);
+				keyValue();
+				setState(132);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==Comma) {
 					{
-					setState(129);
+					setState(131);
 					match(Comma);
 					}
 				}
 
 				}
 				}
-				setState(136);
+				setState(138);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(137);
+			setState(139);
 			match(RL);
 			}
 		}
@@ -1331,12 +1339,55 @@ public class NyarParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(139);
-			((KeyValueContext)_localctx).key = match(SYMBOL);
-			setState(140);
-			match(Colon);
 			setState(141);
+			((KeyValueContext)_localctx).key = match(SYMBOL);
+			setState(142);
+			match(Colon);
+			setState(143);
 			((KeyValueContext)_localctx).value = expression(0);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class MathAliasContext extends ParserRuleContext {
+		public Token alias;
+		public TerminalNode Math() { return getToken(NyarParser.Math, 0); }
+		public MathAliasContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_mathAlias; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof NyarListener ) ((NyarListener)listener).enterMathAlias(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof NyarListener ) ((NyarListener)listener).exitMathAlias(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof NyarVisitor ) return ((NyarVisitor<? extends T>)visitor).visitMathAlias(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final MathAliasContext mathAlias() throws RecognitionException {
+		MathAliasContext _localctx = new MathAliasContext(_ctx, getState());
+		enterRule(_localctx, 26, RULE_mathAlias);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(145);
+			((MathAliasContext)_localctx).alias = match(Math);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1376,45 +1427,46 @@ public class NyarParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3n\u0092\4\2\t\2\4"+
-		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
-		"\13\4\f\t\f\4\r\t\r\4\16\t\16\3\2\7\2\36\n\2\f\2\16\2!\13\2\3\2\3\2\3"+
-		"\3\3\3\3\3\3\3\3\3\3\3\3\3\5\3,\n\3\3\4\3\4\3\4\3\5\3\5\3\5\3\5\3\5\3"+
-		"\5\3\5\3\5\3\5\3\5\3\5\3\5\5\5=\n\5\3\6\3\6\3\6\3\6\3\6\3\7\3\7\3\7\3"+
-		"\7\3\b\3\b\3\b\3\b\3\t\3\t\3\t\3\t\3\n\3\n\3\n\3\n\3\13\3\13\3\13\3\13"+
-		"\3\13\3\13\3\13\3\13\3\13\5\13]\n\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13"+
-		"\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\7\13q\n\13\f\13"+
-		"\16\13t\13\13\3\f\3\f\3\f\5\fy\n\f\7\f{\n\f\f\f\16\f~\13\f\3\f\3\f\3\r"+
-		"\3\r\3\r\5\r\u0085\n\r\7\r\u0087\n\r\f\r\16\r\u008a\13\r\3\r\3\r\3\16"+
-		"\3\16\3\16\3\16\3\16\2\3\24\17\2\4\6\b\n\f\16\20\22\24\26\30\32\2\2\2"+
-		"\u009c\2\37\3\2\2\2\4+\3\2\2\2\6-\3\2\2\2\b<\3\2\2\2\n>\3\2\2\2\fC\3\2"+
-		"\2\2\16G\3\2\2\2\20K\3\2\2\2\22O\3\2\2\2\24\\\3\2\2\2\26u\3\2\2\2\30\u0081"+
-		"\3\2\2\2\32\u008d\3\2\2\2\34\36\5\4\3\2\35\34\3\2\2\2\36!\3\2\2\2\37\35"+
-		"\3\2\2\2\37 \3\2\2\2 \"\3\2\2\2!\37\3\2\2\2\"#\7\2\2\3#\3\3\2\2\2$,\5"+
-		"\6\4\2%,\5\b\5\2&,\5\n\6\2\',\5\f\7\2(,\5\16\b\2),\5\20\t\2*,\5\22\n\2"+
-		"+$\3\2\2\2+%\3\2\2\2+&\3\2\2\2+\'\3\2\2\2+(\3\2\2\2+)\3\2\2\2+*\3\2\2"+
-		"\2,\5\3\2\2\2-.\5\24\13\2./\7\3\2\2/\7\3\2\2\2\60\61\7\n\2\2\61=\7\36"+
-		"\2\2\62\63\7\n\2\2\63\64\7\4\2\2\64\65\7\r\2\2\65=\7\36\2\2\66\67\7\n"+
-		"\2\2\678\7\4\2\289\7\f\2\29=\7\36\2\2:;\7\13\2\2;=\7\4\2\2<\60\3\2\2\2"+
-		"<\62\3\2\2\2<\66\3\2\2\2<:\3\2\2\2=\t\3\2\2\2>?\7\36\2\2?@\7h\2\2@A\5"+
-		"\24\13\2AB\7\3\2\2B\13\3\2\2\2CD\7\16\2\2DE\5\24\13\2EF\7\3\2\2F\r\3\2"+
-		"\2\2GH\7\17\2\2HI\5\24\13\2IJ\7\3\2\2J\17\3\2\2\2KL\7\20\2\2LM\5\24\13"+
-		"\2MN\7\3\2\2N\21\3\2\2\2OP\7\21\2\2PQ\5\24\13\2QR\7\3\2\2R\23\3\2\2\2"+
-		"ST\b\13\1\2T]\7\4\2\2U]\7\6\2\2V]\7\5\2\2W]\7\36\2\2XY\7\37\2\2YZ\5\24"+
-		"\13\2Z[\7 \2\2[]\3\2\2\2\\S\3\2\2\2\\U\3\2\2\2\\V\3\2\2\2\\W\3\2\2\2\\"+
-		"X\3\2\2\2]r\3\2\2\2^_\f\r\2\2_`\7i\2\2`q\5\24\13\16ab\f\f\2\2bc\7j\2\2"+
-		"cq\5\24\13\rde\f\13\2\2ef\7k\2\2fq\5\24\13\13gh\f\n\2\2hi\7l\2\2iq\5\24"+
-		"\13\13jk\f\t\2\2kl\7m\2\2lq\5\24\13\nmn\f\b\2\2no\7n\2\2oq\5\24\13\tp"+
-		"^\3\2\2\2pa\3\2\2\2pd\3\2\2\2pg\3\2\2\2pj\3\2\2\2pm\3\2\2\2qt\3\2\2\2"+
-		"rp\3\2\2\2rs\3\2\2\2s\25\3\2\2\2tr\3\2\2\2u|\7!\2\2vx\5\24\13\2wy\7Z\2"+
-		"\2xw\3\2\2\2xy\3\2\2\2y{\3\2\2\2zv\3\2\2\2{~\3\2\2\2|z\3\2\2\2|}\3\2\2"+
-		"\2}\177\3\2\2\2~|\3\2\2\2\177\u0080\7\"\2\2\u0080\27\3\2\2\2\u0081\u0088"+
-		"\7#\2\2\u0082\u0084\5\32\16\2\u0083\u0085\7Z\2\2\u0084\u0083\3\2\2\2\u0084"+
-		"\u0085\3\2\2\2\u0085\u0087\3\2\2\2\u0086\u0082\3\2\2\2\u0087\u008a\3\2"+
-		"\2\2\u0088\u0086\3\2\2\2\u0088\u0089\3\2\2\2\u0089\u008b\3\2\2\2\u008a"+
-		"\u0088\3\2\2\2\u008b\u008c\7$\2\2\u008c\31\3\2\2\2\u008d\u008e\7\36\2"+
-		"\2\u008e\u008f\7T\2\2\u008f\u0090\5\24\13\2\u0090\33\3\2\2\2\f\37+<\\"+
-		"prx|\u0084\u0088";
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\u0080\u0096\4\2\t"+
+		"\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13"+
+		"\t\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\3\2\7\2 \n\2\f\2\16\2#\13\2"+
+		"\3\2\3\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\5\3.\n\3\3\4\3\4\3\4\3\5\3\5\3\5"+
+		"\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\5\5?\n\5\3\6\3\6\3\6\3\6\3\6\3\7"+
+		"\3\7\3\7\3\7\3\b\3\b\3\b\3\b\3\t\3\t\3\t\3\t\3\n\3\n\3\n\3\n\3\13\3\13"+
+		"\3\13\3\13\3\13\3\13\3\13\3\13\3\13\5\13_\n\13\3\13\3\13\3\13\3\13\3\13"+
+		"\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\7\13"+
+		"s\n\13\f\13\16\13v\13\13\3\f\3\f\3\f\5\f{\n\f\7\f}\n\f\f\f\16\f\u0080"+
+		"\13\f\3\f\3\f\3\r\3\r\3\r\5\r\u0087\n\r\7\r\u0089\n\r\f\r\16\r\u008c\13"+
+		"\r\3\r\3\r\3\16\3\16\3\16\3\16\3\17\3\17\3\17\2\3\24\20\2\4\6\b\n\f\16"+
+		"\20\22\24\26\30\32\34\2\2\2\u009f\2!\3\2\2\2\4-\3\2\2\2\6/\3\2\2\2\b>"+
+		"\3\2\2\2\n@\3\2\2\2\fE\3\2\2\2\16I\3\2\2\2\20M\3\2\2\2\22Q\3\2\2\2\24"+
+		"^\3\2\2\2\26w\3\2\2\2\30\u0083\3\2\2\2\32\u008f\3\2\2\2\34\u0093\3\2\2"+
+		"\2\36 \5\4\3\2\37\36\3\2\2\2 #\3\2\2\2!\37\3\2\2\2!\"\3\2\2\2\"$\3\2\2"+
+		"\2#!\3\2\2\2$%\7\2\2\3%\3\3\2\2\2&.\5\6\4\2\'.\5\b\5\2(.\5\n\6\2).\5\f"+
+		"\7\2*.\5\16\b\2+.\5\20\t\2,.\5\22\n\2-&\3\2\2\2-\'\3\2\2\2-(\3\2\2\2-"+
+		")\3\2\2\2-*\3\2\2\2-+\3\2\2\2-,\3\2\2\2.\5\3\2\2\2/\60\5\24\13\2\60\61"+
+		"\7\3\2\2\61\7\3\2\2\2\62\63\7\n\2\2\63?\7*\2\2\64\65\7\n\2\2\65\66\7\4"+
+		"\2\2\66\67\7\r\2\2\67?\7*\2\289\7\n\2\29:\7\4\2\2:;\7\f\2\2;?\7*\2\2<"+
+		"=\7\13\2\2=?\7\4\2\2>\62\3\2\2\2>\64\3\2\2\2>8\3\2\2\2><\3\2\2\2?\t\3"+
+		"\2\2\2@A\7*\2\2AB\7z\2\2BC\5\24\13\2CD\7\3\2\2D\13\3\2\2\2EF\7\16\2\2"+
+		"FG\5\24\13\2GH\7\3\2\2H\r\3\2\2\2IJ\7\20\2\2JK\5\24\13\2KL\7\3\2\2L\17"+
+		"\3\2\2\2MN\7\22\2\2NO\5\24\13\2OP\7\3\2\2P\21\3\2\2\2QR\7\23\2\2RS\5\24"+
+		"\13\2ST\7\3\2\2T\23\3\2\2\2UV\b\13\1\2V_\7\4\2\2W_\7\6\2\2X_\7\5\2\2Y"+
+		"_\7*\2\2Z[\7,\2\2[\\\5\24\13\2\\]\7-\2\2]_\3\2\2\2^U\3\2\2\2^W\3\2\2\2"+
+		"^X\3\2\2\2^Y\3\2\2\2^Z\3\2\2\2_t\3\2\2\2`a\f\r\2\2ab\7{\2\2bs\5\24\13"+
+		"\16cd\f\f\2\2de\7|\2\2es\5\24\13\rfg\f\13\2\2gh\7}\2\2hs\5\24\13\13ij"+
+		"\f\n\2\2jk\7~\2\2ks\5\24\13\13lm\f\t\2\2mn\7\177\2\2ns\5\24\13\nop\f\b"+
+		"\2\2pq\7\u0080\2\2qs\5\24\13\tr`\3\2\2\2rc\3\2\2\2rf\3\2\2\2ri\3\2\2\2"+
+		"rl\3\2\2\2ro\3\2\2\2sv\3\2\2\2tr\3\2\2\2tu\3\2\2\2u\25\3\2\2\2vt\3\2\2"+
+		"\2w~\7.\2\2xz\5\24\13\2y{\7e\2\2zy\3\2\2\2z{\3\2\2\2{}\3\2\2\2|x\3\2\2"+
+		"\2}\u0080\3\2\2\2~|\3\2\2\2~\177\3\2\2\2\177\u0081\3\2\2\2\u0080~\3\2"+
+		"\2\2\u0081\u0082\7/\2\2\u0082\27\3\2\2\2\u0083\u008a\7\60\2\2\u0084\u0086"+
+		"\5\32\16\2\u0085\u0087\7e\2\2\u0086\u0085\3\2\2\2\u0086\u0087\3\2\2\2"+
+		"\u0087\u0089\3\2\2\2\u0088\u0084\3\2\2\2\u0089\u008c\3\2\2\2\u008a\u0088"+
+		"\3\2\2\2\u008a\u008b\3\2\2\2\u008b\u008d\3\2\2\2\u008c\u008a\3\2\2\2\u008d"+
+		"\u008e\7\61\2\2\u008e\31\3\2\2\2\u008f\u0090\7*\2\2\u0090\u0091\7a\2\2"+
+		"\u0091\u0092\5\24\13\2\u0092\33\3\2\2\2\u0093\u0094\7+\2\2\u0094\35\3"+
+		"\2\2\2\f!->^rtz~\u0086\u008a";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

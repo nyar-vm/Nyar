@@ -1,13 +1,14 @@
-// Generated from Nyar.g4 by ANTLR 4.7.3-SNAPSHOT
+// Generated from Projects/Antlr4/Nyar.g4 by ANTLR 4.7.3-SNAPSHOT
 
 
 import { ParseTreeVisitor } from "antlr4ts/tree/ParseTreeVisitor";
 
+import { Binary_Context } from "./NyarParser";
 import { Logic_Context } from "./NyarParser";
 import { Power_Context } from "./NyarParser";
 import { Multiply_Divide_Context } from "./NyarParser";
 import { Add_Subtract_Context } from "./NyarParser";
-import { Binary_Context } from "./NyarParser";
+import { List_Context } from "./NyarParser";
 import { StringContext } from "./NyarParser";
 import { RealContext } from "./NyarParser";
 import { IntegerContext } from "./NyarParser";
@@ -26,6 +27,7 @@ import { ExpressionContext } from "./NyarParser";
 import { ListContext } from "./NyarParser";
 import { RecordContext } from "./NyarParser";
 import { KeyValueContext } from "./NyarParser";
+import { MathAliasContext } from "./NyarParser";
 
 
 /**
@@ -36,6 +38,14 @@ import { KeyValueContext } from "./NyarParser";
  * operations with no return type.
  */
 export interface NyarVisitor<Result> extends ParseTreeVisitor<Result> {
+	/**
+	 * Visit a parse tree produced by the `Binary_`
+	 * labeled alternative in `NyarParser.expression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitBinary_?: (ctx: Binary_Context) => Result;
+
 	/**
 	 * Visit a parse tree produced by the `Logic_`
 	 * labeled alternative in `NyarParser.expression`.
@@ -69,12 +79,12 @@ export interface NyarVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitAdd_Subtract_?: (ctx: Add_Subtract_Context) => Result;
 
 	/**
-	 * Visit a parse tree produced by the `Binary_`
+	 * Visit a parse tree produced by the `List_`
 	 * labeled alternative in `NyarParser.expression`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitBinary_?: (ctx: Binary_Context) => Result;
+	visitList_?: (ctx: List_Context) => Result;
 
 	/**
 	 * Visit a parse tree produced by the `String`
@@ -206,5 +216,12 @@ export interface NyarVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitKeyValue?: (ctx: KeyValueContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `NyarParser.mathAlias`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitMathAlias?: (ctx: MathAliasContext) => Result;
 }
 

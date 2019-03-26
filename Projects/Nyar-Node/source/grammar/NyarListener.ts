@@ -1,13 +1,14 @@
-// Generated from Nyar.g4 by ANTLR 4.7.3-SNAPSHOT
+// Generated from Projects/Antlr4/Nyar.g4 by ANTLR 4.7.3-SNAPSHOT
 
 
 import { ParseTreeListener } from "antlr4ts/tree/ParseTreeListener";
 
+import { Binary_Context } from "./NyarParser";
 import { Logic_Context } from "./NyarParser";
 import { Power_Context } from "./NyarParser";
 import { Multiply_Divide_Context } from "./NyarParser";
 import { Add_Subtract_Context } from "./NyarParser";
-import { Binary_Context } from "./NyarParser";
+import { List_Context } from "./NyarParser";
 import { StringContext } from "./NyarParser";
 import { RealContext } from "./NyarParser";
 import { IntegerContext } from "./NyarParser";
@@ -26,6 +27,7 @@ import { ExpressionContext } from "./NyarParser";
 import { ListContext } from "./NyarParser";
 import { RecordContext } from "./NyarParser";
 import { KeyValueContext } from "./NyarParser";
+import { MathAliasContext } from "./NyarParser";
 
 
 /**
@@ -33,6 +35,19 @@ import { KeyValueContext } from "./NyarParser";
  * `NyarParser`.
  */
 export interface NyarListener extends ParseTreeListener {
+	/**
+	 * Enter a parse tree produced by the `Binary_`
+	 * labeled alternative in `NyarParser.expression`.
+	 * @param ctx the parse tree
+	 */
+	enterBinary_?: (ctx: Binary_Context) => void;
+	/**
+	 * Exit a parse tree produced by the `Binary_`
+	 * labeled alternative in `NyarParser.expression`.
+	 * @param ctx the parse tree
+	 */
+	exitBinary_?: (ctx: Binary_Context) => void;
+
 	/**
 	 * Enter a parse tree produced by the `Logic_`
 	 * labeled alternative in `NyarParser.expression`.
@@ -86,17 +101,17 @@ export interface NyarListener extends ParseTreeListener {
 	exitAdd_Subtract_?: (ctx: Add_Subtract_Context) => void;
 
 	/**
-	 * Enter a parse tree produced by the `Binary_`
+	 * Enter a parse tree produced by the `List_`
 	 * labeled alternative in `NyarParser.expression`.
 	 * @param ctx the parse tree
 	 */
-	enterBinary_?: (ctx: Binary_Context) => void;
+	enterList_?: (ctx: List_Context) => void;
 	/**
-	 * Exit a parse tree produced by the `Binary_`
+	 * Exit a parse tree produced by the `List_`
 	 * labeled alternative in `NyarParser.expression`.
 	 * @param ctx the parse tree
 	 */
-	exitBinary_?: (ctx: Binary_Context) => void;
+	exitList_?: (ctx: List_Context) => void;
 
 	/**
 	 * Enter a parse tree produced by the `String`
@@ -305,5 +320,16 @@ export interface NyarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitKeyValue?: (ctx: KeyValueContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `NyarParser.mathAlias`.
+	 * @param ctx the parse tree
+	 */
+	enterMathAlias?: (ctx: MathAliasContext) => void;
+	/**
+	 * Exit a parse tree produced by `NyarParser.mathAlias`.
+	 * @param ctx the parse tree
+	 */
+	exitMathAlias?: (ctx: MathAliasContext) => void;
 }
 

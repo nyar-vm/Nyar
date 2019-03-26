@@ -1,5 +1,6 @@
 import { AbstractParseTreeVisitor } from 'antlr4ts/tree';
-import { NyarVisitor } from '../grammar';
+import { NyarVisitor, MathAliasContext } from '../grammar';
+import { INTEGER } from "../core";
 import {
     NyarParser,
     ExpressionStatementContext,
@@ -22,7 +23,7 @@ export default class NyarEvaluationVisitor extends AbstractParseTreeVisitor<numb
     defaultResult() { return 0 }
 
     visitSymbol(ctx: SymbolContext) {
-        const id = ctx.Symbol().text;
+        const id = ctx.SYMBOL().text;
         if (this.memory[id] !== undefined) {
             return this.memory[id];
         }
@@ -30,7 +31,7 @@ export default class NyarEvaluationVisitor extends AbstractParseTreeVisitor<numb
     }
 
     visitInteger(ctx: IntegerContext) {
-        return parseInt(ctx.Integer().text, 10);
+        return parseInt(ctx.INTEGER().text, 10);
     }
 
     visitExpressionStatement(ctx: ExpressionStatementContext) {
@@ -41,15 +42,15 @@ export default class NyarEvaluationVisitor extends AbstractParseTreeVisitor<numb
     }
 
     visitAssignStatement(ctx: AssignStatementContext) {
-        const id = ctx.Symbol().text;
+        const id = ctx.SYMBOL().text;
         const val = this.visit(ctx.expression());
         this.memory[id] = val;
         return val;
     }
 
     visitAdd_Subtract_(ctx: Add_Subtract_Context) {
-        const left = this.visit(ctx.expression(0));
-        const right = this.visit(ctx.expression(1));
+        const left = this.visit(ctx._left);
+        const right = this.visit(ctx._right);
         const op = ctx._op;
 
         switch (op.type) {
@@ -66,8 +67,8 @@ export default class NyarEvaluationVisitor extends AbstractParseTreeVisitor<numb
     }
 
     visitMultiply_Divide_(ctx: Multiply_Divide_Context) {
-        const left = this.visit(ctx.expression(0));
-        const right = this.visit(ctx.expression(1));
+        const left = this.visit(ctx._left);
+        const right = this.visit(ctx._right);
         const op = ctx._op;
 
         switch (op.type) {
@@ -87,13 +88,30 @@ export default class NyarEvaluationVisitor extends AbstractParseTreeVisitor<numb
     }
 
     visitPower_(ctx: Power_Context) {
-        const left = this.visit(ctx.expression(0));
-        const right = this.visit(ctx.expression(1));
+        const left = this.visit(ctx._left);
+        const right = this.visit(ctx._right);
         const op = ctx._op;
 
         switch (op.type) {
             case NyarParser.Power: {
                 return left ** right;
+            }
+            default: {
+                return 0
+            }
+        }
+    }
+
+    visitMathAlias(ctx: MathAliasContext) {
+        switch (ctx._alias.type) {
+            case NyarParser.Pi: {
+                return 3.14159;
+            }
+            case NyarParser.E: {
+                return 2.7;
+            }
+            case NyarParser.EulerGamma: {
+                return 0.57;
             }
             default: {
                 return 0

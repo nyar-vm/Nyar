@@ -1,4 +1,4 @@
-// Generated from D:/Hybrid/Nyar/Projects/Antlr4\Nyar.g4 by ANTLR 4.7.2
+// Generated from Projects/Antlr4/Nyar.g4 by ANTLR 4.7.2
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -158,4 +158,10 @@ public interface NyarVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitKeyValue(NyarParser.KeyValueContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link NyarParser#mathAlias}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMathAlias(NyarParser.MathAliasContext ctx);
 }

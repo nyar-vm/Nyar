@@ -1,4 +1,4 @@
-// Generated from Nyar.g4 by ANTLR 4.7.3-SNAPSHOT
+// Generated from Projects/Antlr4/Nyar.g4 by ANTLR 4.7.3-SNAPSHOT
 
 
 import { ATN } from "antlr4ts/atn/ATN";
@@ -40,101 +40,120 @@ export class NyarParser extends Parser {
 	public static readonly With = 10;
 	public static readonly As = 11;
 	public static readonly Macro = 12;
-	public static readonly Template = 13;
-	public static readonly Interface = 14;
-	public static readonly Class = 15;
-	public static readonly Extends = 16;
-	public static readonly Mixin = 17;
-	public static readonly Setter = 18;
-	public static readonly Getter = 19;
-	public static readonly Public = 20;
-	public static readonly Private = 21;
-	public static readonly Protected = 22;
-	public static readonly Final = 23;
-	public static readonly Try = 24;
-	public static readonly Catch = 25;
-	public static readonly For = 26;
-	public static readonly In = 27;
-	public static readonly SYMBOL = 28;
-	public static readonly LS = 29;
-	public static readonly RS = 30;
-	public static readonly LM = 31;
-	public static readonly RM = 32;
-	public static readonly LL = 33;
-	public static readonly RL = 34;
-	public static readonly Export = 35;
-	public static readonly RightShift = 36;
-	public static readonly Grater = 37;
-	public static readonly Import = 38;
-	public static readonly LeftShift = 39;
-	public static readonly Less = 40;
-	public static readonly Plus3 = 41;
-	public static readonly Increase = 42;
-	public static readonly Add = 43;
-	public static readonly Unknow1 = 44;
-	public static readonly Minus3 = 45;
-	public static readonly Decrease = 46;
-	public static readonly Subtract = 47;
-	public static readonly Unknow2 = 48;
-	public static readonly NullSequence = 49;
-	public static readonly Sequence = 50;
-	public static readonly Times = 51;
-	public static readonly Multiply = 52;
-	public static readonly Kronecker = 53;
-	public static readonly Unknow3 = 54;
-	public static readonly Remainder = 55;
-	public static readonly Divide = 56;
-	public static readonly Unknow4 = 57;
-	public static readonly Quotient = 58;
-	public static readonly Output = 59;
-	public static readonly Mod = 60;
-	public static readonly BaseInput = 61;
-	public static readonly Power = 62;
-	public static readonly Root = 63;
-	public static readonly Equivalent = 64;
-	public static readonly Equal = 65;
-	public static readonly Set = 66;
-	public static readonly NotEqual = 67;
-	public static readonly NotEquivalent = 68;
-	public static readonly GraterEqual = 69;
-	public static readonly LessEqual = 70;
-	public static readonly Bar3 = 71;
-	public static readonly Bar2 = 72;
-	public static readonly Bar = 73;
-	public static readonly SlotSequence = 74;
-	public static readonly Slot = 75;
-	public static readonly PostfixFunction = 76;
-	public static readonly AnonymousFunction = 77;
-	public static readonly Curry = 78;
-	public static readonly Apply = 79;
-	public static readonly At = 80;
-	public static readonly Type = 81;
-	public static readonly Colon = 82;
-	public static readonly Accuracy = 83;
-	public static readonly Quote = 84;
-	public static readonly Bang2 = 85;
-	public static readonly Bang = 86;
-	public static readonly Dot = 87;
-	public static readonly Comma = 88;
-	public static readonly Quotation = 89;
-	public static readonly SetConstant = 90;
-	public static readonly DelayedSet = 91;
-	public static readonly UpSet = 92;
-	public static readonly SetAddTo = 93;
-	public static readonly SetMinusFrom = 94;
-	public static readonly Map = 95;
-	public static readonly MapAll = 96;
-	public static readonly To = 97;
-	public static readonly Infer = 98;
-	public static readonly Concat = 99;
-	public static readonly Unknow5 = 100;
-	public static readonly Unknow6 = 101;
-	public static readonly AssignmentOperator = 102;
-	public static readonly LogicOperator = 103;
-	public static readonly PowerLike = 104;
-	public static readonly MultiplyLike = 105;
-	public static readonly AddLike = 106;
-	public static readonly BinaryOperator = 107;
+	public static readonly MacroApply = 13;
+	public static readonly Template = 14;
+	public static readonly TemplayeApply = 15;
+	public static readonly Interface = 16;
+	public static readonly Class = 17;
+	public static readonly Extends = 18;
+	public static readonly Mixin = 19;
+	public static readonly Setter = 20;
+	public static readonly Getter = 21;
+	public static readonly Public = 22;
+	public static readonly Private = 23;
+	public static readonly Protected = 24;
+	public static readonly Final = 25;
+	public static readonly Try = 26;
+	public static readonly Catch = 27;
+	public static readonly For = 28;
+	public static readonly In = 29;
+	public static readonly Pi = 30;
+	public static readonly E = 31;
+	public static readonly I = 32;
+	public static readonly EulerGamma = 33;
+	public static readonly Plank = 34;
+	public static readonly Reciprocal = 35;
+	public static readonly Derivative = 36;
+	public static readonly IntegerField = 37;
+	public static readonly RealField = 38;
+	public static readonly ComplexField = 39;
+	public static readonly SYMBOL = 40;
+	public static readonly Math = 41;
+	public static readonly LS = 42;
+	public static readonly RS = 43;
+	public static readonly LM = 44;
+	public static readonly RM = 45;
+	public static readonly LL = 46;
+	public static readonly RL = 47;
+	public static readonly LCeil = 48;
+	public static readonly RCeil = 49;
+	public static readonly LFloor = 50;
+	public static readonly RFloor = 51;
+	public static readonly LAngle = 52;
+	public static readonly RAngle = 53;
+	public static readonly Import = 54;
+	public static readonly Export = 55;
+	public static readonly LeftShift = 56;
+	public static readonly RightShift = 57;
+	public static readonly Less = 58;
+	public static readonly Grater = 59;
+	public static readonly Plus3 = 60;
+	public static readonly Increase = 61;
+	public static readonly Add = 62;
+	public static readonly Minus3 = 63;
+	public static readonly Decrease = 64;
+	public static readonly Subtract = 65;
+	public static readonly NullSequence = 66;
+	public static readonly Sequence = 67;
+	public static readonly Times = 68;
+	public static readonly Remainder = 69;
+	public static readonly Divide = 70;
+	public static readonly Quotient = 71;
+	public static readonly Output = 72;
+	public static readonly Mod = 73;
+	public static readonly BaseInput = 74;
+	public static readonly Power = 75;
+	public static readonly Root = 76;
+	public static readonly Equivalent = 77;
+	public static readonly Equal = 78;
+	public static readonly Set = 79;
+	public static readonly NotEqual = 80;
+	public static readonly NotEquivalent = 81;
+	public static readonly GraterEqual = 82;
+	public static readonly LessEqual = 83;
+	public static readonly Bar3 = 84;
+	public static readonly Bar2 = 85;
+	public static readonly Bar = 86;
+	public static readonly SlotSequence = 87;
+	public static readonly Slot = 88;
+	public static readonly PostfixFunction = 89;
+	public static readonly AnonymousFunction = 90;
+	public static readonly Curry = 91;
+	public static readonly Apply = 92;
+	public static readonly At = 93;
+	public static readonly Type = 94;
+	public static readonly Colon = 95;
+	public static readonly Quote = 96;
+	public static readonly Bang = 97;
+	public static readonly Dot = 98;
+	public static readonly Comma = 99;
+	public static readonly Quotation = 100;
+	public static readonly SetConstant = 101;
+	public static readonly DelayedSet = 102;
+	public static readonly SetAddTo = 103;
+	public static readonly SetMinusFrom = 104;
+	public static readonly SetTimesTo = 105;
+	public static readonly SetDivideFrom = 106;
+	public static readonly SetModTo = 107;
+	public static readonly SetPowerTo = 108;
+	public static readonly Clean = 109;
+	public static readonly Map = 110;
+	public static readonly MapAll = 111;
+	public static readonly To = 112;
+	public static readonly Infer = 113;
+	public static readonly Concat = 114;
+	public static readonly Unknow5 = 115;
+	public static readonly Unknow6 = 116;
+	public static readonly Multiply = 117;
+	public static readonly Kronecker = 118;
+	public static readonly TensorProduct = 119;
+	public static readonly AssignmentOperator = 120;
+	public static readonly BinaryOperator = 121;
+	public static readonly LogicOperator = 122;
+	public static readonly PowerLike = 123;
+	public static readonly MultiplyLike = 124;
+	public static readonly AddLike = 125;
+	public static readonly ListOperator = 126;
 	public static readonly RULE_program = 0;
 	public static readonly RULE_statement = 1;
 	public static readonly RULE_expressionStatement = 2;
@@ -148,44 +167,52 @@ export class NyarParser extends Parser {
 	public static readonly RULE_list = 10;
 	public static readonly RULE_record = 11;
 	public static readonly RULE_keyValue = 12;
+	public static readonly RULE_mathAlias = 13;
 	// tslint:disable:no-trailing-whitespace
 	public static readonly ruleNames: string[] = [
 		"program", "statement", "expressionStatement", "moduleStatement", "assignStatement", 
 		"macroStatement", "templateStatement", "interfaceStatement", "classStatement", 
-		"expression", "list", "record", "keyValue",
+		"expression", "list", "record", "keyValue", "mathAlias",
 	];
 
 	private static readonly _LITERAL_NAMES: Array<string | undefined> = [
 		undefined, "';'", undefined, undefined, undefined, undefined, undefined, 
-		undefined, "'Using'", "'Exposing'", "'With'", "'As'", "'Macro'", "'Template'", 
-		"'Interface'", "'Class'", "'Extends'", "'Mixin'", "'Setter'", "'Getter'", 
-		"'Public'", "'Private'", "'Protected'", "'Final'", "'Try'", "'Catch'", 
-		"'For'", "'In'", undefined, "'('", "')'", "'['", "']'", "'{'", "'}'", 
-		"'>>>'", "'>>'", "'>'", "'<<<'", "'<<'", "'<'", "'+++'", "'++'", "'+'", 
-		"'\u2295'", "'---'", "'--'", "'-'", "'\u2296'", "'***'", "'**'", "'*'", 
-		"'\u00D7'", "'\u2297'", "'\u2299'", "'//'", "'/'", "'\u2298'", "'\u00F7'", 
-		"'%%'", "'%'", "'^^'", "'^'", "'\u221A'", "'==='", "'=='", "'='", undefined, 
-		"'=!='", "'>='", "'<='", "'|||'", "'||'", "'|'", "'##'", "'#'", "'$$'", 
-		"'$'", "'@@@'", "'@@'", "'@'", "'::'", "':'", "'``'", "'`'", "'!!'", "'!'", 
-		"'.'", "','", "'''", "'=<'", "':='", "'^='", "'+='", "'-='", "'/@'", "'//@'", 
-		undefined, undefined, "'<>'", "'<->'",
+		undefined, "'Using'", "'Exposing'", "'With'", "'As'", "'Macro'", "'\u00A7'", 
+		"'Template'", "'\u00B6'", "'Interface'", "'Class'", "'Extends'", "'Mixin'", 
+		"'Setter'", "'Getter'", "'Public'", "'Private'", "'Protected'", "'Final'", 
+		"'Try'", "'Catch'", "'For'", "'In'", "'\u213C'", "'\u2147'", "'\u2148'", 
+		"'\u213D'", "'\u210E'", "'\u215F'", "'\u2146'", "'\u2124'", "'\u211D'", 
+		"'\u2102'", undefined, undefined, "'('", "')'", "'['", "']'", "'{'", "'}'", 
+		"'\u2308'", "'\u2309'", "'\u230A'", "'\u230B'", "'\u27E8'", "'\u27E9'", 
+		undefined, undefined, undefined, undefined, "'<'", "'>'", "'+++'", "'++'", 
+		"'+'", "'---'", "'--'", "'-'", "'***'", "'**'", "'*'", "'//'", "'/'", 
+		"'\u00F7'", "'%%'", "'%'", "'^^'", "'^'", "'\u221A'", "'==='", "'=='", 
+		"'='", undefined, "'=!='", "'>='", "'<='", "'|||'", "'||'", "'|'", "'##'", 
+		"'#'", "'$$'", "'$'", "'@@@'", "'@@'", "'@'", undefined, "':'", "'`'", 
+		"'!'", "'.'", "','", "'''", "'=<'", undefined, "'+='", "'-='", "'*='", 
+		"'/='", "'%='", "'^='", "'=.'", "'/@'", "'//@'", undefined, undefined, 
+		"'<>'", "'<->'", undefined, "'\u00D7'", "'\u2297'", "'\u2299'",
 	];
 	private static readonly _SYMBOLIC_NAMES: Array<string | undefined> = [
 		undefined, undefined, "STRING", "INTEGER", "REAL", "WhiteSpace", "NewLine", 
-		"Comment", "Using", "Exposing", "With", "As", "Macro", "Template", "Interface", 
-		"Class", "Extends", "Mixin", "Setter", "Getter", "Public", "Private", 
-		"Protected", "Final", "Try", "Catch", "For", "In", "SYMBOL", "LS", "RS", 
-		"LM", "RM", "LL", "RL", "Export", "RightShift", "Grater", "Import", "LeftShift", 
-		"Less", "Plus3", "Increase", "Add", "Unknow1", "Minus3", "Decrease", "Subtract", 
-		"Unknow2", "NullSequence", "Sequence", "Times", "Multiply", "Kronecker", 
-		"Unknow3", "Remainder", "Divide", "Unknow4", "Quotient", "Output", "Mod", 
-		"BaseInput", "Power", "Root", "Equivalent", "Equal", "Set", "NotEqual", 
-		"NotEquivalent", "GraterEqual", "LessEqual", "Bar3", "Bar2", "Bar", "SlotSequence", 
-		"Slot", "PostfixFunction", "AnonymousFunction", "Curry", "Apply", "At", 
-		"Type", "Colon", "Accuracy", "Quote", "Bang2", "Bang", "Dot", "Comma", 
-		"Quotation", "SetConstant", "DelayedSet", "UpSet", "SetAddTo", "SetMinusFrom", 
-		"Map", "MapAll", "To", "Infer", "Concat", "Unknow5", "Unknow6", "AssignmentOperator", 
-		"LogicOperator", "PowerLike", "MultiplyLike", "AddLike", "BinaryOperator",
+		"Comment", "Using", "Exposing", "With", "As", "Macro", "MacroApply", "Template", 
+		"TemplayeApply", "Interface", "Class", "Extends", "Mixin", "Setter", "Getter", 
+		"Public", "Private", "Protected", "Final", "Try", "Catch", "For", "In", 
+		"Pi", "E", "I", "EulerGamma", "Plank", "Reciprocal", "Derivative", "IntegerField", 
+		"RealField", "ComplexField", "SYMBOL", "Math", "LS", "RS", "LM", "RM", 
+		"LL", "RL", "LCeil", "RCeil", "LFloor", "RFloor", "LAngle", "RAngle", 
+		"Import", "Export", "LeftShift", "RightShift", "Less", "Grater", "Plus3", 
+		"Increase", "Add", "Minus3", "Decrease", "Subtract", "NullSequence", "Sequence", 
+		"Times", "Remainder", "Divide", "Quotient", "Output", "Mod", "BaseInput", 
+		"Power", "Root", "Equivalent", "Equal", "Set", "NotEqual", "NotEquivalent", 
+		"GraterEqual", "LessEqual", "Bar3", "Bar2", "Bar", "SlotSequence", "Slot", 
+		"PostfixFunction", "AnonymousFunction", "Curry", "Apply", "At", "Type", 
+		"Colon", "Quote", "Bang", "Dot", "Comma", "Quotation", "SetConstant", 
+		"DelayedSet", "SetAddTo", "SetMinusFrom", "SetTimesTo", "SetDivideFrom", 
+		"SetModTo", "SetPowerTo", "Clean", "Map", "MapAll", "To", "Infer", "Concat", 
+		"Unknow5", "Unknow6", "Multiply", "Kronecker", "TensorProduct", "AssignmentOperator", 
+		"BinaryOperator", "LogicOperator", "PowerLike", "MultiplyLike", "AddLike", 
+		"ListOperator",
 	];
 	public static readonly VOCABULARY: Vocabulary = new VocabularyImpl(NyarParser._LITERAL_NAMES, NyarParser._SYMBOLIC_NAMES, []);
 
@@ -217,21 +244,21 @@ export class NyarParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 29;
+			this.state = 31;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
-			while ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << NyarParser.STRING) | (1 << NyarParser.INTEGER) | (1 << NyarParser.REAL) | (1 << NyarParser.Using) | (1 << NyarParser.Exposing) | (1 << NyarParser.Macro) | (1 << NyarParser.Template) | (1 << NyarParser.Interface) | (1 << NyarParser.Class) | (1 << NyarParser.SYMBOL) | (1 << NyarParser.LS))) !== 0)) {
+			while ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << NyarParser.STRING) | (1 << NyarParser.INTEGER) | (1 << NyarParser.REAL) | (1 << NyarParser.Using) | (1 << NyarParser.Exposing) | (1 << NyarParser.Macro) | (1 << NyarParser.Template) | (1 << NyarParser.Interface) | (1 << NyarParser.Class))) !== 0) || _la === NyarParser.SYMBOL || _la === NyarParser.LS) {
 				{
 				{
-				this.state = 26;
+				this.state = 28;
 				this.statement();
 				}
 				}
-				this.state = 31;
+				this.state = 33;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 			}
-			this.state = 32;
+			this.state = 34;
 			this.match(NyarParser.EOF);
 			}
 		}
@@ -254,13 +281,13 @@ export class NyarParser extends Parser {
 		let _localctx: StatementContext = new StatementContext(this._ctx, this.state);
 		this.enterRule(_localctx, 2, NyarParser.RULE_statement);
 		try {
-			this.state = 41;
+			this.state = 43;
 			this._errHandler.sync(this);
 			switch ( this.interpreter.adaptivePredict(this._input, 1, this._ctx) ) {
 			case 1:
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 34;
+				this.state = 36;
 				this.expressionStatement();
 				}
 				break;
@@ -268,7 +295,7 @@ export class NyarParser extends Parser {
 			case 2:
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 35;
+				this.state = 37;
 				this.moduleStatement();
 				}
 				break;
@@ -276,7 +303,7 @@ export class NyarParser extends Parser {
 			case 3:
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 36;
+				this.state = 38;
 				this.assignStatement();
 				}
 				break;
@@ -284,7 +311,7 @@ export class NyarParser extends Parser {
 			case 4:
 				this.enterOuterAlt(_localctx, 4);
 				{
-				this.state = 37;
+				this.state = 39;
 				this.macroStatement();
 				}
 				break;
@@ -292,7 +319,7 @@ export class NyarParser extends Parser {
 			case 5:
 				this.enterOuterAlt(_localctx, 5);
 				{
-				this.state = 38;
+				this.state = 40;
 				this.templateStatement();
 				}
 				break;
@@ -300,7 +327,7 @@ export class NyarParser extends Parser {
 			case 6:
 				this.enterOuterAlt(_localctx, 6);
 				{
-				this.state = 39;
+				this.state = 41;
 				this.interfaceStatement();
 				}
 				break;
@@ -308,7 +335,7 @@ export class NyarParser extends Parser {
 			case 7:
 				this.enterOuterAlt(_localctx, 7);
 				{
-				this.state = 40;
+				this.state = 42;
 				this.classStatement();
 				}
 				break;
@@ -335,9 +362,9 @@ export class NyarParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 43;
+			this.state = 45;
 			this.expression(0);
-			this.state = 44;
+			this.state = 46;
 			this.match(NyarParser.T__0);
 			}
 		}
@@ -360,15 +387,15 @@ export class NyarParser extends Parser {
 		let _localctx: ModuleStatementContext = new ModuleStatementContext(this._ctx, this.state);
 		this.enterRule(_localctx, 6, NyarParser.RULE_moduleStatement);
 		try {
-			this.state = 58;
+			this.state = 60;
 			this._errHandler.sync(this);
 			switch ( this.interpreter.adaptivePredict(this._input, 2, this._ctx) ) {
 			case 1:
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 46;
+				this.state = 48;
 				this.match(NyarParser.Using);
-				this.state = 47;
+				this.state = 49;
 				_localctx._core = this.match(NyarParser.SYMBOL);
 				}
 				break;
@@ -376,13 +403,13 @@ export class NyarParser extends Parser {
 			case 2:
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 48;
-				this.match(NyarParser.Using);
-				this.state = 49;
-				_localctx._source = this.match(NyarParser.STRING);
 				this.state = 50;
-				this.match(NyarParser.As);
+				this.match(NyarParser.Using);
 				this.state = 51;
+				_localctx._source = this.match(NyarParser.STRING);
+				this.state = 52;
+				this.match(NyarParser.As);
+				this.state = 53;
 				_localctx._name = this.match(NyarParser.SYMBOL);
 				}
 				break;
@@ -390,13 +417,13 @@ export class NyarParser extends Parser {
 			case 3:
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 52;
-				this.match(NyarParser.Using);
-				this.state = 53;
-				_localctx._source = this.match(NyarParser.STRING);
 				this.state = 54;
-				this.match(NyarParser.With);
+				this.match(NyarParser.Using);
 				this.state = 55;
+				_localctx._source = this.match(NyarParser.STRING);
+				this.state = 56;
+				this.match(NyarParser.With);
+				this.state = 57;
 				_localctx._name = this.match(NyarParser.SYMBOL);
 				}
 				break;
@@ -404,9 +431,9 @@ export class NyarParser extends Parser {
 			case 4:
 				this.enterOuterAlt(_localctx, 4);
 				{
-				this.state = 56;
+				this.state = 58;
 				this.match(NyarParser.Exposing);
-				this.state = 57;
+				this.state = 59;
 				_localctx._source = this.match(NyarParser.STRING);
 				}
 				break;
@@ -433,13 +460,13 @@ export class NyarParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 60;
-			this.match(NyarParser.SYMBOL);
-			this.state = 61;
-			this.match(NyarParser.AssignmentOperator);
 			this.state = 62;
-			this.expression(0);
+			this.match(NyarParser.SYMBOL);
 			this.state = 63;
+			this.match(NyarParser.AssignmentOperator);
+			this.state = 64;
+			this.expression(0);
+			this.state = 65;
 			this.match(NyarParser.T__0);
 			}
 		}
@@ -464,11 +491,11 @@ export class NyarParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 65;
-			this.match(NyarParser.Macro);
-			this.state = 66;
-			this.expression(0);
 			this.state = 67;
+			this.match(NyarParser.Macro);
+			this.state = 68;
+			this.expression(0);
+			this.state = 69;
 			this.match(NyarParser.T__0);
 			}
 		}
@@ -493,11 +520,11 @@ export class NyarParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 69;
-			this.match(NyarParser.Template);
-			this.state = 70;
-			this.expression(0);
 			this.state = 71;
+			this.match(NyarParser.Template);
+			this.state = 72;
+			this.expression(0);
+			this.state = 73;
 			this.match(NyarParser.T__0);
 			}
 		}
@@ -522,11 +549,11 @@ export class NyarParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 73;
-			this.match(NyarParser.Interface);
-			this.state = 74;
-			this.expression(0);
 			this.state = 75;
+			this.match(NyarParser.Interface);
+			this.state = 76;
+			this.expression(0);
+			this.state = 77;
 			this.match(NyarParser.T__0);
 			}
 		}
@@ -551,11 +578,11 @@ export class NyarParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 77;
-			this.match(NyarParser.Class);
-			this.state = 78;
-			this.expression(0);
 			this.state = 79;
+			this.match(NyarParser.Class);
+			this.state = 80;
+			this.expression(0);
+			this.state = 81;
 			this.match(NyarParser.T__0);
 			}
 		}
@@ -592,7 +619,7 @@ export class NyarParser extends Parser {
 			let _alt: number;
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 90;
+			this.state = 92;
 			this._errHandler.sync(this);
 			switch (this._input.LA(1)) {
 			case NyarParser.STRING:
@@ -601,7 +628,7 @@ export class NyarParser extends Parser {
 				this._ctx = _localctx;
 				_prevctx = _localctx;
 
-				this.state = 82;
+				this.state = 84;
 				(_localctx as StringContext)._atom = this.match(NyarParser.STRING);
 				}
 				break;
@@ -610,7 +637,7 @@ export class NyarParser extends Parser {
 				_localctx = new RealContext(_localctx);
 				this._ctx = _localctx;
 				_prevctx = _localctx;
-				this.state = 83;
+				this.state = 85;
 				(_localctx as RealContext)._atom = this.match(NyarParser.REAL);
 				}
 				break;
@@ -619,7 +646,7 @@ export class NyarParser extends Parser {
 				_localctx = new IntegerContext(_localctx);
 				this._ctx = _localctx;
 				_prevctx = _localctx;
-				this.state = 84;
+				this.state = 86;
 				(_localctx as IntegerContext)._atom = this.match(NyarParser.INTEGER);
 				}
 				break;
@@ -628,7 +655,7 @@ export class NyarParser extends Parser {
 				_localctx = new SymbolContext(_localctx);
 				this._ctx = _localctx;
 				_prevctx = _localctx;
-				this.state = 85;
+				this.state = 87;
 				(_localctx as SymbolContext)._atom = this.match(NyarParser.SYMBOL);
 				}
 				break;
@@ -637,11 +664,11 @@ export class NyarParser extends Parser {
 				_localctx = new PriorityOperationContext(_localctx);
 				this._ctx = _localctx;
 				_prevctx = _localctx;
-				this.state = 86;
-				this.match(NyarParser.LS);
-				this.state = 87;
-				this.expression(0);
 				this.state = 88;
+				this.match(NyarParser.LS);
+				this.state = 89;
+				this.expression(0);
+				this.state = 90;
 				this.match(NyarParser.RS);
 				}
 				break;
@@ -649,7 +676,7 @@ export class NyarParser extends Parser {
 				throw new NoViableAltException(this);
 			}
 			this._ctx._stop = this._input.tryLT(-1);
-			this.state = 109;
+			this.state = 114;
 			this._errHandler.sync(this);
 			_alt = this.interpreter.adaptivePredict(this._input, 5, this._ctx);
 			while (_alt !== 2 && _alt !== ATN.INVALID_ALT_NUMBER) {
@@ -659,92 +686,108 @@ export class NyarParser extends Parser {
 					}
 					_prevctx = _localctx;
 					{
-					this.state = 107;
+					this.state = 112;
 					this._errHandler.sync(this);
 					switch ( this.interpreter.adaptivePredict(this._input, 4, this._ctx) ) {
 					case 1:
 						{
-						_localctx = new Logic_Context(new ExpressionContext(_parentctx, _parentState));
-						(_localctx as Logic_Context)._left = _prevctx;
+						_localctx = new Binary_Context(new ExpressionContext(_parentctx, _parentState));
+						(_localctx as Binary_Context)._left = _prevctx;
 						this.pushNewRecursionContext(_localctx, _startState, NyarParser.RULE_expression);
-						this.state = 92;
-						if (!(this.precpred(this._ctx, 10))) {
-							throw new FailedPredicateException(this, "this.precpred(this._ctx, 10)");
-						}
-						this.state = 93;
-						(_localctx as Logic_Context)._op = this.match(NyarParser.LogicOperator);
 						this.state = 94;
-						(_localctx as Logic_Context)._right = this.expression(11);
+						if (!(this.precpred(this._ctx, 11))) {
+							throw new FailedPredicateException(this, "this.precpred(this._ctx, 11)");
+						}
+						this.state = 95;
+						(_localctx as Binary_Context)._op = this.match(NyarParser.BinaryOperator);
+						this.state = 96;
+						(_localctx as Binary_Context)._right = this.expression(12);
 						}
 						break;
 
 					case 2:
 						{
-						_localctx = new Power_Context(new ExpressionContext(_parentctx, _parentState));
-						(_localctx as Power_Context)._left = _prevctx;
+						_localctx = new Logic_Context(new ExpressionContext(_parentctx, _parentState));
+						(_localctx as Logic_Context)._left = _prevctx;
 						this.pushNewRecursionContext(_localctx, _startState, NyarParser.RULE_expression);
-						this.state = 95;
-						if (!(this.precpred(this._ctx, 9))) {
-							throw new FailedPredicateException(this, "this.precpred(this._ctx, 9)");
-						}
-						this.state = 96;
-						(_localctx as Power_Context)._op = this.match(NyarParser.PowerLike);
 						this.state = 97;
-						(_localctx as Power_Context)._right = this.expression(9);
+						if (!(this.precpred(this._ctx, 10))) {
+							throw new FailedPredicateException(this, "this.precpred(this._ctx, 10)");
+						}
+						this.state = 98;
+						(_localctx as Logic_Context)._op = this.match(NyarParser.LogicOperator);
+						this.state = 99;
+						(_localctx as Logic_Context)._right = this.expression(11);
 						}
 						break;
 
 					case 3:
 						{
-						_localctx = new Multiply_Divide_Context(new ExpressionContext(_parentctx, _parentState));
-						(_localctx as Multiply_Divide_Context)._left = _prevctx;
+						_localctx = new Power_Context(new ExpressionContext(_parentctx, _parentState));
+						(_localctx as Power_Context)._left = _prevctx;
 						this.pushNewRecursionContext(_localctx, _startState, NyarParser.RULE_expression);
-						this.state = 98;
-						if (!(this.precpred(this._ctx, 8))) {
-							throw new FailedPredicateException(this, "this.precpred(this._ctx, 8)");
-						}
-						this.state = 99;
-						(_localctx as Multiply_Divide_Context)._op = this.match(NyarParser.MultiplyLike);
 						this.state = 100;
-						(_localctx as Multiply_Divide_Context)._right = this.expression(9);
+						if (!(this.precpred(this._ctx, 9))) {
+							throw new FailedPredicateException(this, "this.precpred(this._ctx, 9)");
+						}
+						this.state = 101;
+						(_localctx as Power_Context)._op = this.match(NyarParser.PowerLike);
+						this.state = 102;
+						(_localctx as Power_Context)._right = this.expression(9);
 						}
 						break;
 
 					case 4:
 						{
-						_localctx = new Add_Subtract_Context(new ExpressionContext(_parentctx, _parentState));
-						(_localctx as Add_Subtract_Context)._left = _prevctx;
+						_localctx = new Multiply_Divide_Context(new ExpressionContext(_parentctx, _parentState));
+						(_localctx as Multiply_Divide_Context)._left = _prevctx;
 						this.pushNewRecursionContext(_localctx, _startState, NyarParser.RULE_expression);
-						this.state = 101;
-						if (!(this.precpred(this._ctx, 7))) {
-							throw new FailedPredicateException(this, "this.precpred(this._ctx, 7)");
-						}
-						this.state = 102;
-						(_localctx as Add_Subtract_Context)._op = this.match(NyarParser.AddLike);
 						this.state = 103;
-						(_localctx as Add_Subtract_Context)._right = this.expression(8);
+						if (!(this.precpred(this._ctx, 8))) {
+							throw new FailedPredicateException(this, "this.precpred(this._ctx, 8)");
+						}
+						this.state = 104;
+						(_localctx as Multiply_Divide_Context)._op = this.match(NyarParser.MultiplyLike);
+						this.state = 105;
+						(_localctx as Multiply_Divide_Context)._right = this.expression(9);
 						}
 						break;
 
 					case 5:
 						{
-						_localctx = new Binary_Context(new ExpressionContext(_parentctx, _parentState));
-						(_localctx as Binary_Context)._left = _prevctx;
+						_localctx = new Add_Subtract_Context(new ExpressionContext(_parentctx, _parentState));
+						(_localctx as Add_Subtract_Context)._left = _prevctx;
 						this.pushNewRecursionContext(_localctx, _startState, NyarParser.RULE_expression);
-						this.state = 104;
+						this.state = 106;
+						if (!(this.precpred(this._ctx, 7))) {
+							throw new FailedPredicateException(this, "this.precpred(this._ctx, 7)");
+						}
+						this.state = 107;
+						(_localctx as Add_Subtract_Context)._op = this.match(NyarParser.AddLike);
+						this.state = 108;
+						(_localctx as Add_Subtract_Context)._right = this.expression(8);
+						}
+						break;
+
+					case 6:
+						{
+						_localctx = new List_Context(new ExpressionContext(_parentctx, _parentState));
+						(_localctx as List_Context)._left = _prevctx;
+						this.pushNewRecursionContext(_localctx, _startState, NyarParser.RULE_expression);
+						this.state = 109;
 						if (!(this.precpred(this._ctx, 6))) {
 							throw new FailedPredicateException(this, "this.precpred(this._ctx, 6)");
 						}
-						this.state = 105;
-						(_localctx as Binary_Context)._op = this.match(NyarParser.BinaryOperator);
-						this.state = 106;
-						(_localctx as Binary_Context)._right = this.expression(7);
+						this.state = 110;
+						(_localctx as List_Context)._op = this.match(NyarParser.ListOperator);
+						this.state = 111;
+						(_localctx as List_Context)._right = this.expression(7);
 						}
 						break;
 					}
 					}
 				}
-				this.state = 111;
+				this.state = 116;
 				this._errHandler.sync(this);
 				_alt = this.interpreter.adaptivePredict(this._input, 5, this._ctx);
 			}
@@ -772,33 +815,33 @@ export class NyarParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 112;
+			this.state = 117;
 			this.match(NyarParser.LM);
-			this.state = 119;
+			this.state = 124;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
-			while ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << NyarParser.STRING) | (1 << NyarParser.INTEGER) | (1 << NyarParser.REAL) | (1 << NyarParser.SYMBOL) | (1 << NyarParser.LS))) !== 0)) {
+			while ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << NyarParser.STRING) | (1 << NyarParser.INTEGER) | (1 << NyarParser.REAL))) !== 0) || _la === NyarParser.SYMBOL || _la === NyarParser.LS) {
 				{
 				{
-				this.state = 113;
+				this.state = 118;
 				this.expression(0);
-				this.state = 115;
+				this.state = 120;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === NyarParser.Comma) {
 					{
-					this.state = 114;
+					this.state = 119;
 					this.match(NyarParser.Comma);
 					}
 				}
 
 				}
 				}
-				this.state = 121;
+				this.state = 126;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 			}
-			this.state = 122;
+			this.state = 127;
 			this.match(NyarParser.RM);
 			}
 		}
@@ -824,33 +867,33 @@ export class NyarParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 124;
+			this.state = 129;
 			this.match(NyarParser.LL);
-			this.state = 131;
+			this.state = 136;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
 			while (_la === NyarParser.SYMBOL) {
 				{
 				{
-				this.state = 125;
+				this.state = 130;
 				this.keyValue();
-				this.state = 127;
+				this.state = 132;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === NyarParser.Comma) {
 					{
-					this.state = 126;
+					this.state = 131;
 					this.match(NyarParser.Comma);
 					}
 				}
 
 				}
 				}
-				this.state = 133;
+				this.state = 138;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 			}
-			this.state = 134;
+			this.state = 139;
 			this.match(NyarParser.RL);
 			}
 		}
@@ -875,12 +918,37 @@ export class NyarParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 136;
+			this.state = 141;
 			_localctx._key = this.match(NyarParser.SYMBOL);
-			this.state = 137;
+			this.state = 142;
 			this.match(NyarParser.Colon);
-			this.state = 138;
+			this.state = 143;
 			_localctx._value = this.expression(0);
+			}
+		}
+		catch (re) {
+			if (re instanceof RecognitionException) {
+				_localctx.exception = re;
+				this._errHandler.reportError(this, re);
+				this._errHandler.recover(this, re);
+			} else {
+				throw re;
+			}
+		}
+		finally {
+			this.exitRule();
+		}
+		return _localctx;
+	}
+	// @RuleVersion(0)
+	public mathAlias(): MathAliasContext {
+		let _localctx: MathAliasContext = new MathAliasContext(this._ctx, this.state);
+		this.enterRule(_localctx, 26, NyarParser.RULE_mathAlias);
+		try {
+			this.enterOuterAlt(_localctx, 1);
+			{
+			this.state = 145;
+			_localctx._alias = this.match(NyarParser.Math);
 			}
 		}
 		catch (re) {
@@ -908,80 +976,86 @@ export class NyarParser extends Parser {
 	private expression_sempred(_localctx: ExpressionContext, predIndex: number): boolean {
 		switch (predIndex) {
 		case 0:
-			return this.precpred(this._ctx, 10);
+			return this.precpred(this._ctx, 11);
 
 		case 1:
-			return this.precpred(this._ctx, 9);
+			return this.precpred(this._ctx, 10);
 
 		case 2:
-			return this.precpred(this._ctx, 8);
+			return this.precpred(this._ctx, 9);
 
 		case 3:
-			return this.precpred(this._ctx, 7);
+			return this.precpred(this._ctx, 8);
 
 		case 4:
+			return this.precpred(this._ctx, 7);
+
+		case 5:
 			return this.precpred(this._ctx, 6);
 		}
 		return true;
 	}
 
 	public static readonly _serializedATN: string =
-		"\x03\uC91D\uCABA\u058D\uAFBA\u4F53\u0607\uEA8B\uC241\x03m\x8F\x04\x02" +
+		"\x03\uC91D\uCABA\u058D\uAFBA\u4F53\u0607\uEA8B\uC241\x03\x80\x96\x04\x02" +
 		"\t\x02\x04\x03\t\x03\x04\x04\t\x04\x04\x05\t\x05\x04\x06\t\x06\x04\x07" +
 		"\t\x07\x04\b\t\b\x04\t\t\t\x04\n\t\n\x04\v\t\v\x04\f\t\f\x04\r\t\r\x04" +
-		"\x0E\t\x0E\x03\x02\x07\x02\x1E\n\x02\f\x02\x0E\x02!\v\x02\x03\x02\x03" +
-		"\x02\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x05\x03," +
-		"\n\x03\x03\x04\x03\x04\x03\x04\x03\x05\x03\x05\x03\x05\x03\x05\x03\x05" +
-		"\x03\x05\x03\x05\x03\x05\x03\x05\x03\x05\x03\x05\x03\x05\x05\x05=\n\x05" +
-		"\x03\x06\x03\x06\x03\x06\x03\x06\x03\x06\x03\x07\x03\x07\x03\x07\x03\x07" +
-		"\x03\b\x03\b\x03\b\x03\b\x03\t\x03\t\x03\t\x03\t\x03\n\x03\n\x03\n\x03" +
-		"\n\x03\v\x03\v\x03\v\x03\v\x03\v\x03\v\x03\v\x03\v\x03\v\x05\v]\n\v\x03" +
-		"\v\x03\v\x03\v\x03\v\x03\v\x03\v\x03\v\x03\v\x03\v\x03\v\x03\v\x03\v\x03" +
-		"\v\x03\v\x03\v\x07\vn\n\v\f\v\x0E\vq\v\v\x03\f\x03\f\x03\f\x05\fv\n\f" +
-		"\x07\fx\n\f\f\f\x0E\f{\v\f\x03\f\x03\f\x03\r\x03\r\x03\r\x05\r\x82\n\r" +
-		"\x07\r\x84\n\r\f\r\x0E\r\x87\v\r\x03\r\x03\r\x03\x0E\x03\x0E\x03\x0E\x03" +
-		"\x0E\x03\x0E\x02\x02\x03\x14\x0F\x02\x02\x04\x02\x06\x02\b\x02\n\x02\f" +
-		"\x02\x0E\x02\x10\x02\x12\x02\x14\x02\x16\x02\x18\x02\x1A\x02\x02\x02\x02" +
-		"\x98\x02\x1F\x03\x02\x02\x02\x04+\x03\x02\x02\x02\x06-\x03\x02\x02\x02" +
-		"\b<\x03\x02\x02\x02\n>\x03\x02\x02\x02\fC\x03\x02\x02\x02\x0EG\x03\x02" +
-		"\x02\x02\x10K\x03\x02\x02\x02\x12O\x03\x02\x02\x02\x14\\\x03\x02\x02\x02" +
-		"\x16r\x03\x02\x02\x02\x18~\x03\x02\x02\x02\x1A\x8A\x03\x02\x02\x02\x1C" +
-		"\x1E\x05\x04\x03\x02\x1D\x1C\x03\x02\x02\x02\x1E!\x03\x02\x02\x02\x1F" +
-		"\x1D\x03\x02\x02\x02\x1F \x03\x02\x02\x02 \"\x03\x02\x02\x02!\x1F\x03" +
-		"\x02\x02\x02\"#\x07\x02\x02\x03#\x03\x03\x02\x02\x02$,\x05\x06\x04\x02" +
-		"%,\x05\b\x05\x02&,\x05\n\x06\x02\',\x05\f\x07\x02(,\x05\x0E\b\x02),\x05" +
-		"\x10\t\x02*,\x05\x12\n\x02+$\x03\x02\x02\x02+%\x03\x02\x02\x02+&\x03\x02" +
-		"\x02\x02+\'\x03\x02\x02\x02+(\x03\x02\x02\x02+)\x03\x02\x02\x02+*\x03" +
-		"\x02\x02\x02,\x05\x03\x02\x02\x02-.\x05\x14\v\x02./\x07\x03\x02\x02/\x07" +
-		"\x03\x02\x02\x0201\x07\n\x02\x021=\x07\x1E\x02\x0223\x07\n\x02\x0234\x07" +
-		"\x04\x02\x0245\x07\r\x02\x025=\x07\x1E\x02\x0267\x07\n\x02\x0278\x07\x04" +
-		"\x02\x0289\x07\f\x02\x029=\x07\x1E\x02\x02:;\x07\v\x02\x02;=\x07\x04\x02" +
-		"\x02<0\x03\x02\x02\x02<2\x03\x02\x02\x02<6\x03\x02\x02\x02<:\x03\x02\x02" +
-		"\x02=\t\x03\x02\x02\x02>?\x07\x1E\x02\x02?@\x07h\x02\x02@A\x05\x14\v\x02" +
-		"AB\x07\x03\x02\x02B\v\x03\x02\x02\x02CD\x07\x0E\x02\x02DE\x05\x14\v\x02" +
-		"EF\x07\x03\x02\x02F\r\x03\x02\x02\x02GH\x07\x0F\x02\x02HI\x05\x14\v\x02" +
-		"IJ\x07\x03\x02\x02J\x0F\x03\x02\x02\x02KL\x07\x10\x02\x02LM\x05\x14\v" +
-		"\x02MN\x07\x03\x02\x02N\x11\x03\x02\x02\x02OP\x07\x11\x02\x02PQ\x05\x14" +
-		"\v\x02QR\x07\x03\x02\x02R\x13\x03\x02\x02\x02ST\b\v\x01\x02T]\x07\x04" +
-		"\x02\x02U]\x07\x06\x02\x02V]\x07\x05\x02\x02W]\x07\x1E\x02\x02XY\x07\x1F" +
-		"\x02\x02YZ\x05\x14\v\x02Z[\x07 \x02\x02[]\x03\x02\x02\x02\\S\x03\x02\x02" +
-		"\x02\\U\x03\x02\x02\x02\\V\x03\x02\x02\x02\\W\x03\x02\x02\x02\\X\x03\x02" +
-		"\x02\x02]o\x03\x02\x02\x02^_\f\f\x02\x02_`\x07i\x02\x02`n\x05\x14\v\r" +
-		"ab\f\v\x02\x02bc\x07j\x02\x02cn\x05\x14\v\vde\f\n\x02\x02ef\x07k\x02\x02" +
-		"fn\x05\x14\v\vgh\f\t\x02\x02hi\x07l\x02\x02in\x05\x14\v\njk\f\b\x02\x02" +
-		"kl\x07m\x02\x02ln\x05\x14\v\tm^\x03\x02\x02\x02ma\x03\x02\x02\x02md\x03" +
-		"\x02\x02\x02mg\x03\x02\x02\x02mj\x03\x02\x02\x02nq\x03\x02\x02\x02om\x03" +
-		"\x02\x02\x02op\x03\x02\x02\x02p\x15\x03\x02\x02\x02qo\x03\x02\x02\x02" +
-		"ry\x07!\x02\x02su\x05\x14\v\x02tv\x07Z\x02\x02ut\x03\x02\x02\x02uv\x03" +
-		"\x02\x02\x02vx\x03\x02\x02\x02ws\x03\x02\x02\x02x{\x03\x02\x02\x02yw\x03" +
-		"\x02\x02\x02yz\x03\x02\x02\x02z|\x03\x02\x02\x02{y\x03\x02\x02\x02|}\x07" +
-		"\"\x02\x02}\x17\x03\x02\x02\x02~\x85\x07#\x02\x02\x7F\x81\x05\x1A\x0E" +
-		"\x02\x80\x82\x07Z\x02\x02\x81\x80\x03\x02\x02\x02\x81\x82\x03\x02\x02" +
-		"\x02\x82\x84\x03\x02\x02\x02\x83\x7F\x03\x02\x02\x02\x84\x87\x03\x02\x02" +
-		"\x02\x85\x83\x03\x02\x02\x02\x85\x86\x03\x02\x02\x02\x86\x88\x03\x02\x02" +
-		"\x02\x87\x85\x03\x02\x02\x02\x88\x89\x07$\x02\x02\x89\x19\x03\x02\x02" +
-		"\x02\x8A\x8B\x07\x1E\x02\x02\x8B\x8C\x07T\x02\x02\x8C\x8D\x05\x14\v\x02" +
-		"\x8D\x1B\x03\x02\x02\x02\f\x1F+<\\mouy\x81\x85";
+		"\x0E\t\x0E\x04\x0F\t\x0F\x03\x02\x07\x02 \n\x02\f\x02\x0E\x02#\v\x02\x03" +
+		"\x02\x03\x02\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x05" +
+		"\x03.\n\x03\x03\x04\x03\x04\x03\x04\x03\x05\x03\x05\x03\x05\x03\x05\x03" +
+		"\x05\x03\x05\x03\x05\x03\x05\x03\x05\x03\x05\x03\x05\x03\x05\x05\x05?" +
+		"\n\x05\x03\x06\x03\x06\x03\x06\x03\x06\x03\x06\x03\x07\x03\x07\x03\x07" +
+		"\x03\x07\x03\b\x03\b\x03\b\x03\b\x03\t\x03\t\x03\t\x03\t\x03\n\x03\n\x03" +
+		"\n\x03\n\x03\v\x03\v\x03\v\x03\v\x03\v\x03\v\x03\v\x03\v\x03\v\x05\v_" +
+		"\n\v\x03\v\x03\v\x03\v\x03\v\x03\v\x03\v\x03\v\x03\v\x03\v\x03\v\x03\v" +
+		"\x03\v\x03\v\x03\v\x03\v\x03\v\x03\v\x03\v\x07\vs\n\v\f\v\x0E\vv\v\v\x03" +
+		"\f\x03\f\x03\f\x05\f{\n\f\x07\f}\n\f\f\f\x0E\f\x80\v\f\x03\f\x03\f\x03" +
+		"\r\x03\r\x03\r\x05\r\x87\n\r\x07\r\x89\n\r\f\r\x0E\r\x8C\v\r\x03\r\x03" +
+		"\r\x03\x0E\x03\x0E\x03\x0E\x03\x0E\x03\x0F\x03\x0F\x03\x0F\x02\x02\x03" +
+		"\x14\x10\x02\x02\x04\x02\x06\x02\b\x02\n\x02\f\x02\x0E\x02\x10\x02\x12" +
+		"\x02\x14\x02\x16\x02\x18\x02\x1A\x02\x1C\x02\x02\x02\x02\x9F\x02!\x03" +
+		"\x02\x02\x02\x04-\x03\x02\x02\x02\x06/\x03\x02\x02\x02\b>\x03\x02\x02" +
+		"\x02\n@\x03\x02\x02\x02\fE\x03\x02\x02\x02\x0EI\x03\x02\x02\x02\x10M\x03" +
+		"\x02\x02\x02\x12Q\x03\x02\x02\x02\x14^\x03\x02\x02\x02\x16w\x03\x02\x02" +
+		"\x02\x18\x83\x03\x02\x02\x02\x1A\x8F\x03\x02\x02\x02\x1C\x93\x03\x02\x02" +
+		"\x02\x1E \x05\x04\x03\x02\x1F\x1E\x03\x02\x02\x02 #\x03\x02\x02\x02!\x1F" +
+		"\x03\x02\x02\x02!\"\x03\x02\x02\x02\"$\x03\x02\x02\x02#!\x03\x02\x02\x02" +
+		"$%\x07\x02\x02\x03%\x03\x03\x02\x02\x02&.\x05\x06\x04\x02\'.\x05\b\x05" +
+		"\x02(.\x05\n\x06\x02).\x05\f\x07\x02*.\x05\x0E\b\x02+.\x05\x10\t\x02," +
+		".\x05\x12\n\x02-&\x03\x02\x02\x02-\'\x03\x02\x02\x02-(\x03\x02\x02\x02" +
+		"-)\x03\x02\x02\x02-*\x03\x02\x02\x02-+\x03\x02\x02\x02-,\x03\x02\x02\x02" +
+		".\x05\x03\x02\x02\x02/0\x05\x14\v\x0201\x07\x03\x02\x021\x07\x03\x02\x02" +
+		"\x0223\x07\n\x02\x023?\x07*\x02\x0245\x07\n\x02\x0256\x07\x04\x02\x02" +
+		"67\x07\r\x02\x027?\x07*\x02\x0289\x07\n\x02\x029:\x07\x04\x02\x02:;\x07" +
+		"\f\x02\x02;?\x07*\x02\x02<=\x07\v\x02\x02=?\x07\x04\x02\x02>2\x03\x02" +
+		"\x02\x02>4\x03\x02\x02\x02>8\x03\x02\x02\x02><\x03\x02\x02\x02?\t\x03" +
+		"\x02\x02\x02@A\x07*\x02\x02AB\x07z\x02\x02BC\x05\x14\v\x02CD\x07\x03\x02" +
+		"\x02D\v\x03\x02\x02\x02EF\x07\x0E\x02\x02FG\x05\x14\v\x02GH\x07\x03\x02" +
+		"\x02H\r\x03\x02\x02\x02IJ\x07\x10\x02\x02JK\x05\x14\v\x02KL\x07\x03\x02" +
+		"\x02L\x0F\x03\x02\x02\x02MN\x07\x12\x02\x02NO\x05\x14\v\x02OP\x07\x03" +
+		"\x02\x02P\x11\x03\x02\x02\x02QR\x07\x13\x02\x02RS\x05\x14\v\x02ST\x07" +
+		"\x03\x02\x02T\x13\x03\x02\x02\x02UV\b\v\x01\x02V_\x07\x04\x02\x02W_\x07" +
+		"\x06\x02\x02X_\x07\x05\x02\x02Y_\x07*\x02\x02Z[\x07,\x02\x02[\\\x05\x14" +
+		"\v\x02\\]\x07-\x02\x02]_\x03\x02\x02\x02^U\x03\x02\x02\x02^W\x03\x02\x02" +
+		"\x02^X\x03\x02\x02\x02^Y\x03\x02\x02\x02^Z\x03\x02\x02\x02_t\x03\x02\x02" +
+		"\x02`a\f\r\x02\x02ab\x07{\x02\x02bs\x05\x14\v\x0Ecd\f\f\x02\x02de\x07" +
+		"|\x02\x02es\x05\x14\v\rfg\f\v\x02\x02gh\x07}\x02\x02hs\x05\x14\v\vij\f" +
+		"\n\x02\x02jk\x07~\x02\x02ks\x05\x14\v\vlm\f\t\x02\x02mn\x07\x7F\x02\x02" +
+		"ns\x05\x14\v\nop\f\b\x02\x02pq\x07\x80\x02\x02qs\x05\x14\v\tr`\x03\x02" +
+		"\x02\x02rc\x03\x02\x02\x02rf\x03\x02\x02\x02ri\x03\x02\x02\x02rl\x03\x02" +
+		"\x02\x02ro\x03\x02\x02\x02sv\x03\x02\x02\x02tr\x03\x02\x02\x02tu\x03\x02" +
+		"\x02\x02u\x15\x03\x02\x02\x02vt\x03\x02\x02\x02w~\x07.\x02\x02xz\x05\x14" +
+		"\v\x02y{\x07e\x02\x02zy\x03\x02\x02\x02z{\x03\x02\x02\x02{}\x03\x02\x02" +
+		"\x02|x\x03\x02\x02\x02}\x80\x03\x02\x02\x02~|\x03\x02\x02\x02~\x7F\x03" +
+		"\x02\x02\x02\x7F\x81\x03\x02\x02\x02\x80~\x03\x02\x02\x02\x81\x82\x07" +
+		"/\x02\x02\x82\x17\x03\x02\x02\x02\x83\x8A\x070\x02\x02\x84\x86\x05\x1A" +
+		"\x0E\x02\x85\x87\x07e\x02\x02\x86\x85\x03\x02\x02\x02\x86\x87\x03\x02" +
+		"\x02\x02\x87\x89\x03\x02\x02\x02\x88\x84\x03\x02\x02\x02\x89\x8C\x03\x02" +
+		"\x02\x02\x8A\x88\x03\x02\x02\x02\x8A\x8B\x03\x02\x02\x02\x8B\x8D\x03\x02" +
+		"\x02\x02\x8C\x8A\x03\x02\x02\x02\x8D\x8E\x071\x02\x02\x8E\x19\x03\x02" +
+		"\x02\x02\x8F\x90\x07*\x02\x02\x90\x91\x07a\x02\x02\x91\x92\x05\x14\v\x02" +
+		"\x92\x1B\x03\x02\x02\x02\x93\x94\x07+\x02\x02\x94\x1D\x03\x02\x02\x02" +
+		"\f!->^rtz~\x86\x8A";
 	public static __ATN: ATN;
 	public static get _ATN(): ATN {
 		if (!NyarParser.__ATN) {
@@ -1328,6 +1402,45 @@ export class ExpressionContext extends ParserRuleContext {
 		super.copyFrom(ctx);
 	}
 }
+export class Binary_Context extends ExpressionContext {
+	public _left: ExpressionContext;
+	public _op: Token;
+	public _right: ExpressionContext;
+	public expression(): ExpressionContext[];
+	public expression(i: number): ExpressionContext;
+	public expression(i?: number): ExpressionContext | ExpressionContext[] {
+		if (i === undefined) {
+			return this.getRuleContexts(ExpressionContext);
+		} else {
+			return this.getRuleContext(i, ExpressionContext);
+		}
+	}
+	public BinaryOperator(): TerminalNode { return this.getToken(NyarParser.BinaryOperator, 0); }
+	constructor(ctx: ExpressionContext) {
+		super(ctx.parent, ctx.invokingState);
+		this.copyFrom(ctx);
+	}
+	// @Override
+	public enterRule(listener: NyarListener): void {
+		if (listener.enterBinary_) {
+			listener.enterBinary_(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: NyarListener): void {
+		if (listener.exitBinary_) {
+			listener.exitBinary_(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: NyarVisitor<Result>): Result {
+		if (visitor.visitBinary_) {
+			return visitor.visitBinary_(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
+}
 export class Logic_Context extends ExpressionContext {
 	public _left: ExpressionContext;
 	public _op: Token;
@@ -1484,7 +1597,7 @@ export class Add_Subtract_Context extends ExpressionContext {
 		}
 	}
 }
-export class Binary_Context extends ExpressionContext {
+export class List_Context extends ExpressionContext {
 	public _left: ExpressionContext;
 	public _op: Token;
 	public _right: ExpressionContext;
@@ -1497,27 +1610,27 @@ export class Binary_Context extends ExpressionContext {
 			return this.getRuleContext(i, ExpressionContext);
 		}
 	}
-	public BinaryOperator(): TerminalNode { return this.getToken(NyarParser.BinaryOperator, 0); }
+	public ListOperator(): TerminalNode { return this.getToken(NyarParser.ListOperator, 0); }
 	constructor(ctx: ExpressionContext) {
 		super(ctx.parent, ctx.invokingState);
 		this.copyFrom(ctx);
 	}
 	// @Override
 	public enterRule(listener: NyarListener): void {
-		if (listener.enterBinary_) {
-			listener.enterBinary_(this);
+		if (listener.enterList_) {
+			listener.enterList_(this);
 		}
 	}
 	// @Override
 	public exitRule(listener: NyarListener): void {
-		if (listener.exitBinary_) {
-			listener.exitBinary_(this);
+		if (listener.exitList_) {
+			listener.exitList_(this);
 		}
 	}
 	// @Override
 	public accept<Result>(visitor: NyarVisitor<Result>): Result {
-		if (visitor.visitBinary_) {
-			return visitor.visitBinary_(this);
+		if (visitor.visitList_) {
+			return visitor.visitList_(this);
 		} else {
 			return visitor.visitChildren(this);
 		}
@@ -1795,6 +1908,37 @@ export class KeyValueContext extends ParserRuleContext {
 	public accept<Result>(visitor: NyarVisitor<Result>): Result {
 		if (visitor.visitKeyValue) {
 			return visitor.visitKeyValue(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
+}
+
+
+export class MathAliasContext extends ParserRuleContext {
+	public _alias: Token;
+	public Math(): TerminalNode { return this.getToken(NyarParser.Math, 0); }
+	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
+		super(parent, invokingState);
+	}
+	// @Override
+	public get ruleIndex(): number { return NyarParser.RULE_mathAlias; }
+	// @Override
+	public enterRule(listener: NyarListener): void {
+		if (listener.enterMathAlias) {
+			listener.enterMathAlias(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: NyarListener): void {
+		if (listener.exitMathAlias) {
+			listener.exitMathAlias(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: NyarVisitor<Result>): Result {
+		if (visitor.visitMathAlias) {
+			return visitor.visitMathAlias(this);
 		} else {
 			return visitor.visitChildren(this);
 		}
