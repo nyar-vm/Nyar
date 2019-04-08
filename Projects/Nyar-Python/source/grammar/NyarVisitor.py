@@ -19,18 +19,133 @@ class NyarVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by NyarParser#blockStatement.
+    def visitBlockStatement(self, ctx:NyarParser.BlockStatementContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NyarParser#expr_block.
+    def visitExpr_block(self, ctx:NyarParser.Expr_blockContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NyarParser#emptyStatement.
+    def visitEmptyStatement(self, ctx:NyarParser.EmptyStatementContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NyarParser#eos.
+    def visitEos(self, ctx:NyarParser.EosContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NyarParser#eol.
+    def visitEol(self, ctx:NyarParser.EolContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by NyarParser#expressionStatement.
     def visitExpressionStatement(self, ctx:NyarParser.ExpressionStatementContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by NyarParser#moduleStatement.
-    def visitModuleStatement(self, ctx:NyarParser.ModuleStatementContext):
+    # Visit a parse tree produced by NyarParser#PriorityExpression.
+    def visitPriorityExpression(self, ctx:NyarParser.PriorityExpressionContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by NyarParser#assignStatement.
-    def visitAssignStatement(self, ctx:NyarParser.AssignStatementContext):
+    # Visit a parse tree produced by NyarParser#Symbol.
+    def visitSymbol(self, ctx:NyarParser.SymbolContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NyarParser#Plus_Like.
+    def visitPlus_Like(self, ctx:NyarParser.Plus_LikeContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NyarParser#String.
+    def visitString(self, ctx:NyarParser.StringContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NyarParser#List_Like.
+    def visitList_Like(self, ctx:NyarParser.List_LikeContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NyarParser#Number.
+    def visitNumber(self, ctx:NyarParser.NumberContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NyarParser#OperatorAssign.
+    def visitOperatorAssign(self, ctx:NyarParser.OperatorAssignContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NyarParser#Dict.
+    def visitDict(self, ctx:NyarParser.DictContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NyarParser#PrefixExpression.
+    def visitPrefixExpression(self, ctx:NyarParser.PrefixExpressionContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NyarParser#Logic_Like.
+    def visitLogic_Like(self, ctx:NyarParser.Logic_LikeContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NyarParser#Power_Like.
+    def visitPower_Like(self, ctx:NyarParser.Power_LikeContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NyarParser#Multiply_Like.
+    def visitMultiply_Like(self, ctx:NyarParser.Multiply_LikeContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NyarParser#List.
+    def visitList(self, ctx:NyarParser.ListContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NyarParser#Binary_Like.
+    def visitBinary_Like(self, ctx:NyarParser.Binary_LikeContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NyarParser#Tuple.
+    def visitTuple(self, ctx:NyarParser.TupleContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NyarParser#assignable.
+    def visitAssignable(self, ctx:NyarParser.AssignableContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NyarParser#ModifierAssign.
+    def visitModifierAssign(self, ctx:NyarParser.ModifierAssignContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NyarParser#assignTuple.
+    def visitAssignTuple(self, ctx:NyarParser.AssignTupleContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NyarParser#assignPass.
+    def visitAssignPass(self, ctx:NyarParser.AssignPassContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by NyarParser#moduleStatement.
+    def visitModuleStatement(self, ctx:NyarParser.ModuleStatementContext):
         return self.visitChildren(ctx)
 
 
@@ -54,78 +169,68 @@ class NyarVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by NyarParser#Integer.
-    def visitInteger(self, ctx:NyarParser.IntegerContext):
+    # Visit a parse tree produced by NyarParser#ifStatement.
+    def visitIfStatement(self, ctx:NyarParser.IfStatementContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by NyarParser#Multiply_Divide_.
-    def visitMultiply_Divide_(self, ctx:NyarParser.Multiply_Divide_Context):
+    # Visit a parse tree produced by NyarParser#elseif.
+    def visitElseif(self, ctx:NyarParser.ElseifContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by NyarParser#List_.
-    def visitList_(self, ctx:NyarParser.List_Context):
+    # Visit a parse tree produced by NyarParser#condition.
+    def visitCondition(self, ctx:NyarParser.ConditionContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by NyarParser#Symbol.
-    def visitSymbol(self, ctx:NyarParser.SymbolContext):
+    # Visit a parse tree produced by NyarParser#tryStatement.
+    def visitTryStatement(self, ctx:NyarParser.TryStatementContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by NyarParser#Real.
-    def visitReal(self, ctx:NyarParser.RealContext):
+    # Visit a parse tree produced by NyarParser#catchProduction.
+    def visitCatchProduction(self, ctx:NyarParser.CatchProductionContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by NyarParser#Binary_.
-    def visitBinary_(self, ctx:NyarParser.Binary_Context):
+    # Visit a parse tree produced by NyarParser#finalProduction.
+    def visitFinalProduction(self, ctx:NyarParser.FinalProductionContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by NyarParser#String.
-    def visitString(self, ctx:NyarParser.StringContext):
+    # Visit a parse tree produced by NyarParser#tupleLiteral.
+    def visitTupleLiteral(self, ctx:NyarParser.TupleLiteralContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by NyarParser#Logic_.
-    def visitLogic_(self, ctx:NyarParser.Logic_Context):
+    # Visit a parse tree produced by NyarParser#single.
+    def visitSingle(self, ctx:NyarParser.SingleContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by NyarParser#Power_.
-    def visitPower_(self, ctx:NyarParser.Power_Context):
+    # Visit a parse tree produced by NyarParser#dictLiteral.
+    def visitDictLiteral(self, ctx:NyarParser.DictLiteralContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by NyarParser#PriorityOperation.
-    def visitPriorityOperation(self, ctx:NyarParser.PriorityOperationContext):
+    # Visit a parse tree produced by NyarParser#keyvalue.
+    def visitKeyvalue(self, ctx:NyarParser.KeyvalueContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by NyarParser#Add_Subtract_.
-    def visitAdd_Subtract_(self, ctx:NyarParser.Add_Subtract_Context):
+    # Visit a parse tree produced by NyarParser#listLiteral.
+    def visitListLiteral(self, ctx:NyarParser.ListLiteralContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by NyarParser#list.
-    def visitList(self, ctx:NyarParser.ListContext):
+    # Visit a parse tree produced by NyarParser#element.
+    def visitElement(self, ctx:NyarParser.ElementContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by NyarParser#record.
-    def visitRecord(self, ctx:NyarParser.RecordContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by NyarParser#keyValue.
-    def visitKeyValue(self, ctx:NyarParser.KeyValueContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by NyarParser#mathAlias.
-    def visitMathAlias(self, ctx:NyarParser.MathAliasContext):
+    # Visit a parse tree produced by NyarParser#signedInteger.
+    def visitSignedInteger(self, ctx:NyarParser.SignedIntegerContext):
         return self.visitChildren(ctx)
 
 

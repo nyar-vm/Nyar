@@ -22,23 +22,177 @@ public interface NyarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitStatement(NyarParser.StatementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link NyarParser#blockStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBlockStatement(NyarParser.BlockStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link NyarParser#expr_block}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExpr_block(NyarParser.Expr_blockContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link NyarParser#emptyStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitEmptyStatement(NyarParser.EmptyStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link NyarParser#eos}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitEos(NyarParser.EosContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link NyarParser#eol}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitEol(NyarParser.EolContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link NyarParser#expressionStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitExpressionStatement(NyarParser.ExpressionStatementContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code PriorityExpression}
+	 * labeled alternative in {@link NyarParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPriorityExpression(NyarParser.PriorityExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Symbol}
+	 * labeled alternative in {@link NyarParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSymbol(NyarParser.SymbolContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Plus_Like}
+	 * labeled alternative in {@link NyarParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPlus_Like(NyarParser.Plus_LikeContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code String}
+	 * labeled alternative in {@link NyarParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitString(NyarParser.StringContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code List_Like}
+	 * labeled alternative in {@link NyarParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitList_Like(NyarParser.List_LikeContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Number}
+	 * labeled alternative in {@link NyarParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNumber(NyarParser.NumberContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code OperatorAssign}
+	 * labeled alternative in {@link NyarParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOperatorAssign(NyarParser.OperatorAssignContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Dict}
+	 * labeled alternative in {@link NyarParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDict(NyarParser.DictContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code PrefixExpression}
+	 * labeled alternative in {@link NyarParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPrefixExpression(NyarParser.PrefixExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Logic_Like}
+	 * labeled alternative in {@link NyarParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLogic_Like(NyarParser.Logic_LikeContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Power_Like}
+	 * labeled alternative in {@link NyarParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPower_Like(NyarParser.Power_LikeContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Multiply_Like}
+	 * labeled alternative in {@link NyarParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMultiply_Like(NyarParser.Multiply_LikeContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code List}
+	 * labeled alternative in {@link NyarParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitList(NyarParser.ListContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Binary_Like}
+	 * labeled alternative in {@link NyarParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBinary_Like(NyarParser.Binary_LikeContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Tuple}
+	 * labeled alternative in {@link NyarParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTuple(NyarParser.TupleContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link NyarParser#assignable}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAssignable(NyarParser.AssignableContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code ModifierAssign}
+	 * labeled alternative in {@link NyarParser#assignStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitModifierAssign(NyarParser.ModifierAssignContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link NyarParser#assignTuple}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAssignTuple(NyarParser.AssignTupleContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link NyarParser#assignPass}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAssignPass(NyarParser.AssignPassContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link NyarParser#moduleStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitModuleStatement(NyarParser.ModuleStatementContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link NyarParser#assignStatement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitAssignStatement(NyarParser.AssignStatementContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link NyarParser#macroStatement}.
 	 * @param ctx the parse tree
@@ -64,104 +218,81 @@ public interface NyarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitClassStatement(NyarParser.ClassStatementContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code Integer}
-	 * labeled alternative in {@link NyarParser#expression}.
+	 * Visit a parse tree produced by {@link NyarParser#ifStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitInteger(NyarParser.IntegerContext ctx);
+	T visitIfStatement(NyarParser.IfStatementContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code Multiply_Divide_}
-	 * labeled alternative in {@link NyarParser#expression}.
+	 * Visit a parse tree produced by {@link NyarParser#elseif}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitMultiply_Divide_(NyarParser.Multiply_Divide_Context ctx);
+	T visitElseif(NyarParser.ElseifContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code List_}
-	 * labeled alternative in {@link NyarParser#expression}.
+	 * Visit a parse tree produced by {@link NyarParser#condition}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitList_(NyarParser.List_Context ctx);
+	T visitCondition(NyarParser.ConditionContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code Symbol}
-	 * labeled alternative in {@link NyarParser#expression}.
+	 * Visit a parse tree produced by {@link NyarParser#tryStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitSymbol(NyarParser.SymbolContext ctx);
+	T visitTryStatement(NyarParser.TryStatementContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code Real}
-	 * labeled alternative in {@link NyarParser#expression}.
+	 * Visit a parse tree produced by {@link NyarParser#catchProduction}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitReal(NyarParser.RealContext ctx);
+	T visitCatchProduction(NyarParser.CatchProductionContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code Binary_}
-	 * labeled alternative in {@link NyarParser#expression}.
+	 * Visit a parse tree produced by {@link NyarParser#finalProduction}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitBinary_(NyarParser.Binary_Context ctx);
+	T visitFinalProduction(NyarParser.FinalProductionContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code String}
-	 * labeled alternative in {@link NyarParser#expression}.
+	 * Visit a parse tree produced by {@link NyarParser#tupleLiteral}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitString(NyarParser.StringContext ctx);
+	T visitTupleLiteral(NyarParser.TupleLiteralContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code Logic_}
-	 * labeled alternative in {@link NyarParser#expression}.
+	 * Visit a parse tree produced by {@link NyarParser#single}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitLogic_(NyarParser.Logic_Context ctx);
+	T visitSingle(NyarParser.SingleContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code Power_}
-	 * labeled alternative in {@link NyarParser#expression}.
+	 * Visit a parse tree produced by {@link NyarParser#dictLiteral}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitPower_(NyarParser.Power_Context ctx);
+	T visitDictLiteral(NyarParser.DictLiteralContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code PriorityOperation}
-	 * labeled alternative in {@link NyarParser#expression}.
+	 * Visit a parse tree produced by {@link NyarParser#keyvalue}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitPriorityOperation(NyarParser.PriorityOperationContext ctx);
+	T visitKeyvalue(NyarParser.KeyvalueContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code Add_Subtract_}
-	 * labeled alternative in {@link NyarParser#expression}.
+	 * Visit a parse tree produced by {@link NyarParser#listLiteral}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitAdd_Subtract_(NyarParser.Add_Subtract_Context ctx);
+	T visitListLiteral(NyarParser.ListLiteralContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link NyarParser#list}.
+	 * Visit a parse tree produced by {@link NyarParser#element}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitList(NyarParser.ListContext ctx);
+	T visitElement(NyarParser.ElementContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link NyarParser#record}.
+	 * Visit a parse tree produced by {@link NyarParser#signedInteger}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitRecord(NyarParser.RecordContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link NyarParser#keyValue}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitKeyValue(NyarParser.KeyValueContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link NyarParser#mathAlias}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitMathAlias(NyarParser.MathAliasContext ctx);
+	T visitSignedInteger(NyarParser.SignedIntegerContext ctx);
 }

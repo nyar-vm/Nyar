@@ -23,11 +23,57 @@ public:
 
     virtual antlrcpp::Any visitStatement(NyarParser::StatementContext *context) = 0;
 
+    virtual antlrcpp::Any visitBlockStatement(NyarParser::BlockStatementContext *context) = 0;
+
+    virtual antlrcpp::Any visitExpr_block(NyarParser::Expr_blockContext *context) = 0;
+
+    virtual antlrcpp::Any visitEmptyStatement(NyarParser::EmptyStatementContext *context) = 0;
+
+    virtual antlrcpp::Any visitEos(NyarParser::EosContext *context) = 0;
+
+    virtual antlrcpp::Any visitEol(NyarParser::EolContext *context) = 0;
+
     virtual antlrcpp::Any visitExpressionStatement(NyarParser::ExpressionStatementContext *context) = 0;
 
-    virtual antlrcpp::Any visitModuleStatement(NyarParser::ModuleStatementContext *context) = 0;
+    virtual antlrcpp::Any visitPriorityExpression(NyarParser::PriorityExpressionContext *context) = 0;
 
-    virtual antlrcpp::Any visitAssignStatement(NyarParser::AssignStatementContext *context) = 0;
+    virtual antlrcpp::Any visitSymbol(NyarParser::SymbolContext *context) = 0;
+
+    virtual antlrcpp::Any visitPlus_Like(NyarParser::Plus_LikeContext *context) = 0;
+
+    virtual antlrcpp::Any visitString(NyarParser::StringContext *context) = 0;
+
+    virtual antlrcpp::Any visitList_Like(NyarParser::List_LikeContext *context) = 0;
+
+    virtual antlrcpp::Any visitNumber(NyarParser::NumberContext *context) = 0;
+
+    virtual antlrcpp::Any visitOperatorAssign(NyarParser::OperatorAssignContext *context) = 0;
+
+    virtual antlrcpp::Any visitDict(NyarParser::DictContext *context) = 0;
+
+    virtual antlrcpp::Any visitPrefixExpression(NyarParser::PrefixExpressionContext *context) = 0;
+
+    virtual antlrcpp::Any visitLogic_Like(NyarParser::Logic_LikeContext *context) = 0;
+
+    virtual antlrcpp::Any visitPower_Like(NyarParser::Power_LikeContext *context) = 0;
+
+    virtual antlrcpp::Any visitMultiply_Like(NyarParser::Multiply_LikeContext *context) = 0;
+
+    virtual antlrcpp::Any visitList(NyarParser::ListContext *context) = 0;
+
+    virtual antlrcpp::Any visitBinary_Like(NyarParser::Binary_LikeContext *context) = 0;
+
+    virtual antlrcpp::Any visitTuple(NyarParser::TupleContext *context) = 0;
+
+    virtual antlrcpp::Any visitAssignable(NyarParser::AssignableContext *context) = 0;
+
+    virtual antlrcpp::Any visitModifierAssign(NyarParser::ModifierAssignContext *context) = 0;
+
+    virtual antlrcpp::Any visitAssignTuple(NyarParser::AssignTupleContext *context) = 0;
+
+    virtual antlrcpp::Any visitAssignPass(NyarParser::AssignPassContext *context) = 0;
+
+    virtual antlrcpp::Any visitModuleStatement(NyarParser::ModuleStatementContext *context) = 0;
 
     virtual antlrcpp::Any visitMacroStatement(NyarParser::MacroStatementContext *context) = 0;
 
@@ -37,35 +83,31 @@ public:
 
     virtual antlrcpp::Any visitClassStatement(NyarParser::ClassStatementContext *context) = 0;
 
-    virtual antlrcpp::Any visitInteger(NyarParser::IntegerContext *context) = 0;
+    virtual antlrcpp::Any visitIfStatement(NyarParser::IfStatementContext *context) = 0;
 
-    virtual antlrcpp::Any visitMultiply_Divide_(NyarParser::Multiply_Divide_Context *context) = 0;
+    virtual antlrcpp::Any visitElseif(NyarParser::ElseifContext *context) = 0;
 
-    virtual antlrcpp::Any visitList_(NyarParser::List_Context *context) = 0;
+    virtual antlrcpp::Any visitCondition(NyarParser::ConditionContext *context) = 0;
 
-    virtual antlrcpp::Any visitSymbol(NyarParser::SymbolContext *context) = 0;
+    virtual antlrcpp::Any visitTryStatement(NyarParser::TryStatementContext *context) = 0;
 
-    virtual antlrcpp::Any visitReal(NyarParser::RealContext *context) = 0;
+    virtual antlrcpp::Any visitCatchProduction(NyarParser::CatchProductionContext *context) = 0;
 
-    virtual antlrcpp::Any visitBinary_(NyarParser::Binary_Context *context) = 0;
+    virtual antlrcpp::Any visitFinalProduction(NyarParser::FinalProductionContext *context) = 0;
 
-    virtual antlrcpp::Any visitString(NyarParser::StringContext *context) = 0;
+    virtual antlrcpp::Any visitTupleLiteral(NyarParser::TupleLiteralContext *context) = 0;
 
-    virtual antlrcpp::Any visitLogic_(NyarParser::Logic_Context *context) = 0;
+    virtual antlrcpp::Any visitSingle(NyarParser::SingleContext *context) = 0;
 
-    virtual antlrcpp::Any visitPower_(NyarParser::Power_Context *context) = 0;
+    virtual antlrcpp::Any visitDictLiteral(NyarParser::DictLiteralContext *context) = 0;
 
-    virtual antlrcpp::Any visitPriorityOperation(NyarParser::PriorityOperationContext *context) = 0;
+    virtual antlrcpp::Any visitKeyvalue(NyarParser::KeyvalueContext *context) = 0;
 
-    virtual antlrcpp::Any visitAdd_Subtract_(NyarParser::Add_Subtract_Context *context) = 0;
+    virtual antlrcpp::Any visitListLiteral(NyarParser::ListLiteralContext *context) = 0;
 
-    virtual antlrcpp::Any visitList(NyarParser::ListContext *context) = 0;
+    virtual antlrcpp::Any visitElement(NyarParser::ElementContext *context) = 0;
 
-    virtual antlrcpp::Any visitRecord(NyarParser::RecordContext *context) = 0;
-
-    virtual antlrcpp::Any visitKeyValue(NyarParser::KeyValueContext *context) = 0;
-
-    virtual antlrcpp::Any visitMathAlias(NyarParser::MathAliasContext *context) = 0;
+    virtual antlrcpp::Any visitSignedInteger(NyarParser::SignedIntegerContext *context) = 0;
 
 
 };

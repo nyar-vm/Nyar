@@ -3,31 +3,53 @@
 
 import { ParseTreeVisitor } from "antlr4ts/tree/ParseTreeVisitor";
 
-import { Binary_Context } from "./NyarParser";
-import { Logic_Context } from "./NyarParser";
-import { Power_Context } from "./NyarParser";
-import { Multiply_Divide_Context } from "./NyarParser";
-import { Add_Subtract_Context } from "./NyarParser";
-import { List_Context } from "./NyarParser";
+import { PrefixExpressionContext } from "./NyarParser";
+import { Binary_LikeContext } from "./NyarParser";
+import { Logic_LikeContext } from "./NyarParser";
+import { Power_LikeContext } from "./NyarParser";
+import { Multiply_LikeContext } from "./NyarParser";
+import { Plus_LikeContext } from "./NyarParser";
+import { List_LikeContext } from "./NyarParser";
+import { OperatorAssignContext } from "./NyarParser";
+import { TupleContext } from "./NyarParser";
+import { ListContext } from "./NyarParser";
+import { DictContext } from "./NyarParser";
 import { StringContext } from "./NyarParser";
-import { RealContext } from "./NyarParser";
-import { IntegerContext } from "./NyarParser";
+import { NumberContext } from "./NyarParser";
 import { SymbolContext } from "./NyarParser";
-import { PriorityOperationContext } from "./NyarParser";
+import { PriorityExpressionContext } from "./NyarParser";
+import { ModifierAssignContext } from "./NyarParser";
 import { ProgramContext } from "./NyarParser";
 import { StatementContext } from "./NyarParser";
+import { BlockStatementContext } from "./NyarParser";
+import { Expr_blockContext } from "./NyarParser";
+import { EmptyStatementContext } from "./NyarParser";
+import { EosContext } from "./NyarParser";
+import { EolContext } from "./NyarParser";
 import { ExpressionStatementContext } from "./NyarParser";
-import { ModuleStatementContext } from "./NyarParser";
+import { ExpressionContext } from "./NyarParser";
+import { AssignableContext } from "./NyarParser";
 import { AssignStatementContext } from "./NyarParser";
+import { AssignTupleContext } from "./NyarParser";
+import { AssignPassContext } from "./NyarParser";
+import { ModuleStatementContext } from "./NyarParser";
 import { MacroStatementContext } from "./NyarParser";
 import { TemplateStatementContext } from "./NyarParser";
 import { InterfaceStatementContext } from "./NyarParser";
 import { ClassStatementContext } from "./NyarParser";
-import { ExpressionContext } from "./NyarParser";
-import { ListContext } from "./NyarParser";
-import { RecordContext } from "./NyarParser";
-import { KeyValueContext } from "./NyarParser";
-import { MathAliasContext } from "./NyarParser";
+import { IfStatementContext } from "./NyarParser";
+import { ElseifContext } from "./NyarParser";
+import { ConditionContext } from "./NyarParser";
+import { TryStatementContext } from "./NyarParser";
+import { CatchProductionContext } from "./NyarParser";
+import { FinalProductionContext } from "./NyarParser";
+import { TupleLiteralContext } from "./NyarParser";
+import { SingleContext } from "./NyarParser";
+import { DictLiteralContext } from "./NyarParser";
+import { KeyvalueContext } from "./NyarParser";
+import { ListLiteralContext } from "./NyarParser";
+import { ElementContext } from "./NyarParser";
+import { SignedIntegerContext } from "./NyarParser";
 
 
 /**
@@ -39,52 +61,92 @@ import { MathAliasContext } from "./NyarParser";
  */
 export interface NyarVisitor<Result> extends ParseTreeVisitor<Result> {
 	/**
-	 * Visit a parse tree produced by the `Binary_`
+	 * Visit a parse tree produced by the `PrefixExpression`
 	 * labeled alternative in `NyarParser.expression`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitBinary_?: (ctx: Binary_Context) => Result;
+	visitPrefixExpression?: (ctx: PrefixExpressionContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by the `Logic_`
+	 * Visit a parse tree produced by the `Binary_Like`
 	 * labeled alternative in `NyarParser.expression`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitLogic_?: (ctx: Logic_Context) => Result;
+	visitBinary_Like?: (ctx: Binary_LikeContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by the `Power_`
+	 * Visit a parse tree produced by the `Logic_Like`
 	 * labeled alternative in `NyarParser.expression`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitPower_?: (ctx: Power_Context) => Result;
+	visitLogic_Like?: (ctx: Logic_LikeContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by the `Multiply_Divide_`
+	 * Visit a parse tree produced by the `Power_Like`
 	 * labeled alternative in `NyarParser.expression`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitMultiply_Divide_?: (ctx: Multiply_Divide_Context) => Result;
+	visitPower_Like?: (ctx: Power_LikeContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by the `Add_Subtract_`
+	 * Visit a parse tree produced by the `Multiply_Like`
 	 * labeled alternative in `NyarParser.expression`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitAdd_Subtract_?: (ctx: Add_Subtract_Context) => Result;
+	visitMultiply_Like?: (ctx: Multiply_LikeContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by the `List_`
+	 * Visit a parse tree produced by the `Plus_Like`
 	 * labeled alternative in `NyarParser.expression`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitList_?: (ctx: List_Context) => Result;
+	visitPlus_Like?: (ctx: Plus_LikeContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `List_Like`
+	 * labeled alternative in `NyarParser.expression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitList_Like?: (ctx: List_LikeContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `OperatorAssign`
+	 * labeled alternative in `NyarParser.expression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitOperatorAssign?: (ctx: OperatorAssignContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `Tuple`
+	 * labeled alternative in `NyarParser.expression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitTuple?: (ctx: TupleContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `List`
+	 * labeled alternative in `NyarParser.expression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitList?: (ctx: ListContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `Dict`
+	 * labeled alternative in `NyarParser.expression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitDict?: (ctx: DictContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by the `String`
@@ -95,20 +157,12 @@ export interface NyarVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitString?: (ctx: StringContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by the `Real`
+	 * Visit a parse tree produced by the `Number`
 	 * labeled alternative in `NyarParser.expression`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitReal?: (ctx: RealContext) => Result;
-
-	/**
-	 * Visit a parse tree produced by the `Integer`
-	 * labeled alternative in `NyarParser.expression`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitInteger?: (ctx: IntegerContext) => Result;
+	visitNumber?: (ctx: NumberContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by the `Symbol`
@@ -119,12 +173,20 @@ export interface NyarVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitSymbol?: (ctx: SymbolContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by the `PriorityOperation`
+	 * Visit a parse tree produced by the `PriorityExpression`
 	 * labeled alternative in `NyarParser.expression`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitPriorityOperation?: (ctx: PriorityOperationContext) => Result;
+	visitPriorityExpression?: (ctx: PriorityExpressionContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `ModifierAssign`
+	 * labeled alternative in `NyarParser.assignStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitModifierAssign?: (ctx: ModifierAssignContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `NyarParser.program`.
@@ -141,6 +203,41 @@ export interface NyarVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitStatement?: (ctx: StatementContext) => Result;
 
 	/**
+	 * Visit a parse tree produced by `NyarParser.blockStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitBlockStatement?: (ctx: BlockStatementContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `NyarParser.expr_block`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitExpr_block?: (ctx: Expr_blockContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `NyarParser.emptyStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitEmptyStatement?: (ctx: EmptyStatementContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `NyarParser.eos`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitEos?: (ctx: EosContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `NyarParser.eol`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitEol?: (ctx: EolContext) => Result;
+
+	/**
 	 * Visit a parse tree produced by `NyarParser.expressionStatement`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -148,11 +245,18 @@ export interface NyarVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitExpressionStatement?: (ctx: ExpressionStatementContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by `NyarParser.moduleStatement`.
+	 * Visit a parse tree produced by `NyarParser.expression`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitModuleStatement?: (ctx: ModuleStatementContext) => Result;
+	visitExpression?: (ctx: ExpressionContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `NyarParser.assignable`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitAssignable?: (ctx: AssignableContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `NyarParser.assignStatement`.
@@ -160,6 +264,27 @@ export interface NyarVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitAssignStatement?: (ctx: AssignStatementContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `NyarParser.assignTuple`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitAssignTuple?: (ctx: AssignTupleContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `NyarParser.assignPass`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitAssignPass?: (ctx: AssignPassContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `NyarParser.moduleStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitModuleStatement?: (ctx: ModuleStatementContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `NyarParser.macroStatement`.
@@ -190,38 +315,94 @@ export interface NyarVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitClassStatement?: (ctx: ClassStatementContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by `NyarParser.expression`.
+	 * Visit a parse tree produced by `NyarParser.ifStatement`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitExpression?: (ctx: ExpressionContext) => Result;
+	visitIfStatement?: (ctx: IfStatementContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by `NyarParser.list`.
+	 * Visit a parse tree produced by `NyarParser.elseif`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitList?: (ctx: ListContext) => Result;
+	visitElseif?: (ctx: ElseifContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by `NyarParser.record`.
+	 * Visit a parse tree produced by `NyarParser.condition`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitRecord?: (ctx: RecordContext) => Result;
+	visitCondition?: (ctx: ConditionContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by `NyarParser.keyValue`.
+	 * Visit a parse tree produced by `NyarParser.tryStatement`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitKeyValue?: (ctx: KeyValueContext) => Result;
+	visitTryStatement?: (ctx: TryStatementContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by `NyarParser.mathAlias`.
+	 * Visit a parse tree produced by `NyarParser.catchProduction`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitMathAlias?: (ctx: MathAliasContext) => Result;
+	visitCatchProduction?: (ctx: CatchProductionContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `NyarParser.finalProduction`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitFinalProduction?: (ctx: FinalProductionContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `NyarParser.tupleLiteral`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitTupleLiteral?: (ctx: TupleLiteralContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `NyarParser.single`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSingle?: (ctx: SingleContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `NyarParser.dictLiteral`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitDictLiteral?: (ctx: DictLiteralContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `NyarParser.keyvalue`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitKeyvalue?: (ctx: KeyvalueContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `NyarParser.listLiteral`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitListLiteral?: (ctx: ListLiteralContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `NyarParser.element`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitElement?: (ctx: ElementContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `NyarParser.signedInteger`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSignedInteger?: (ctx: SignedIntegerContext) => Result;
 }
 

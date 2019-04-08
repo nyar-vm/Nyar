@@ -23,15 +23,107 @@ public:
     return visitChildren(ctx);
   }
 
+  virtual antlrcpp::Any visitBlockStatement(NyarParser::BlockStatementContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitExpr_block(NyarParser::Expr_blockContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitEmptyStatement(NyarParser::EmptyStatementContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitEos(NyarParser::EosContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitEol(NyarParser::EolContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
   virtual antlrcpp::Any visitExpressionStatement(NyarParser::ExpressionStatementContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitModuleStatement(NyarParser::ModuleStatementContext *ctx) override {
+  virtual antlrcpp::Any visitPriorityExpression(NyarParser::PriorityExpressionContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitAssignStatement(NyarParser::AssignStatementContext *ctx) override {
+  virtual antlrcpp::Any visitSymbol(NyarParser::SymbolContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitPlus_Like(NyarParser::Plus_LikeContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitString(NyarParser::StringContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitList_Like(NyarParser::List_LikeContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitNumber(NyarParser::NumberContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitOperatorAssign(NyarParser::OperatorAssignContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitDict(NyarParser::DictContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitPrefixExpression(NyarParser::PrefixExpressionContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitLogic_Like(NyarParser::Logic_LikeContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitPower_Like(NyarParser::Power_LikeContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitMultiply_Like(NyarParser::Multiply_LikeContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitList(NyarParser::ListContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitBinary_Like(NyarParser::Binary_LikeContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitTuple(NyarParser::TupleContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitAssignable(NyarParser::AssignableContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitModifierAssign(NyarParser::ModifierAssignContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitAssignTuple(NyarParser::AssignTupleContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitAssignPass(NyarParser::AssignPassContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitModuleStatement(NyarParser::ModuleStatementContext *ctx) override {
     return visitChildren(ctx);
   }
 
@@ -51,63 +143,55 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitInteger(NyarParser::IntegerContext *ctx) override {
+  virtual antlrcpp::Any visitIfStatement(NyarParser::IfStatementContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitMultiply_Divide_(NyarParser::Multiply_Divide_Context *ctx) override {
+  virtual antlrcpp::Any visitElseif(NyarParser::ElseifContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitList_(NyarParser::List_Context *ctx) override {
+  virtual antlrcpp::Any visitCondition(NyarParser::ConditionContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitSymbol(NyarParser::SymbolContext *ctx) override {
+  virtual antlrcpp::Any visitTryStatement(NyarParser::TryStatementContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitReal(NyarParser::RealContext *ctx) override {
+  virtual antlrcpp::Any visitCatchProduction(NyarParser::CatchProductionContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitBinary_(NyarParser::Binary_Context *ctx) override {
+  virtual antlrcpp::Any visitFinalProduction(NyarParser::FinalProductionContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitString(NyarParser::StringContext *ctx) override {
+  virtual antlrcpp::Any visitTupleLiteral(NyarParser::TupleLiteralContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitLogic_(NyarParser::Logic_Context *ctx) override {
+  virtual antlrcpp::Any visitSingle(NyarParser::SingleContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitPower_(NyarParser::Power_Context *ctx) override {
+  virtual antlrcpp::Any visitDictLiteral(NyarParser::DictLiteralContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitPriorityOperation(NyarParser::PriorityOperationContext *ctx) override {
+  virtual antlrcpp::Any visitKeyvalue(NyarParser::KeyvalueContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitAdd_Subtract_(NyarParser::Add_Subtract_Context *ctx) override {
+  virtual antlrcpp::Any visitListLiteral(NyarParser::ListLiteralContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitList(NyarParser::ListContext *ctx) override {
+  virtual antlrcpp::Any visitElement(NyarParser::ElementContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitRecord(NyarParser::RecordContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual antlrcpp::Any visitKeyValue(NyarParser::KeyValueContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual antlrcpp::Any visitMathAlias(NyarParser::MathAliasContext *ctx) override {
+  virtual antlrcpp::Any visitSignedInteger(NyarParser::SignedIntegerContext *ctx) override {
     return visitChildren(ctx);
   }
 
