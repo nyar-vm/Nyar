@@ -1,62 +1,62 @@
 lexer grammar NyarKeywords;
 // $antlr-format useTab false; reflowComments false;
 // $antlr-format alignColons trailing;
-STRING  : '"' .*? '"';
-INTEGER : DIGIT+;
-REAL    : DIGIT+ ('.' DIGIT+)?;
-
-WhiteSpace : [\n\t\r]+ -> channel(HIDDEN);
-NewLine    : ('\r'? '\n' | '\r')+ -> channel(HIDDEN);
-Comment    : '%%%' .*? '%%%' -> channel(HIDDEN);
+fragment Digit              : [0-9];
+fragment OctalDigit         : [0-7];
+fragment HexDigit           : [0-9a-fA-F];
+fragment Letter             : [a-zA-Z];
+fragment UNICODE_WhiteSpace : [\p{White_Space}];
+fragment SimpleString       : '"' .*? '"';
+fragment EmojiCharacter     : [\p{Emoji}];
+fragment NameStartCharacter : Letter | '_';
+fragment NameCharacter      : NameStartCharacter | Digit;
 
 /* Module */
-Using    : 'Using';
-Exposing : 'Exposing';
-With     : 'With';
-As       : 'As';
+Use    : 'use';
+Expose : 'expose';
+With   : 'with';
+As     : 'as';
 
 /* Macro */
-Macro      : 'Macro';
+Macro      : 'macro';
 MacroApply : '\u00A7'; // U+00A7 §
 
 /* Template */
-Template      : 'Template';
+Template      : 'template';
 TemplayeApply : '\u00B6'; // U+00B6 ¶
 
 /* Class */
-Interface : 'Interface';
-Class     : 'Class';
-Extends   : 'Extends';
-Mixin     : 'Mixin';
-Setter    : 'Setter';
-Getter    : 'Getter';
-Public    : 'Public';
-Private   : 'Private';
-Protected : 'Protected';
-Final     : 'Final';
+Interface : 'interface';
+Class     : 'class';
+Extends   : 'extends';
+Mixin     : 'mixin';
+Setter    : 'setter';
+Getter    : 'getter';
+Public    : 'public';
+Private   : 'private';
+Protected : 'protected';
+Final     : 'final';
+
+/* Function */
+Let   : 'let';
+True  : 'true';
+False : 'false';
+
+/* Condition */
+If   : 'if';
+Else : 'else';
 
 /* Loop */
-Try   : 'Try';
-Catch : 'Catch';
-For   : 'For';
-In    : 'In';
+Try   : 'try';
+Catch : 'catch';
+For   : 'for';
+In    : 'in';
 
-// $antlr-format alignColons hanging;
-SYMBOL: NameStartCharacter NameCharacter*;
-fragment DIGIT: [0-9];
-fragment LETTER: [a-zA-Z];
-fragment NameCharacter
-    : NameStartCharacter
-    | DIGIT
-    | '\u00B7'
-    | '\u0300' ..'\u036F'
-    | '\u203F' ..'\u2040';
-fragment NameStartCharacter
-    : [:a-zA-Z] // Letter
-    | '_'
-    | '\u2070' ..'\u218F'
-    | '\u2C00' ..'\u2FEF'
-    | '\u3001' ..'\uD7FF'
-    | '\uF900' ..'\uFDCF'
-    | '\uFDF0' ..'\uFFFD';
-// May Allow # $ % with special meaning English + Chinese + Japanese + Greeks
+BOOL    : True | False;
+NUMBER  : Integer | Float;
+STRING  : SimpleString;
+SYMBOL  : NameStartCharacter NameCharacter*; //Try JS | Julia
+Integer : Digit+;
+Float   : Digit+ '.' Digit* | '.' Digit+;
+//UNICODE_ID : [\p{General_Category=Other_Letter}]*; May Allow # $ % with special meaning English +
+// Chinese + Japanese + Greeks

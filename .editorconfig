@@ -13,7 +13,7 @@ charset = utf-8
 indent_style = tab
 indent_size = 4
 
-[*.{ts, nyar, n}]
+[*.{ts, py, nyar, n}]
 charset = utf-8
 indent_style = space
 indent_size = 4
