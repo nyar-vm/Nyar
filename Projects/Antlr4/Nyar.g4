@@ -14,76 +14,42 @@ statement
     | class_statement eos?
     | loop_statement eos?;
 /*====================================================================================================================*/
-block_statement
-    : LL statement+ RL     # BlockStatement
-    | Colon statement+ End # BlockStatement;
-expr_or_block: (block_statement | expression);
+// $antlr-format alignColons hanging;
+blockStatement: '{' statement* '}' | Colon expression | Colon statement* End;
+blockNonEnd: '{' statement* '}' | statement*;
+// $antlr-format alignColons trailing;
+End   : 'end';
+Colon : ':' | '\uFF1A'; //U+FF1A ：
 /*====================================================================================================================*/
 empty_statement: eos # EmptyStatement;
 eos: Semicolon;
 symbol: Identifier (DOT Identifier)*;
 global: Section Identifier (DOT Identifier)*;
 /*====================================================================================================================*/
-expression_statement
-    : expression (COMMA expression)* # ExpressionStatement;
-type_statement
-    : left = Identifier TypeAnnotation right = expression # TypeAssign
-    | Type left = Identifier right = expression           # TypeAssign;
-function_apply: symbol LS function_params? RS;
-function_params: expression (COMMA expression)*;
-// High computing priority in the front
+// $antlr-format alignColons hanging;
+expressionStatement: expression (Comma expression)*;
 expression
-    : type_statement                                                    # TypeStatement
-    | function_apply                                                    # FunctionApply
+    : functionCall                                                      # FunctionApply
+    | left = expression Dot right = symbol                              # GetterApply
+    | left = expression Dot right = functionCall                        # MethodApply
+    | left = expression right = index                                   # IndexApply
+    | assignStatment                                                    # AssignApply
+    | left = identifier right = string                                  # SpecialString
+    | left = expression As right = typeExpression                       # TypeConversion
     | op = pre_ops right = expression                                   # PrefixExpression
     | left = expression op = pst_ops                                    # PostfixExpression
-    | left = expression op = DOT right = expression                     # MethodApply
     | left = expression op = bit_ops right = expression                 # BinaryLike
-    | left = expression op = cpr_ops right = expression                 # LogicLike
+    | left = expression op = lgk_ops right = expression                 # LogicLike
     | left = expression op = cpr_ops right = expression                 # CompareLike
     | <assoc = right> left = expression op = pow_ops right = expression # PowerLike
     | left = expression op = mul_ops right = expression                 # MultiplyLike
     | left = expression op = add_ops right = expression                 # PlusLike
     | left = expression op = list_ops right = expression                # ListLike
-    | id = function_apply op = DelayedAssign expr = assignable          # LazyAssign
-    | <assoc = right> id = assign_lhs op = assign_ops expr = assignable # OperatorAssign
-    | data = listLiteral                                                # List
-    | left = expression data = indexLiteral                             # Index
-    | data = dictLiteral                                                # Dict
-    | atom = STRING                                                     # String
-    | atom = NUMBER                                                     # Number
-    | atom = symbol                                                     # SymbolExpression
-    | LS expression RS                                                  # PriorityExpression;
-add_ops: Plus | Minus; //@Inline
-pre_ops
-    : Plus
-    | Minus
-    | BitNot
-    | LogicNot
-    | Reciprocal
-    | Increase; //@Inline
-pst_ops: Increase;
-bit_ops: LeftShift | RightShift; //@Inline
-lgk_ops: LogicAnd | LogicNot | LogicOr | LogicXor; //@Inline
-cpr_ops
-    : Equal
-    | NotEqual
-    | Equivalent
-    | NotEquivalent
-    | Grater
-    | GraterEqual
-    | Less
-    | LessEqual
-    | LogicAnd
-    | LogicOr; //@Inline
-pow_ops: Power | Surd; //@Inline
-mul_ops
-    : Divide
-    | Times
-    | Multiply
-    | Kronecker
-    | TensorProduct; //@Inline
-list_ops: Concat | LeftShift | RightShift; //@Inline
+    | atom = data                                                       # DataLiteral
+    | '(' expression ')'                                                # PriorityExpression
+    | controlFlow                                                       # ControlExpression
+    | expression BitAnd                                                 # SlotCatch;
+/* | left = number right = expression                                  # SpaceExpression*/
 /*====================================================================================================================*/
 assign_statement
     : op = assign_modifier id = assign_lhs expr = assignable # AssignStatement;
