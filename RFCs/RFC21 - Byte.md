@@ -5,8 +5,15 @@ RFC0: Byte
 - 当前状态: Document
 - 语言实现: Valkyrie, Vanilla
 
+
+
 ## Introduction
 
+无限大的无符号整数
+
+## Related
+
+- Bytes
 
 ## Alias
 
