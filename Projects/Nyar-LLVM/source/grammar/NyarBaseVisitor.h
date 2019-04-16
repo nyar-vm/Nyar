@@ -27,7 +27,7 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitExpr_block(NyarParser::Expr_blockContext *ctx) override {
+  virtual antlrcpp::Any visitExpr_or_block(NyarParser::Expr_or_blockContext *ctx) override {
     return visitChildren(ctx);
   }
 
@@ -39,7 +39,11 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitEol(NyarParser::EolContext *ctx) override {
+  virtual antlrcpp::Any visitSymbol(NyarParser::SymbolContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitGlobal(NyarParser::GlobalContext *ctx) override {
     return visitChildren(ctx);
   }
 
@@ -47,15 +51,27 @@ public:
     return visitChildren(ctx);
   }
 
+  virtual antlrcpp::Any visitTypeAssign(NyarParser::TypeAssignContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitFunction_apply(NyarParser::Function_applyContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitFunction_params(NyarParser::Function_paramsContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
   virtual antlrcpp::Any visitPriorityExpression(NyarParser::PriorityExpressionContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitSymbol(NyarParser::SymbolContext *ctx) override {
+  virtual antlrcpp::Any visitFunctionApply(NyarParser::FunctionApplyContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitPlus_Like(NyarParser::Plus_LikeContext *ctx) override {
+  virtual antlrcpp::Any visitIndex(NyarParser::IndexContext *ctx) override {
     return visitChildren(ctx);
   }
 
@@ -63,7 +79,35 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitList_Like(NyarParser::List_LikeContext *ctx) override {
+  virtual antlrcpp::Any visitBinaryLike(NyarParser::BinaryLikeContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitLogicLike(NyarParser::LogicLikeContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitMethodApply(NyarParser::MethodApplyContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitCompareLike(NyarParser::CompareLikeContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitPlusLike(NyarParser::PlusLikeContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitLazyAssign(NyarParser::LazyAssignContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitPowerLike(NyarParser::PowerLikeContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitTypeStatement(NyarParser::TypeStatementContext *ctx) override {
     return visitChildren(ctx);
   }
 
@@ -83,15 +127,7 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitLogic_Like(NyarParser::Logic_LikeContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual antlrcpp::Any visitPower_Like(NyarParser::Power_LikeContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual antlrcpp::Any visitMultiply_Like(NyarParser::Multiply_LikeContext *ctx) override {
+  virtual antlrcpp::Any visitSymbolExpression(NyarParser::SymbolExpressionContext *ctx) override {
     return visitChildren(ctx);
   }
 
@@ -99,11 +135,23 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitBinary_Like(NyarParser::Binary_LikeContext *ctx) override {
+  virtual antlrcpp::Any visitPostfixExpression(NyarParser::PostfixExpressionContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitTuple(NyarParser::TupleContext *ctx) override {
+  virtual antlrcpp::Any visitMultiplyLike(NyarParser::MultiplyLikeContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitListLike(NyarParser::ListLikeContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitPst_ops(NyarParser::Pst_opsContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitAssignStatement(NyarParser::AssignStatementContext *ctx) override {
     return visitChildren(ctx);
   }
 
@@ -111,51 +159,119 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitModifierAssign(NyarParser::ModifierAssignContext *ctx) override {
+  virtual antlrcpp::Any visitAssignValue(NyarParser::AssignValueContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitAssignTuple(NyarParser::AssignTupleContext *ctx) override {
+  virtual antlrcpp::Any visitAssignAttribute(NyarParser::AssignAttributeContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitAssignPass(NyarParser::AssignPassContext *ctx) override {
+  virtual antlrcpp::Any visitAssignFunction(NyarParser::AssignFunctionContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitModuleStatement(NyarParser::ModuleStatementContext *ctx) override {
+  virtual antlrcpp::Any visitAssignPair(NyarParser::AssignPairContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitMacroStatement(NyarParser::MacroStatementContext *ctx) override {
+  virtual antlrcpp::Any visitAssignWithList(NyarParser::AssignWithListContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitTemplateStatement(NyarParser::TemplateStatementContext *ctx) override {
+  virtual antlrcpp::Any visitAssign_pass(NyarParser::Assign_passContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitInterfaceStatement(NyarParser::InterfaceStatementContext *ctx) override {
+  virtual antlrcpp::Any visitModuleInclude(NyarParser::ModuleIncludeContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitClassStatement(NyarParser::ClassStatementContext *ctx) override {
+  virtual antlrcpp::Any visitModuleAlias(NyarParser::ModuleAliasContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitIfStatement(NyarParser::IfStatementContext *ctx) override {
+  virtual antlrcpp::Any visitModuleSymbol(NyarParser::ModuleSymbolContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitElseif(NyarParser::ElseifContext *ctx) override {
+  virtual antlrcpp::Any visitModuleSymbols(NyarParser::ModuleSymbolsContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitCondition(NyarParser::ConditionContext *ctx) override {
+  virtual antlrcpp::Any visitModuleResolve(NyarParser::ModuleResolveContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitTryStatement(NyarParser::TryStatementContext *ctx) override {
+  virtual antlrcpp::Any visitId_tuples(NyarParser::Id_tuplesContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitClassBase(NyarParser::ClassBaseContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitClassWithFather(NyarParser::ClassWithFatherContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitClassFather(NyarParser::ClassFatherContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitClassFathers(NyarParser::ClassFathersContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitClassImplement(NyarParser::ClassImplementContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitClassDefine(NyarParser::ClassDefineContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitInterface_Statement(NyarParser::Interface_StatementContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitTemplate_Statement(NyarParser::Template_StatementContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitMacro_Statement(NyarParser::Macro_StatementContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitIfSingle(NyarParser::IfSingleContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitIfNested(NyarParser::IfNestedContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitSwitchStatement(NyarParser::SwitchStatementContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitMatchStatement(NyarParser::MatchStatementContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitConditionStatement(NyarParser::ConditionStatementContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitElseStatement(NyarParser::ElseStatementContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitElseIfStatement(NyarParser::ElseIfStatementContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitTry_statement(NyarParser::Try_statementContext *ctx) override {
     return visitChildren(ctx);
   }
 
@@ -167,11 +283,19 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitTupleLiteral(NyarParser::TupleLiteralContext *ctx) override {
+  virtual antlrcpp::Any visitForLoop(NyarParser::ForLoopContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitSingle(NyarParser::SingleContext *ctx) override {
+  virtual antlrcpp::Any visitForInLoop(NyarParser::ForInLoopContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitWhileLoop(NyarParser::WhileLoopContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitDoLoop(NyarParser::DoLoopContext *ctx) override {
     return visitChildren(ctx);
   }
 
@@ -183,11 +307,23 @@ public:
     return visitChildren(ctx);
   }
 
+  virtual antlrcpp::Any visitKey_valid(NyarParser::Key_validContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
   virtual antlrcpp::Any visitListLiteral(NyarParser::ListLiteralContext *ctx) override {
     return visitChildren(ctx);
   }
 
   virtual antlrcpp::Any visitElement(NyarParser::ElementContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitIndexLiteral(NyarParser::IndexLiteralContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual antlrcpp::Any visitIndex_valid(NyarParser::Index_validContext *ctx) override {
     return visitChildren(ctx);
   }
 

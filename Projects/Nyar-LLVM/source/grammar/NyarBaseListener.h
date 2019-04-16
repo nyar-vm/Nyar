@@ -25,8 +25,8 @@ public:
   virtual void enterBlockStatement(NyarParser::BlockStatementContext * /*ctx*/) override { }
   virtual void exitBlockStatement(NyarParser::BlockStatementContext * /*ctx*/) override { }
 
-  virtual void enterExpr_block(NyarParser::Expr_blockContext * /*ctx*/) override { }
-  virtual void exitExpr_block(NyarParser::Expr_blockContext * /*ctx*/) override { }
+  virtual void enterExpr_or_block(NyarParser::Expr_or_blockContext * /*ctx*/) override { }
+  virtual void exitExpr_or_block(NyarParser::Expr_or_blockContext * /*ctx*/) override { }
 
   virtual void enterEmptyStatement(NyarParser::EmptyStatementContext * /*ctx*/) override { }
   virtual void exitEmptyStatement(NyarParser::EmptyStatementContext * /*ctx*/) override { }
@@ -34,26 +34,59 @@ public:
   virtual void enterEos(NyarParser::EosContext * /*ctx*/) override { }
   virtual void exitEos(NyarParser::EosContext * /*ctx*/) override { }
 
-  virtual void enterEol(NyarParser::EolContext * /*ctx*/) override { }
-  virtual void exitEol(NyarParser::EolContext * /*ctx*/) override { }
+  virtual void enterSymbol(NyarParser::SymbolContext * /*ctx*/) override { }
+  virtual void exitSymbol(NyarParser::SymbolContext * /*ctx*/) override { }
+
+  virtual void enterGlobal(NyarParser::GlobalContext * /*ctx*/) override { }
+  virtual void exitGlobal(NyarParser::GlobalContext * /*ctx*/) override { }
 
   virtual void enterExpressionStatement(NyarParser::ExpressionStatementContext * /*ctx*/) override { }
   virtual void exitExpressionStatement(NyarParser::ExpressionStatementContext * /*ctx*/) override { }
 
+  virtual void enterTypeAssign(NyarParser::TypeAssignContext * /*ctx*/) override { }
+  virtual void exitTypeAssign(NyarParser::TypeAssignContext * /*ctx*/) override { }
+
+  virtual void enterFunction_apply(NyarParser::Function_applyContext * /*ctx*/) override { }
+  virtual void exitFunction_apply(NyarParser::Function_applyContext * /*ctx*/) override { }
+
+  virtual void enterFunction_params(NyarParser::Function_paramsContext * /*ctx*/) override { }
+  virtual void exitFunction_params(NyarParser::Function_paramsContext * /*ctx*/) override { }
+
   virtual void enterPriorityExpression(NyarParser::PriorityExpressionContext * /*ctx*/) override { }
   virtual void exitPriorityExpression(NyarParser::PriorityExpressionContext * /*ctx*/) override { }
 
-  virtual void enterSymbol(NyarParser::SymbolContext * /*ctx*/) override { }
-  virtual void exitSymbol(NyarParser::SymbolContext * /*ctx*/) override { }
+  virtual void enterFunctionApply(NyarParser::FunctionApplyContext * /*ctx*/) override { }
+  virtual void exitFunctionApply(NyarParser::FunctionApplyContext * /*ctx*/) override { }
 
-  virtual void enterPlus_Like(NyarParser::Plus_LikeContext * /*ctx*/) override { }
-  virtual void exitPlus_Like(NyarParser::Plus_LikeContext * /*ctx*/) override { }
+  virtual void enterIndex(NyarParser::IndexContext * /*ctx*/) override { }
+  virtual void exitIndex(NyarParser::IndexContext * /*ctx*/) override { }
 
   virtual void enterString(NyarParser::StringContext * /*ctx*/) override { }
   virtual void exitString(NyarParser::StringContext * /*ctx*/) override { }
 
-  virtual void enterList_Like(NyarParser::List_LikeContext * /*ctx*/) override { }
-  virtual void exitList_Like(NyarParser::List_LikeContext * /*ctx*/) override { }
+  virtual void enterBinaryLike(NyarParser::BinaryLikeContext * /*ctx*/) override { }
+  virtual void exitBinaryLike(NyarParser::BinaryLikeContext * /*ctx*/) override { }
+
+  virtual void enterLogicLike(NyarParser::LogicLikeContext * /*ctx*/) override { }
+  virtual void exitLogicLike(NyarParser::LogicLikeContext * /*ctx*/) override { }
+
+  virtual void enterMethodApply(NyarParser::MethodApplyContext * /*ctx*/) override { }
+  virtual void exitMethodApply(NyarParser::MethodApplyContext * /*ctx*/) override { }
+
+  virtual void enterCompareLike(NyarParser::CompareLikeContext * /*ctx*/) override { }
+  virtual void exitCompareLike(NyarParser::CompareLikeContext * /*ctx*/) override { }
+
+  virtual void enterPlusLike(NyarParser::PlusLikeContext * /*ctx*/) override { }
+  virtual void exitPlusLike(NyarParser::PlusLikeContext * /*ctx*/) override { }
+
+  virtual void enterLazyAssign(NyarParser::LazyAssignContext * /*ctx*/) override { }
+  virtual void exitLazyAssign(NyarParser::LazyAssignContext * /*ctx*/) override { }
+
+  virtual void enterPowerLike(NyarParser::PowerLikeContext * /*ctx*/) override { }
+  virtual void exitPowerLike(NyarParser::PowerLikeContext * /*ctx*/) override { }
+
+  virtual void enterTypeStatement(NyarParser::TypeStatementContext * /*ctx*/) override { }
+  virtual void exitTypeStatement(NyarParser::TypeStatementContext * /*ctx*/) override { }
 
   virtual void enterNumber(NyarParser::NumberContext * /*ctx*/) override { }
   virtual void exitNumber(NyarParser::NumberContext * /*ctx*/) override { }
@@ -67,62 +100,116 @@ public:
   virtual void enterPrefixExpression(NyarParser::PrefixExpressionContext * /*ctx*/) override { }
   virtual void exitPrefixExpression(NyarParser::PrefixExpressionContext * /*ctx*/) override { }
 
-  virtual void enterLogic_Like(NyarParser::Logic_LikeContext * /*ctx*/) override { }
-  virtual void exitLogic_Like(NyarParser::Logic_LikeContext * /*ctx*/) override { }
-
-  virtual void enterPower_Like(NyarParser::Power_LikeContext * /*ctx*/) override { }
-  virtual void exitPower_Like(NyarParser::Power_LikeContext * /*ctx*/) override { }
-
-  virtual void enterMultiply_Like(NyarParser::Multiply_LikeContext * /*ctx*/) override { }
-  virtual void exitMultiply_Like(NyarParser::Multiply_LikeContext * /*ctx*/) override { }
+  virtual void enterSymbolExpression(NyarParser::SymbolExpressionContext * /*ctx*/) override { }
+  virtual void exitSymbolExpression(NyarParser::SymbolExpressionContext * /*ctx*/) override { }
 
   virtual void enterList(NyarParser::ListContext * /*ctx*/) override { }
   virtual void exitList(NyarParser::ListContext * /*ctx*/) override { }
 
-  virtual void enterBinary_Like(NyarParser::Binary_LikeContext * /*ctx*/) override { }
-  virtual void exitBinary_Like(NyarParser::Binary_LikeContext * /*ctx*/) override { }
+  virtual void enterPostfixExpression(NyarParser::PostfixExpressionContext * /*ctx*/) override { }
+  virtual void exitPostfixExpression(NyarParser::PostfixExpressionContext * /*ctx*/) override { }
 
-  virtual void enterTuple(NyarParser::TupleContext * /*ctx*/) override { }
-  virtual void exitTuple(NyarParser::TupleContext * /*ctx*/) override { }
+  virtual void enterMultiplyLike(NyarParser::MultiplyLikeContext * /*ctx*/) override { }
+  virtual void exitMultiplyLike(NyarParser::MultiplyLikeContext * /*ctx*/) override { }
+
+  virtual void enterListLike(NyarParser::ListLikeContext * /*ctx*/) override { }
+  virtual void exitListLike(NyarParser::ListLikeContext * /*ctx*/) override { }
+
+  virtual void enterPst_ops(NyarParser::Pst_opsContext * /*ctx*/) override { }
+  virtual void exitPst_ops(NyarParser::Pst_opsContext * /*ctx*/) override { }
+
+  virtual void enterAssignStatement(NyarParser::AssignStatementContext * /*ctx*/) override { }
+  virtual void exitAssignStatement(NyarParser::AssignStatementContext * /*ctx*/) override { }
 
   virtual void enterAssignable(NyarParser::AssignableContext * /*ctx*/) override { }
   virtual void exitAssignable(NyarParser::AssignableContext * /*ctx*/) override { }
 
-  virtual void enterModifierAssign(NyarParser::ModifierAssignContext * /*ctx*/) override { }
-  virtual void exitModifierAssign(NyarParser::ModifierAssignContext * /*ctx*/) override { }
+  virtual void enterAssignValue(NyarParser::AssignValueContext * /*ctx*/) override { }
+  virtual void exitAssignValue(NyarParser::AssignValueContext * /*ctx*/) override { }
 
-  virtual void enterAssignTuple(NyarParser::AssignTupleContext * /*ctx*/) override { }
-  virtual void exitAssignTuple(NyarParser::AssignTupleContext * /*ctx*/) override { }
+  virtual void enterAssignAttribute(NyarParser::AssignAttributeContext * /*ctx*/) override { }
+  virtual void exitAssignAttribute(NyarParser::AssignAttributeContext * /*ctx*/) override { }
 
-  virtual void enterAssignPass(NyarParser::AssignPassContext * /*ctx*/) override { }
-  virtual void exitAssignPass(NyarParser::AssignPassContext * /*ctx*/) override { }
+  virtual void enterAssignFunction(NyarParser::AssignFunctionContext * /*ctx*/) override { }
+  virtual void exitAssignFunction(NyarParser::AssignFunctionContext * /*ctx*/) override { }
 
-  virtual void enterModuleStatement(NyarParser::ModuleStatementContext * /*ctx*/) override { }
-  virtual void exitModuleStatement(NyarParser::ModuleStatementContext * /*ctx*/) override { }
+  virtual void enterAssignPair(NyarParser::AssignPairContext * /*ctx*/) override { }
+  virtual void exitAssignPair(NyarParser::AssignPairContext * /*ctx*/) override { }
 
-  virtual void enterMacroStatement(NyarParser::MacroStatementContext * /*ctx*/) override { }
-  virtual void exitMacroStatement(NyarParser::MacroStatementContext * /*ctx*/) override { }
+  virtual void enterAssignWithList(NyarParser::AssignWithListContext * /*ctx*/) override { }
+  virtual void exitAssignWithList(NyarParser::AssignWithListContext * /*ctx*/) override { }
 
-  virtual void enterTemplateStatement(NyarParser::TemplateStatementContext * /*ctx*/) override { }
-  virtual void exitTemplateStatement(NyarParser::TemplateStatementContext * /*ctx*/) override { }
+  virtual void enterAssign_pass(NyarParser::Assign_passContext * /*ctx*/) override { }
+  virtual void exitAssign_pass(NyarParser::Assign_passContext * /*ctx*/) override { }
 
-  virtual void enterInterfaceStatement(NyarParser::InterfaceStatementContext * /*ctx*/) override { }
-  virtual void exitInterfaceStatement(NyarParser::InterfaceStatementContext * /*ctx*/) override { }
+  virtual void enterModuleInclude(NyarParser::ModuleIncludeContext * /*ctx*/) override { }
+  virtual void exitModuleInclude(NyarParser::ModuleIncludeContext * /*ctx*/) override { }
 
-  virtual void enterClassStatement(NyarParser::ClassStatementContext * /*ctx*/) override { }
-  virtual void exitClassStatement(NyarParser::ClassStatementContext * /*ctx*/) override { }
+  virtual void enterModuleAlias(NyarParser::ModuleAliasContext * /*ctx*/) override { }
+  virtual void exitModuleAlias(NyarParser::ModuleAliasContext * /*ctx*/) override { }
 
-  virtual void enterIfStatement(NyarParser::IfStatementContext * /*ctx*/) override { }
-  virtual void exitIfStatement(NyarParser::IfStatementContext * /*ctx*/) override { }
+  virtual void enterModuleSymbol(NyarParser::ModuleSymbolContext * /*ctx*/) override { }
+  virtual void exitModuleSymbol(NyarParser::ModuleSymbolContext * /*ctx*/) override { }
 
-  virtual void enterElseif(NyarParser::ElseifContext * /*ctx*/) override { }
-  virtual void exitElseif(NyarParser::ElseifContext * /*ctx*/) override { }
+  virtual void enterModuleSymbols(NyarParser::ModuleSymbolsContext * /*ctx*/) override { }
+  virtual void exitModuleSymbols(NyarParser::ModuleSymbolsContext * /*ctx*/) override { }
 
-  virtual void enterCondition(NyarParser::ConditionContext * /*ctx*/) override { }
-  virtual void exitCondition(NyarParser::ConditionContext * /*ctx*/) override { }
+  virtual void enterModuleResolve(NyarParser::ModuleResolveContext * /*ctx*/) override { }
+  virtual void exitModuleResolve(NyarParser::ModuleResolveContext * /*ctx*/) override { }
 
-  virtual void enterTryStatement(NyarParser::TryStatementContext * /*ctx*/) override { }
-  virtual void exitTryStatement(NyarParser::TryStatementContext * /*ctx*/) override { }
+  virtual void enterId_tuples(NyarParser::Id_tuplesContext * /*ctx*/) override { }
+  virtual void exitId_tuples(NyarParser::Id_tuplesContext * /*ctx*/) override { }
+
+  virtual void enterClassBase(NyarParser::ClassBaseContext * /*ctx*/) override { }
+  virtual void exitClassBase(NyarParser::ClassBaseContext * /*ctx*/) override { }
+
+  virtual void enterClassWithFather(NyarParser::ClassWithFatherContext * /*ctx*/) override { }
+  virtual void exitClassWithFather(NyarParser::ClassWithFatherContext * /*ctx*/) override { }
+
+  virtual void enterClassFather(NyarParser::ClassFatherContext * /*ctx*/) override { }
+  virtual void exitClassFather(NyarParser::ClassFatherContext * /*ctx*/) override { }
+
+  virtual void enterClassFathers(NyarParser::ClassFathersContext * /*ctx*/) override { }
+  virtual void exitClassFathers(NyarParser::ClassFathersContext * /*ctx*/) override { }
+
+  virtual void enterClassImplement(NyarParser::ClassImplementContext * /*ctx*/) override { }
+  virtual void exitClassImplement(NyarParser::ClassImplementContext * /*ctx*/) override { }
+
+  virtual void enterClassDefine(NyarParser::ClassDefineContext * /*ctx*/) override { }
+  virtual void exitClassDefine(NyarParser::ClassDefineContext * /*ctx*/) override { }
+
+  virtual void enterInterface_Statement(NyarParser::Interface_StatementContext * /*ctx*/) override { }
+  virtual void exitInterface_Statement(NyarParser::Interface_StatementContext * /*ctx*/) override { }
+
+  virtual void enterTemplate_Statement(NyarParser::Template_StatementContext * /*ctx*/) override { }
+  virtual void exitTemplate_Statement(NyarParser::Template_StatementContext * /*ctx*/) override { }
+
+  virtual void enterMacro_Statement(NyarParser::Macro_StatementContext * /*ctx*/) override { }
+  virtual void exitMacro_Statement(NyarParser::Macro_StatementContext * /*ctx*/) override { }
+
+  virtual void enterIfSingle(NyarParser::IfSingleContext * /*ctx*/) override { }
+  virtual void exitIfSingle(NyarParser::IfSingleContext * /*ctx*/) override { }
+
+  virtual void enterIfNested(NyarParser::IfNestedContext * /*ctx*/) override { }
+  virtual void exitIfNested(NyarParser::IfNestedContext * /*ctx*/) override { }
+
+  virtual void enterSwitchStatement(NyarParser::SwitchStatementContext * /*ctx*/) override { }
+  virtual void exitSwitchStatement(NyarParser::SwitchStatementContext * /*ctx*/) override { }
+
+  virtual void enterMatchStatement(NyarParser::MatchStatementContext * /*ctx*/) override { }
+  virtual void exitMatchStatement(NyarParser::MatchStatementContext * /*ctx*/) override { }
+
+  virtual void enterConditionStatement(NyarParser::ConditionStatementContext * /*ctx*/) override { }
+  virtual void exitConditionStatement(NyarParser::ConditionStatementContext * /*ctx*/) override { }
+
+  virtual void enterElseStatement(NyarParser::ElseStatementContext * /*ctx*/) override { }
+  virtual void exitElseStatement(NyarParser::ElseStatementContext * /*ctx*/) override { }
+
+  virtual void enterElseIfStatement(NyarParser::ElseIfStatementContext * /*ctx*/) override { }
+  virtual void exitElseIfStatement(NyarParser::ElseIfStatementContext * /*ctx*/) override { }
+
+  virtual void enterTry_statement(NyarParser::Try_statementContext * /*ctx*/) override { }
+  virtual void exitTry_statement(NyarParser::Try_statementContext * /*ctx*/) override { }
 
   virtual void enterCatchProduction(NyarParser::CatchProductionContext * /*ctx*/) override { }
   virtual void exitCatchProduction(NyarParser::CatchProductionContext * /*ctx*/) override { }
@@ -130,11 +217,17 @@ public:
   virtual void enterFinalProduction(NyarParser::FinalProductionContext * /*ctx*/) override { }
   virtual void exitFinalProduction(NyarParser::FinalProductionContext * /*ctx*/) override { }
 
-  virtual void enterTupleLiteral(NyarParser::TupleLiteralContext * /*ctx*/) override { }
-  virtual void exitTupleLiteral(NyarParser::TupleLiteralContext * /*ctx*/) override { }
+  virtual void enterForLoop(NyarParser::ForLoopContext * /*ctx*/) override { }
+  virtual void exitForLoop(NyarParser::ForLoopContext * /*ctx*/) override { }
 
-  virtual void enterSingle(NyarParser::SingleContext * /*ctx*/) override { }
-  virtual void exitSingle(NyarParser::SingleContext * /*ctx*/) override { }
+  virtual void enterForInLoop(NyarParser::ForInLoopContext * /*ctx*/) override { }
+  virtual void exitForInLoop(NyarParser::ForInLoopContext * /*ctx*/) override { }
+
+  virtual void enterWhileLoop(NyarParser::WhileLoopContext * /*ctx*/) override { }
+  virtual void exitWhileLoop(NyarParser::WhileLoopContext * /*ctx*/) override { }
+
+  virtual void enterDoLoop(NyarParser::DoLoopContext * /*ctx*/) override { }
+  virtual void exitDoLoop(NyarParser::DoLoopContext * /*ctx*/) override { }
 
   virtual void enterDictLiteral(NyarParser::DictLiteralContext * /*ctx*/) override { }
   virtual void exitDictLiteral(NyarParser::DictLiteralContext * /*ctx*/) override { }
@@ -142,11 +235,20 @@ public:
   virtual void enterKeyvalue(NyarParser::KeyvalueContext * /*ctx*/) override { }
   virtual void exitKeyvalue(NyarParser::KeyvalueContext * /*ctx*/) override { }
 
+  virtual void enterKey_valid(NyarParser::Key_validContext * /*ctx*/) override { }
+  virtual void exitKey_valid(NyarParser::Key_validContext * /*ctx*/) override { }
+
   virtual void enterListLiteral(NyarParser::ListLiteralContext * /*ctx*/) override { }
   virtual void exitListLiteral(NyarParser::ListLiteralContext * /*ctx*/) override { }
 
   virtual void enterElement(NyarParser::ElementContext * /*ctx*/) override { }
   virtual void exitElement(NyarParser::ElementContext * /*ctx*/) override { }
+
+  virtual void enterIndexLiteral(NyarParser::IndexLiteralContext * /*ctx*/) override { }
+  virtual void exitIndexLiteral(NyarParser::IndexLiteralContext * /*ctx*/) override { }
+
+  virtual void enterIndex_valid(NyarParser::Index_validContext * /*ctx*/) override { }
+  virtual void exitIndex_valid(NyarParser::Index_validContext * /*ctx*/) override { }
 
   virtual void enterSignedInteger(NyarParser::SignedIntegerContext * /*ctx*/) override { }
   virtual void exitSignedInteger(NyarParser::SignedIntegerContext * /*ctx*/) override { }

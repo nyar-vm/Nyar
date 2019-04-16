@@ -27,32 +27,36 @@ public interface NyarListener extends ParseTreeListener {
 	 */
 	void exitStatement(NyarParser.StatementContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link NyarParser#blockStatement}.
+	 * Enter a parse tree produced by the {@code BlockStatement}
+	 * labeled alternative in {@link NyarParser#block_statement}.
 	 * @param ctx the parse tree
 	 */
 	void enterBlockStatement(NyarParser.BlockStatementContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link NyarParser#blockStatement}.
+	 * Exit a parse tree produced by the {@code BlockStatement}
+	 * labeled alternative in {@link NyarParser#block_statement}.
 	 * @param ctx the parse tree
 	 */
 	void exitBlockStatement(NyarParser.BlockStatementContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link NyarParser#expr_block}.
+	 * Enter a parse tree produced by {@link NyarParser#expr_or_block}.
 	 * @param ctx the parse tree
 	 */
-	void enterExpr_block(NyarParser.Expr_blockContext ctx);
+	void enterExpr_or_block(NyarParser.Expr_or_blockContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link NyarParser#expr_block}.
+	 * Exit a parse tree produced by {@link NyarParser#expr_or_block}.
 	 * @param ctx the parse tree
 	 */
-	void exitExpr_block(NyarParser.Expr_blockContext ctx);
+	void exitExpr_or_block(NyarParser.Expr_or_blockContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link NyarParser#emptyStatement}.
+	 * Enter a parse tree produced by the {@code EmptyStatement}
+	 * labeled alternative in {@link NyarParser#empty_statement}.
 	 * @param ctx the parse tree
 	 */
 	void enterEmptyStatement(NyarParser.EmptyStatementContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link NyarParser#emptyStatement}.
+	 * Exit a parse tree produced by the {@code EmptyStatement}
+	 * labeled alternative in {@link NyarParser#empty_statement}.
 	 * @param ctx the parse tree
 	 */
 	void exitEmptyStatement(NyarParser.EmptyStatementContext ctx);
@@ -67,25 +71,69 @@ public interface NyarListener extends ParseTreeListener {
 	 */
 	void exitEos(NyarParser.EosContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link NyarParser#eol}.
+	 * Enter a parse tree produced by {@link NyarParser#symbol}.
 	 * @param ctx the parse tree
 	 */
-	void enterEol(NyarParser.EolContext ctx);
+	void enterSymbol(NyarParser.SymbolContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link NyarParser#eol}.
+	 * Exit a parse tree produced by {@link NyarParser#symbol}.
 	 * @param ctx the parse tree
 	 */
-	void exitEol(NyarParser.EolContext ctx);
+	void exitSymbol(NyarParser.SymbolContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link NyarParser#expressionStatement}.
+	 * Enter a parse tree produced by {@link NyarParser#global}.
+	 * @param ctx the parse tree
+	 */
+	void enterGlobal(NyarParser.GlobalContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link NyarParser#global}.
+	 * @param ctx the parse tree
+	 */
+	void exitGlobal(NyarParser.GlobalContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code ExpressionStatement}
+	 * labeled alternative in {@link NyarParser#expression_statement}.
 	 * @param ctx the parse tree
 	 */
 	void enterExpressionStatement(NyarParser.ExpressionStatementContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link NyarParser#expressionStatement}.
+	 * Exit a parse tree produced by the {@code ExpressionStatement}
+	 * labeled alternative in {@link NyarParser#expression_statement}.
 	 * @param ctx the parse tree
 	 */
 	void exitExpressionStatement(NyarParser.ExpressionStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code TypeAssign}
+	 * labeled alternative in {@link NyarParser#type_statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterTypeAssign(NyarParser.TypeAssignContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code TypeAssign}
+	 * labeled alternative in {@link NyarParser#type_statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitTypeAssign(NyarParser.TypeAssignContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link NyarParser#function_apply}.
+	 * @param ctx the parse tree
+	 */
+	void enterFunction_apply(NyarParser.Function_applyContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link NyarParser#function_apply}.
+	 * @param ctx the parse tree
+	 */
+	void exitFunction_apply(NyarParser.Function_applyContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link NyarParser#function_params}.
+	 * @param ctx the parse tree
+	 */
+	void enterFunction_params(NyarParser.Function_paramsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link NyarParser#function_params}.
+	 * @param ctx the parse tree
+	 */
+	void exitFunction_params(NyarParser.Function_paramsContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code PriorityExpression}
 	 * labeled alternative in {@link NyarParser#expression}.
@@ -99,29 +147,29 @@ public interface NyarListener extends ParseTreeListener {
 	 */
 	void exitPriorityExpression(NyarParser.PriorityExpressionContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code Symbol}
+	 * Enter a parse tree produced by the {@code FunctionApply}
 	 * labeled alternative in {@link NyarParser#expression}.
 	 * @param ctx the parse tree
 	 */
-	void enterSymbol(NyarParser.SymbolContext ctx);
+	void enterFunctionApply(NyarParser.FunctionApplyContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code Symbol}
+	 * Exit a parse tree produced by the {@code FunctionApply}
 	 * labeled alternative in {@link NyarParser#expression}.
 	 * @param ctx the parse tree
 	 */
-	void exitSymbol(NyarParser.SymbolContext ctx);
+	void exitFunctionApply(NyarParser.FunctionApplyContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code Plus_Like}
+	 * Enter a parse tree produced by the {@code Index}
 	 * labeled alternative in {@link NyarParser#expression}.
 	 * @param ctx the parse tree
 	 */
-	void enterPlus_Like(NyarParser.Plus_LikeContext ctx);
+	void enterIndex(NyarParser.IndexContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code Plus_Like}
+	 * Exit a parse tree produced by the {@code Index}
 	 * labeled alternative in {@link NyarParser#expression}.
 	 * @param ctx the parse tree
 	 */
-	void exitPlus_Like(NyarParser.Plus_LikeContext ctx);
+	void exitIndex(NyarParser.IndexContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code String}
 	 * labeled alternative in {@link NyarParser#expression}.
@@ -135,17 +183,101 @@ public interface NyarListener extends ParseTreeListener {
 	 */
 	void exitString(NyarParser.StringContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code List_Like}
+	 * Enter a parse tree produced by the {@code BinaryLike}
 	 * labeled alternative in {@link NyarParser#expression}.
 	 * @param ctx the parse tree
 	 */
-	void enterList_Like(NyarParser.List_LikeContext ctx);
+	void enterBinaryLike(NyarParser.BinaryLikeContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code List_Like}
+	 * Exit a parse tree produced by the {@code BinaryLike}
 	 * labeled alternative in {@link NyarParser#expression}.
 	 * @param ctx the parse tree
 	 */
-	void exitList_Like(NyarParser.List_LikeContext ctx);
+	void exitBinaryLike(NyarParser.BinaryLikeContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code LogicLike}
+	 * labeled alternative in {@link NyarParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterLogicLike(NyarParser.LogicLikeContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code LogicLike}
+	 * labeled alternative in {@link NyarParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitLogicLike(NyarParser.LogicLikeContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code MethodApply}
+	 * labeled alternative in {@link NyarParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterMethodApply(NyarParser.MethodApplyContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code MethodApply}
+	 * labeled alternative in {@link NyarParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitMethodApply(NyarParser.MethodApplyContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code CompareLike}
+	 * labeled alternative in {@link NyarParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterCompareLike(NyarParser.CompareLikeContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code CompareLike}
+	 * labeled alternative in {@link NyarParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitCompareLike(NyarParser.CompareLikeContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code PlusLike}
+	 * labeled alternative in {@link NyarParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterPlusLike(NyarParser.PlusLikeContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code PlusLike}
+	 * labeled alternative in {@link NyarParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitPlusLike(NyarParser.PlusLikeContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code LazyAssign}
+	 * labeled alternative in {@link NyarParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterLazyAssign(NyarParser.LazyAssignContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code LazyAssign}
+	 * labeled alternative in {@link NyarParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitLazyAssign(NyarParser.LazyAssignContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code PowerLike}
+	 * labeled alternative in {@link NyarParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterPowerLike(NyarParser.PowerLikeContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code PowerLike}
+	 * labeled alternative in {@link NyarParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitPowerLike(NyarParser.PowerLikeContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code TypeStatement}
+	 * labeled alternative in {@link NyarParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterTypeStatement(NyarParser.TypeStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code TypeStatement}
+	 * labeled alternative in {@link NyarParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitTypeStatement(NyarParser.TypeStatementContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code Number}
 	 * labeled alternative in {@link NyarParser#expression}.
@@ -195,41 +327,17 @@ public interface NyarListener extends ParseTreeListener {
 	 */
 	void exitPrefixExpression(NyarParser.PrefixExpressionContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code Logic_Like}
+	 * Enter a parse tree produced by the {@code SymbolExpression}
 	 * labeled alternative in {@link NyarParser#expression}.
 	 * @param ctx the parse tree
 	 */
-	void enterLogic_Like(NyarParser.Logic_LikeContext ctx);
+	void enterSymbolExpression(NyarParser.SymbolExpressionContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code Logic_Like}
+	 * Exit a parse tree produced by the {@code SymbolExpression}
 	 * labeled alternative in {@link NyarParser#expression}.
 	 * @param ctx the parse tree
 	 */
-	void exitLogic_Like(NyarParser.Logic_LikeContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code Power_Like}
-	 * labeled alternative in {@link NyarParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void enterPower_Like(NyarParser.Power_LikeContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code Power_Like}
-	 * labeled alternative in {@link NyarParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void exitPower_Like(NyarParser.Power_LikeContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code Multiply_Like}
-	 * labeled alternative in {@link NyarParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void enterMultiply_Like(NyarParser.Multiply_LikeContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code Multiply_Like}
-	 * labeled alternative in {@link NyarParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void exitMultiply_Like(NyarParser.Multiply_LikeContext ctx);
+	void exitSymbolExpression(NyarParser.SymbolExpressionContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code List}
 	 * labeled alternative in {@link NyarParser#expression}.
@@ -243,29 +351,63 @@ public interface NyarListener extends ParseTreeListener {
 	 */
 	void exitList(NyarParser.ListContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code Binary_Like}
+	 * Enter a parse tree produced by the {@code PostfixExpression}
 	 * labeled alternative in {@link NyarParser#expression}.
 	 * @param ctx the parse tree
 	 */
-	void enterBinary_Like(NyarParser.Binary_LikeContext ctx);
+	void enterPostfixExpression(NyarParser.PostfixExpressionContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code Binary_Like}
+	 * Exit a parse tree produced by the {@code PostfixExpression}
 	 * labeled alternative in {@link NyarParser#expression}.
 	 * @param ctx the parse tree
 	 */
-	void exitBinary_Like(NyarParser.Binary_LikeContext ctx);
+	void exitPostfixExpression(NyarParser.PostfixExpressionContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code Tuple}
+	 * Enter a parse tree produced by the {@code MultiplyLike}
 	 * labeled alternative in {@link NyarParser#expression}.
 	 * @param ctx the parse tree
 	 */
-	void enterTuple(NyarParser.TupleContext ctx);
+	void enterMultiplyLike(NyarParser.MultiplyLikeContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code Tuple}
+	 * Exit a parse tree produced by the {@code MultiplyLike}
 	 * labeled alternative in {@link NyarParser#expression}.
 	 * @param ctx the parse tree
 	 */
-	void exitTuple(NyarParser.TupleContext ctx);
+	void exitMultiplyLike(NyarParser.MultiplyLikeContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code ListLike}
+	 * labeled alternative in {@link NyarParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterListLike(NyarParser.ListLikeContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code ListLike}
+	 * labeled alternative in {@link NyarParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitListLike(NyarParser.ListLikeContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link NyarParser#pst_ops}.
+	 * @param ctx the parse tree
+	 */
+	void enterPst_ops(NyarParser.Pst_opsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link NyarParser#pst_ops}.
+	 * @param ctx the parse tree
+	 */
+	void exitPst_ops(NyarParser.Pst_opsContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code AssignStatement}
+	 * labeled alternative in {@link NyarParser#assign_statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterAssignStatement(NyarParser.AssignStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code AssignStatement}
+	 * labeled alternative in {@link NyarParser#assign_statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitAssignStatement(NyarParser.AssignStatementContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link NyarParser#assignable}.
 	 * @param ctx the parse tree
@@ -277,127 +419,341 @@ public interface NyarListener extends ParseTreeListener {
 	 */
 	void exitAssignable(NyarParser.AssignableContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code ModifierAssign}
-	 * labeled alternative in {@link NyarParser#assignStatement}.
+	 * Enter a parse tree produced by the {@code AssignValue}
+	 * labeled alternative in {@link NyarParser#assign_lhs}.
 	 * @param ctx the parse tree
 	 */
-	void enterModifierAssign(NyarParser.ModifierAssignContext ctx);
+	void enterAssignValue(NyarParser.AssignValueContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code ModifierAssign}
-	 * labeled alternative in {@link NyarParser#assignStatement}.
+	 * Exit a parse tree produced by the {@code AssignValue}
+	 * labeled alternative in {@link NyarParser#assign_lhs}.
 	 * @param ctx the parse tree
 	 */
-	void exitModifierAssign(NyarParser.ModifierAssignContext ctx);
+	void exitAssignValue(NyarParser.AssignValueContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link NyarParser#assignTuple}.
+	 * Enter a parse tree produced by the {@code AssignAttribute}
+	 * labeled alternative in {@link NyarParser#assign_lhs}.
 	 * @param ctx the parse tree
 	 */
-	void enterAssignTuple(NyarParser.AssignTupleContext ctx);
+	void enterAssignAttribute(NyarParser.AssignAttributeContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link NyarParser#assignTuple}.
+	 * Exit a parse tree produced by the {@code AssignAttribute}
+	 * labeled alternative in {@link NyarParser#assign_lhs}.
 	 * @param ctx the parse tree
 	 */
-	void exitAssignTuple(NyarParser.AssignTupleContext ctx);
+	void exitAssignAttribute(NyarParser.AssignAttributeContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link NyarParser#assignPass}.
+	 * Enter a parse tree produced by the {@code AssignFunction}
+	 * labeled alternative in {@link NyarParser#assign_lhs}.
 	 * @param ctx the parse tree
 	 */
-	void enterAssignPass(NyarParser.AssignPassContext ctx);
+	void enterAssignFunction(NyarParser.AssignFunctionContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link NyarParser#assignPass}.
+	 * Exit a parse tree produced by the {@code AssignFunction}
+	 * labeled alternative in {@link NyarParser#assign_lhs}.
 	 * @param ctx the parse tree
 	 */
-	void exitAssignPass(NyarParser.AssignPassContext ctx);
+	void exitAssignFunction(NyarParser.AssignFunctionContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link NyarParser#moduleStatement}.
+	 * Enter a parse tree produced by the {@code AssignPair}
+	 * labeled alternative in {@link NyarParser#assign_lhs}.
 	 * @param ctx the parse tree
 	 */
-	void enterModuleStatement(NyarParser.ModuleStatementContext ctx);
+	void enterAssignPair(NyarParser.AssignPairContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link NyarParser#moduleStatement}.
+	 * Exit a parse tree produced by the {@code AssignPair}
+	 * labeled alternative in {@link NyarParser#assign_lhs}.
 	 * @param ctx the parse tree
 	 */
-	void exitModuleStatement(NyarParser.ModuleStatementContext ctx);
+	void exitAssignPair(NyarParser.AssignPairContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link NyarParser#macroStatement}.
+	 * Enter a parse tree produced by the {@code AssignWithList}
+	 * labeled alternative in {@link NyarParser#assign_lhs}.
 	 * @param ctx the parse tree
 	 */
-	void enterMacroStatement(NyarParser.MacroStatementContext ctx);
+	void enterAssignWithList(NyarParser.AssignWithListContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link NyarParser#macroStatement}.
+	 * Exit a parse tree produced by the {@code AssignWithList}
+	 * labeled alternative in {@link NyarParser#assign_lhs}.
 	 * @param ctx the parse tree
 	 */
-	void exitMacroStatement(NyarParser.MacroStatementContext ctx);
+	void exitAssignWithList(NyarParser.AssignWithListContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link NyarParser#templateStatement}.
+	 * Enter a parse tree produced by {@link NyarParser#assign_pass}.
 	 * @param ctx the parse tree
 	 */
-	void enterTemplateStatement(NyarParser.TemplateStatementContext ctx);
+	void enterAssign_pass(NyarParser.Assign_passContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link NyarParser#templateStatement}.
+	 * Exit a parse tree produced by {@link NyarParser#assign_pass}.
 	 * @param ctx the parse tree
 	 */
-	void exitTemplateStatement(NyarParser.TemplateStatementContext ctx);
+	void exitAssign_pass(NyarParser.Assign_passContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link NyarParser#interfaceStatement}.
+	 * Enter a parse tree produced by the {@code ModuleInclude}
+	 * labeled alternative in {@link NyarParser#module_statement}.
 	 * @param ctx the parse tree
 	 */
-	void enterInterfaceStatement(NyarParser.InterfaceStatementContext ctx);
+	void enterModuleInclude(NyarParser.ModuleIncludeContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link NyarParser#interfaceStatement}.
+	 * Exit a parse tree produced by the {@code ModuleInclude}
+	 * labeled alternative in {@link NyarParser#module_statement}.
 	 * @param ctx the parse tree
 	 */
-	void exitInterfaceStatement(NyarParser.InterfaceStatementContext ctx);
+	void exitModuleInclude(NyarParser.ModuleIncludeContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link NyarParser#classStatement}.
+	 * Enter a parse tree produced by the {@code ModuleAlias}
+	 * labeled alternative in {@link NyarParser#module_statement}.
 	 * @param ctx the parse tree
 	 */
-	void enterClassStatement(NyarParser.ClassStatementContext ctx);
+	void enterModuleAlias(NyarParser.ModuleAliasContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link NyarParser#classStatement}.
+	 * Exit a parse tree produced by the {@code ModuleAlias}
+	 * labeled alternative in {@link NyarParser#module_statement}.
 	 * @param ctx the parse tree
 	 */
-	void exitClassStatement(NyarParser.ClassStatementContext ctx);
+	void exitModuleAlias(NyarParser.ModuleAliasContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link NyarParser#ifStatement}.
+	 * Enter a parse tree produced by the {@code ModuleSymbol}
+	 * labeled alternative in {@link NyarParser#module_statement}.
 	 * @param ctx the parse tree
 	 */
-	void enterIfStatement(NyarParser.IfStatementContext ctx);
+	void enterModuleSymbol(NyarParser.ModuleSymbolContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link NyarParser#ifStatement}.
+	 * Exit a parse tree produced by the {@code ModuleSymbol}
+	 * labeled alternative in {@link NyarParser#module_statement}.
 	 * @param ctx the parse tree
 	 */
-	void exitIfStatement(NyarParser.IfStatementContext ctx);
+	void exitModuleSymbol(NyarParser.ModuleSymbolContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link NyarParser#elseif}.
+	 * Enter a parse tree produced by the {@code ModuleSymbols}
+	 * labeled alternative in {@link NyarParser#module_statement}.
 	 * @param ctx the parse tree
 	 */
-	void enterElseif(NyarParser.ElseifContext ctx);
+	void enterModuleSymbols(NyarParser.ModuleSymbolsContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link NyarParser#elseif}.
+	 * Exit a parse tree produced by the {@code ModuleSymbols}
+	 * labeled alternative in {@link NyarParser#module_statement}.
 	 * @param ctx the parse tree
 	 */
-	void exitElseif(NyarParser.ElseifContext ctx);
+	void exitModuleSymbols(NyarParser.ModuleSymbolsContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link NyarParser#condition}.
+	 * Enter a parse tree produced by the {@code ModuleResolve}
+	 * labeled alternative in {@link NyarParser#module_statement}.
 	 * @param ctx the parse tree
 	 */
-	void enterCondition(NyarParser.ConditionContext ctx);
+	void enterModuleResolve(NyarParser.ModuleResolveContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link NyarParser#condition}.
+	 * Exit a parse tree produced by the {@code ModuleResolve}
+	 * labeled alternative in {@link NyarParser#module_statement}.
 	 * @param ctx the parse tree
 	 */
-	void exitCondition(NyarParser.ConditionContext ctx);
+	void exitModuleResolve(NyarParser.ModuleResolveContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link NyarParser#tryStatement}.
+	 * Enter a parse tree produced by {@link NyarParser#id_tuples}.
 	 * @param ctx the parse tree
 	 */
-	void enterTryStatement(NyarParser.TryStatementContext ctx);
+	void enterId_tuples(NyarParser.Id_tuplesContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link NyarParser#tryStatement}.
+	 * Exit a parse tree produced by {@link NyarParser#id_tuples}.
 	 * @param ctx the parse tree
 	 */
-	void exitTryStatement(NyarParser.TryStatementContext ctx);
+	void exitId_tuples(NyarParser.Id_tuplesContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code ClassBase}
+	 * labeled alternative in {@link NyarParser#class_statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterClassBase(NyarParser.ClassBaseContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code ClassBase}
+	 * labeled alternative in {@link NyarParser#class_statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitClassBase(NyarParser.ClassBaseContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code ClassWithFather}
+	 * labeled alternative in {@link NyarParser#class_statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterClassWithFather(NyarParser.ClassWithFatherContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code ClassWithFather}
+	 * labeled alternative in {@link NyarParser#class_statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitClassWithFather(NyarParser.ClassWithFatherContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code ClassFather}
+	 * labeled alternative in {@link NyarParser#class_fathers}.
+	 * @param ctx the parse tree
+	 */
+	void enterClassFather(NyarParser.ClassFatherContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code ClassFather}
+	 * labeled alternative in {@link NyarParser#class_fathers}.
+	 * @param ctx the parse tree
+	 */
+	void exitClassFather(NyarParser.ClassFatherContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code ClassFathers}
+	 * labeled alternative in {@link NyarParser#class_fathers}.
+	 * @param ctx the parse tree
+	 */
+	void enterClassFathers(NyarParser.ClassFathersContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code ClassFathers}
+	 * labeled alternative in {@link NyarParser#class_fathers}.
+	 * @param ctx the parse tree
+	 */
+	void exitClassFathers(NyarParser.ClassFathersContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code ClassImplement}
+	 * labeled alternative in {@link NyarParser#class_implement}.
+	 * @param ctx the parse tree
+	 */
+	void enterClassImplement(NyarParser.ClassImplementContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code ClassImplement}
+	 * labeled alternative in {@link NyarParser#class_implement}.
+	 * @param ctx the parse tree
+	 */
+	void exitClassImplement(NyarParser.ClassImplementContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code ClassDefine}
+	 * labeled alternative in {@link NyarParser#class_define}.
+	 * @param ctx the parse tree
+	 */
+	void enterClassDefine(NyarParser.ClassDefineContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code ClassDefine}
+	 * labeled alternative in {@link NyarParser#class_define}.
+	 * @param ctx the parse tree
+	 */
+	void exitClassDefine(NyarParser.ClassDefineContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link NyarParser#interface_Statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterInterface_Statement(NyarParser.Interface_StatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link NyarParser#interface_Statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitInterface_Statement(NyarParser.Interface_StatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link NyarParser#template_Statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterTemplate_Statement(NyarParser.Template_StatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link NyarParser#template_Statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitTemplate_Statement(NyarParser.Template_StatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link NyarParser#macro_Statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterMacro_Statement(NyarParser.Macro_StatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link NyarParser#macro_Statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitMacro_Statement(NyarParser.Macro_StatementContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code IfSingle}
+	 * labeled alternative in {@link NyarParser#branch_statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterIfSingle(NyarParser.IfSingleContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code IfSingle}
+	 * labeled alternative in {@link NyarParser#branch_statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitIfSingle(NyarParser.IfSingleContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code IfNested}
+	 * labeled alternative in {@link NyarParser#branch_statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterIfNested(NyarParser.IfNestedContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code IfNested}
+	 * labeled alternative in {@link NyarParser#branch_statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitIfNested(NyarParser.IfNestedContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code SwitchStatement}
+	 * labeled alternative in {@link NyarParser#branch_statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterSwitchStatement(NyarParser.SwitchStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code SwitchStatement}
+	 * labeled alternative in {@link NyarParser#branch_statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitSwitchStatement(NyarParser.SwitchStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code MatchStatement}
+	 * labeled alternative in {@link NyarParser#branch_statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterMatchStatement(NyarParser.MatchStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code MatchStatement}
+	 * labeled alternative in {@link NyarParser#branch_statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitMatchStatement(NyarParser.MatchStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code ConditionStatement}
+	 * labeled alternative in {@link NyarParser#condition_statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterConditionStatement(NyarParser.ConditionStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code ConditionStatement}
+	 * labeled alternative in {@link NyarParser#condition_statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitConditionStatement(NyarParser.ConditionStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code ElseStatement}
+	 * labeled alternative in {@link NyarParser#if_else}.
+	 * @param ctx the parse tree
+	 */
+	void enterElseStatement(NyarParser.ElseStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code ElseStatement}
+	 * labeled alternative in {@link NyarParser#if_else}.
+	 * @param ctx the parse tree
+	 */
+	void exitElseStatement(NyarParser.ElseStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code ElseIfStatement}
+	 * labeled alternative in {@link NyarParser#if_elseif}.
+	 * @param ctx the parse tree
+	 */
+	void enterElseIfStatement(NyarParser.ElseIfStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code ElseIfStatement}
+	 * labeled alternative in {@link NyarParser#if_elseif}.
+	 * @param ctx the parse tree
+	 */
+	void exitElseIfStatement(NyarParser.ElseIfStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link NyarParser#try_statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterTry_statement(NyarParser.Try_statementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link NyarParser#try_statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitTry_statement(NyarParser.Try_statementContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link NyarParser#catchProduction}.
 	 * @param ctx the parse tree
@@ -419,25 +775,53 @@ public interface NyarListener extends ParseTreeListener {
 	 */
 	void exitFinalProduction(NyarParser.FinalProductionContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link NyarParser#tupleLiteral}.
+	 * Enter a parse tree produced by the {@code ForLoop}
+	 * labeled alternative in {@link NyarParser#loop_statement}.
 	 * @param ctx the parse tree
 	 */
-	void enterTupleLiteral(NyarParser.TupleLiteralContext ctx);
+	void enterForLoop(NyarParser.ForLoopContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link NyarParser#tupleLiteral}.
+	 * Exit a parse tree produced by the {@code ForLoop}
+	 * labeled alternative in {@link NyarParser#loop_statement}.
 	 * @param ctx the parse tree
 	 */
-	void exitTupleLiteral(NyarParser.TupleLiteralContext ctx);
+	void exitForLoop(NyarParser.ForLoopContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link NyarParser#single}.
+	 * Enter a parse tree produced by the {@code ForInLoop}
+	 * labeled alternative in {@link NyarParser#loop_statement}.
 	 * @param ctx the parse tree
 	 */
-	void enterSingle(NyarParser.SingleContext ctx);
+	void enterForInLoop(NyarParser.ForInLoopContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link NyarParser#single}.
+	 * Exit a parse tree produced by the {@code ForInLoop}
+	 * labeled alternative in {@link NyarParser#loop_statement}.
 	 * @param ctx the parse tree
 	 */
-	void exitSingle(NyarParser.SingleContext ctx);
+	void exitForInLoop(NyarParser.ForInLoopContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code WhileLoop}
+	 * labeled alternative in {@link NyarParser#loop_statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterWhileLoop(NyarParser.WhileLoopContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code WhileLoop}
+	 * labeled alternative in {@link NyarParser#loop_statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitWhileLoop(NyarParser.WhileLoopContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code DoLoop}
+	 * labeled alternative in {@link NyarParser#loop_statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterDoLoop(NyarParser.DoLoopContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code DoLoop}
+	 * labeled alternative in {@link NyarParser#loop_statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitDoLoop(NyarParser.DoLoopContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link NyarParser#dictLiteral}.
 	 * @param ctx the parse tree
@@ -459,6 +843,16 @@ public interface NyarListener extends ParseTreeListener {
 	 */
 	void exitKeyvalue(NyarParser.KeyvalueContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link NyarParser#key_valid}.
+	 * @param ctx the parse tree
+	 */
+	void enterKey_valid(NyarParser.Key_validContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link NyarParser#key_valid}.
+	 * @param ctx the parse tree
+	 */
+	void exitKey_valid(NyarParser.Key_validContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link NyarParser#listLiteral}.
 	 * @param ctx the parse tree
 	 */
@@ -478,6 +872,26 @@ public interface NyarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitElement(NyarParser.ElementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link NyarParser#indexLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void enterIndexLiteral(NyarParser.IndexLiteralContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link NyarParser#indexLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void exitIndexLiteral(NyarParser.IndexLiteralContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link NyarParser#index_valid}.
+	 * @param ctx the parse tree
+	 */
+	void enterIndex_valid(NyarParser.Index_validContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link NyarParser#index_valid}.
+	 * @param ctx the parse tree
+	 */
+	void exitIndex_valid(NyarParser.Index_validContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link NyarParser#signedInteger}.
 	 * @param ctx the parse tree

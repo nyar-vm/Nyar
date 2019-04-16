@@ -26,29 +26,29 @@ class NyarListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by NyarParser#blockStatement.
+    # Enter a parse tree produced by NyarParser#BlockStatement.
     def enterBlockStatement(self, ctx:NyarParser.BlockStatementContext):
         pass
 
-    # Exit a parse tree produced by NyarParser#blockStatement.
+    # Exit a parse tree produced by NyarParser#BlockStatement.
     def exitBlockStatement(self, ctx:NyarParser.BlockStatementContext):
         pass
 
 
-    # Enter a parse tree produced by NyarParser#expr_block.
-    def enterExpr_block(self, ctx:NyarParser.Expr_blockContext):
+    # Enter a parse tree produced by NyarParser#expr_or_block.
+    def enterExpr_or_block(self, ctx:NyarParser.Expr_or_blockContext):
         pass
 
-    # Exit a parse tree produced by NyarParser#expr_block.
-    def exitExpr_block(self, ctx:NyarParser.Expr_blockContext):
+    # Exit a parse tree produced by NyarParser#expr_or_block.
+    def exitExpr_or_block(self, ctx:NyarParser.Expr_or_blockContext):
         pass
 
 
-    # Enter a parse tree produced by NyarParser#emptyStatement.
+    # Enter a parse tree produced by NyarParser#EmptyStatement.
     def enterEmptyStatement(self, ctx:NyarParser.EmptyStatementContext):
         pass
 
-    # Exit a parse tree produced by NyarParser#emptyStatement.
+    # Exit a parse tree produced by NyarParser#EmptyStatement.
     def exitEmptyStatement(self, ctx:NyarParser.EmptyStatementContext):
         pass
 
@@ -62,21 +62,57 @@ class NyarListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by NyarParser#eol.
-    def enterEol(self, ctx:NyarParser.EolContext):
+    # Enter a parse tree produced by NyarParser#symbol.
+    def enterSymbol(self, ctx:NyarParser.SymbolContext):
         pass
 
-    # Exit a parse tree produced by NyarParser#eol.
-    def exitEol(self, ctx:NyarParser.EolContext):
+    # Exit a parse tree produced by NyarParser#symbol.
+    def exitSymbol(self, ctx:NyarParser.SymbolContext):
         pass
 
 
-    # Enter a parse tree produced by NyarParser#expressionStatement.
+    # Enter a parse tree produced by NyarParser#global.
+    def enterGlobal(self, ctx:NyarParser.GlobalContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#global.
+    def exitGlobal(self, ctx:NyarParser.GlobalContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#ExpressionStatement.
     def enterExpressionStatement(self, ctx:NyarParser.ExpressionStatementContext):
         pass
 
-    # Exit a parse tree produced by NyarParser#expressionStatement.
+    # Exit a parse tree produced by NyarParser#ExpressionStatement.
     def exitExpressionStatement(self, ctx:NyarParser.ExpressionStatementContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#TypeAssign.
+    def enterTypeAssign(self, ctx:NyarParser.TypeAssignContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#TypeAssign.
+    def exitTypeAssign(self, ctx:NyarParser.TypeAssignContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#function_apply.
+    def enterFunction_apply(self, ctx:NyarParser.Function_applyContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#function_apply.
+    def exitFunction_apply(self, ctx:NyarParser.Function_applyContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#function_params.
+    def enterFunction_params(self, ctx:NyarParser.Function_paramsContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#function_params.
+    def exitFunction_params(self, ctx:NyarParser.Function_paramsContext):
         pass
 
 
@@ -89,21 +125,21 @@ class NyarListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by NyarParser#Symbol.
-    def enterSymbol(self, ctx:NyarParser.SymbolContext):
+    # Enter a parse tree produced by NyarParser#FunctionApply.
+    def enterFunctionApply(self, ctx:NyarParser.FunctionApplyContext):
         pass
 
-    # Exit a parse tree produced by NyarParser#Symbol.
-    def exitSymbol(self, ctx:NyarParser.SymbolContext):
+    # Exit a parse tree produced by NyarParser#FunctionApply.
+    def exitFunctionApply(self, ctx:NyarParser.FunctionApplyContext):
         pass
 
 
-    # Enter a parse tree produced by NyarParser#Plus_Like.
-    def enterPlus_Like(self, ctx:NyarParser.Plus_LikeContext):
+    # Enter a parse tree produced by NyarParser#Index.
+    def enterIndex(self, ctx:NyarParser.IndexContext):
         pass
 
-    # Exit a parse tree produced by NyarParser#Plus_Like.
-    def exitPlus_Like(self, ctx:NyarParser.Plus_LikeContext):
+    # Exit a parse tree produced by NyarParser#Index.
+    def exitIndex(self, ctx:NyarParser.IndexContext):
         pass
 
 
@@ -116,12 +152,75 @@ class NyarListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by NyarParser#List_Like.
-    def enterList_Like(self, ctx:NyarParser.List_LikeContext):
+    # Enter a parse tree produced by NyarParser#BinaryLike.
+    def enterBinaryLike(self, ctx:NyarParser.BinaryLikeContext):
         pass
 
-    # Exit a parse tree produced by NyarParser#List_Like.
-    def exitList_Like(self, ctx:NyarParser.List_LikeContext):
+    # Exit a parse tree produced by NyarParser#BinaryLike.
+    def exitBinaryLike(self, ctx:NyarParser.BinaryLikeContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#LogicLike.
+    def enterLogicLike(self, ctx:NyarParser.LogicLikeContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#LogicLike.
+    def exitLogicLike(self, ctx:NyarParser.LogicLikeContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#MethodApply.
+    def enterMethodApply(self, ctx:NyarParser.MethodApplyContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#MethodApply.
+    def exitMethodApply(self, ctx:NyarParser.MethodApplyContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#CompareLike.
+    def enterCompareLike(self, ctx:NyarParser.CompareLikeContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#CompareLike.
+    def exitCompareLike(self, ctx:NyarParser.CompareLikeContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#PlusLike.
+    def enterPlusLike(self, ctx:NyarParser.PlusLikeContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#PlusLike.
+    def exitPlusLike(self, ctx:NyarParser.PlusLikeContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#LazyAssign.
+    def enterLazyAssign(self, ctx:NyarParser.LazyAssignContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#LazyAssign.
+    def exitLazyAssign(self, ctx:NyarParser.LazyAssignContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#PowerLike.
+    def enterPowerLike(self, ctx:NyarParser.PowerLikeContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#PowerLike.
+    def exitPowerLike(self, ctx:NyarParser.PowerLikeContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#TypeStatement.
+    def enterTypeStatement(self, ctx:NyarParser.TypeStatementContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#TypeStatement.
+    def exitTypeStatement(self, ctx:NyarParser.TypeStatementContext):
         pass
 
 
@@ -161,30 +260,12 @@ class NyarListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by NyarParser#Logic_Like.
-    def enterLogic_Like(self, ctx:NyarParser.Logic_LikeContext):
+    # Enter a parse tree produced by NyarParser#SymbolExpression.
+    def enterSymbolExpression(self, ctx:NyarParser.SymbolExpressionContext):
         pass
 
-    # Exit a parse tree produced by NyarParser#Logic_Like.
-    def exitLogic_Like(self, ctx:NyarParser.Logic_LikeContext):
-        pass
-
-
-    # Enter a parse tree produced by NyarParser#Power_Like.
-    def enterPower_Like(self, ctx:NyarParser.Power_LikeContext):
-        pass
-
-    # Exit a parse tree produced by NyarParser#Power_Like.
-    def exitPower_Like(self, ctx:NyarParser.Power_LikeContext):
-        pass
-
-
-    # Enter a parse tree produced by NyarParser#Multiply_Like.
-    def enterMultiply_Like(self, ctx:NyarParser.Multiply_LikeContext):
-        pass
-
-    # Exit a parse tree produced by NyarParser#Multiply_Like.
-    def exitMultiply_Like(self, ctx:NyarParser.Multiply_LikeContext):
+    # Exit a parse tree produced by NyarParser#SymbolExpression.
+    def exitSymbolExpression(self, ctx:NyarParser.SymbolExpressionContext):
         pass
 
 
@@ -197,21 +278,48 @@ class NyarListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by NyarParser#Binary_Like.
-    def enterBinary_Like(self, ctx:NyarParser.Binary_LikeContext):
+    # Enter a parse tree produced by NyarParser#PostfixExpression.
+    def enterPostfixExpression(self, ctx:NyarParser.PostfixExpressionContext):
         pass
 
-    # Exit a parse tree produced by NyarParser#Binary_Like.
-    def exitBinary_Like(self, ctx:NyarParser.Binary_LikeContext):
+    # Exit a parse tree produced by NyarParser#PostfixExpression.
+    def exitPostfixExpression(self, ctx:NyarParser.PostfixExpressionContext):
         pass
 
 
-    # Enter a parse tree produced by NyarParser#Tuple.
-    def enterTuple(self, ctx:NyarParser.TupleContext):
+    # Enter a parse tree produced by NyarParser#MultiplyLike.
+    def enterMultiplyLike(self, ctx:NyarParser.MultiplyLikeContext):
         pass
 
-    # Exit a parse tree produced by NyarParser#Tuple.
-    def exitTuple(self, ctx:NyarParser.TupleContext):
+    # Exit a parse tree produced by NyarParser#MultiplyLike.
+    def exitMultiplyLike(self, ctx:NyarParser.MultiplyLikeContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#ListLike.
+    def enterListLike(self, ctx:NyarParser.ListLikeContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#ListLike.
+    def exitListLike(self, ctx:NyarParser.ListLikeContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#pst_ops.
+    def enterPst_ops(self, ctx:NyarParser.Pst_opsContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#pst_ops.
+    def exitPst_ops(self, ctx:NyarParser.Pst_opsContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#AssignStatement.
+    def enterAssignStatement(self, ctx:NyarParser.AssignStatementContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#AssignStatement.
+    def exitAssignStatement(self, ctx:NyarParser.AssignStatementContext):
         pass
 
 
@@ -224,111 +332,264 @@ class NyarListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by NyarParser#ModifierAssign.
-    def enterModifierAssign(self, ctx:NyarParser.ModifierAssignContext):
+    # Enter a parse tree produced by NyarParser#AssignValue.
+    def enterAssignValue(self, ctx:NyarParser.AssignValueContext):
         pass
 
-    # Exit a parse tree produced by NyarParser#ModifierAssign.
-    def exitModifierAssign(self, ctx:NyarParser.ModifierAssignContext):
-        pass
-
-
-    # Enter a parse tree produced by NyarParser#assignTuple.
-    def enterAssignTuple(self, ctx:NyarParser.AssignTupleContext):
-        pass
-
-    # Exit a parse tree produced by NyarParser#assignTuple.
-    def exitAssignTuple(self, ctx:NyarParser.AssignTupleContext):
+    # Exit a parse tree produced by NyarParser#AssignValue.
+    def exitAssignValue(self, ctx:NyarParser.AssignValueContext):
         pass
 
 
-    # Enter a parse tree produced by NyarParser#assignPass.
-    def enterAssignPass(self, ctx:NyarParser.AssignPassContext):
+    # Enter a parse tree produced by NyarParser#AssignAttribute.
+    def enterAssignAttribute(self, ctx:NyarParser.AssignAttributeContext):
         pass
 
-    # Exit a parse tree produced by NyarParser#assignPass.
-    def exitAssignPass(self, ctx:NyarParser.AssignPassContext):
-        pass
-
-
-    # Enter a parse tree produced by NyarParser#moduleStatement.
-    def enterModuleStatement(self, ctx:NyarParser.ModuleStatementContext):
-        pass
-
-    # Exit a parse tree produced by NyarParser#moduleStatement.
-    def exitModuleStatement(self, ctx:NyarParser.ModuleStatementContext):
+    # Exit a parse tree produced by NyarParser#AssignAttribute.
+    def exitAssignAttribute(self, ctx:NyarParser.AssignAttributeContext):
         pass
 
 
-    # Enter a parse tree produced by NyarParser#macroStatement.
-    def enterMacroStatement(self, ctx:NyarParser.MacroStatementContext):
+    # Enter a parse tree produced by NyarParser#AssignFunction.
+    def enterAssignFunction(self, ctx:NyarParser.AssignFunctionContext):
         pass
 
-    # Exit a parse tree produced by NyarParser#macroStatement.
-    def exitMacroStatement(self, ctx:NyarParser.MacroStatementContext):
-        pass
-
-
-    # Enter a parse tree produced by NyarParser#templateStatement.
-    def enterTemplateStatement(self, ctx:NyarParser.TemplateStatementContext):
-        pass
-
-    # Exit a parse tree produced by NyarParser#templateStatement.
-    def exitTemplateStatement(self, ctx:NyarParser.TemplateStatementContext):
+    # Exit a parse tree produced by NyarParser#AssignFunction.
+    def exitAssignFunction(self, ctx:NyarParser.AssignFunctionContext):
         pass
 
 
-    # Enter a parse tree produced by NyarParser#interfaceStatement.
-    def enterInterfaceStatement(self, ctx:NyarParser.InterfaceStatementContext):
+    # Enter a parse tree produced by NyarParser#AssignPair.
+    def enterAssignPair(self, ctx:NyarParser.AssignPairContext):
         pass
 
-    # Exit a parse tree produced by NyarParser#interfaceStatement.
-    def exitInterfaceStatement(self, ctx:NyarParser.InterfaceStatementContext):
-        pass
-
-
-    # Enter a parse tree produced by NyarParser#classStatement.
-    def enterClassStatement(self, ctx:NyarParser.ClassStatementContext):
-        pass
-
-    # Exit a parse tree produced by NyarParser#classStatement.
-    def exitClassStatement(self, ctx:NyarParser.ClassStatementContext):
+    # Exit a parse tree produced by NyarParser#AssignPair.
+    def exitAssignPair(self, ctx:NyarParser.AssignPairContext):
         pass
 
 
-    # Enter a parse tree produced by NyarParser#ifStatement.
-    def enterIfStatement(self, ctx:NyarParser.IfStatementContext):
+    # Enter a parse tree produced by NyarParser#AssignWithList.
+    def enterAssignWithList(self, ctx:NyarParser.AssignWithListContext):
         pass
 
-    # Exit a parse tree produced by NyarParser#ifStatement.
-    def exitIfStatement(self, ctx:NyarParser.IfStatementContext):
-        pass
-
-
-    # Enter a parse tree produced by NyarParser#elseif.
-    def enterElseif(self, ctx:NyarParser.ElseifContext):
-        pass
-
-    # Exit a parse tree produced by NyarParser#elseif.
-    def exitElseif(self, ctx:NyarParser.ElseifContext):
+    # Exit a parse tree produced by NyarParser#AssignWithList.
+    def exitAssignWithList(self, ctx:NyarParser.AssignWithListContext):
         pass
 
 
-    # Enter a parse tree produced by NyarParser#condition.
-    def enterCondition(self, ctx:NyarParser.ConditionContext):
+    # Enter a parse tree produced by NyarParser#assign_pass.
+    def enterAssign_pass(self, ctx:NyarParser.Assign_passContext):
         pass
 
-    # Exit a parse tree produced by NyarParser#condition.
-    def exitCondition(self, ctx:NyarParser.ConditionContext):
+    # Exit a parse tree produced by NyarParser#assign_pass.
+    def exitAssign_pass(self, ctx:NyarParser.Assign_passContext):
         pass
 
 
-    # Enter a parse tree produced by NyarParser#tryStatement.
-    def enterTryStatement(self, ctx:NyarParser.TryStatementContext):
+    # Enter a parse tree produced by NyarParser#ModuleInclude.
+    def enterModuleInclude(self, ctx:NyarParser.ModuleIncludeContext):
         pass
 
-    # Exit a parse tree produced by NyarParser#tryStatement.
-    def exitTryStatement(self, ctx:NyarParser.TryStatementContext):
+    # Exit a parse tree produced by NyarParser#ModuleInclude.
+    def exitModuleInclude(self, ctx:NyarParser.ModuleIncludeContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#ModuleAlias.
+    def enterModuleAlias(self, ctx:NyarParser.ModuleAliasContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#ModuleAlias.
+    def exitModuleAlias(self, ctx:NyarParser.ModuleAliasContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#ModuleSymbol.
+    def enterModuleSymbol(self, ctx:NyarParser.ModuleSymbolContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#ModuleSymbol.
+    def exitModuleSymbol(self, ctx:NyarParser.ModuleSymbolContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#ModuleSymbols.
+    def enterModuleSymbols(self, ctx:NyarParser.ModuleSymbolsContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#ModuleSymbols.
+    def exitModuleSymbols(self, ctx:NyarParser.ModuleSymbolsContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#ModuleResolve.
+    def enterModuleResolve(self, ctx:NyarParser.ModuleResolveContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#ModuleResolve.
+    def exitModuleResolve(self, ctx:NyarParser.ModuleResolveContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#id_tuples.
+    def enterId_tuples(self, ctx:NyarParser.Id_tuplesContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#id_tuples.
+    def exitId_tuples(self, ctx:NyarParser.Id_tuplesContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#ClassBase.
+    def enterClassBase(self, ctx:NyarParser.ClassBaseContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#ClassBase.
+    def exitClassBase(self, ctx:NyarParser.ClassBaseContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#ClassWithFather.
+    def enterClassWithFather(self, ctx:NyarParser.ClassWithFatherContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#ClassWithFather.
+    def exitClassWithFather(self, ctx:NyarParser.ClassWithFatherContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#ClassFather.
+    def enterClassFather(self, ctx:NyarParser.ClassFatherContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#ClassFather.
+    def exitClassFather(self, ctx:NyarParser.ClassFatherContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#ClassFathers.
+    def enterClassFathers(self, ctx:NyarParser.ClassFathersContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#ClassFathers.
+    def exitClassFathers(self, ctx:NyarParser.ClassFathersContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#ClassImplement.
+    def enterClassImplement(self, ctx:NyarParser.ClassImplementContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#ClassImplement.
+    def exitClassImplement(self, ctx:NyarParser.ClassImplementContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#ClassDefine.
+    def enterClassDefine(self, ctx:NyarParser.ClassDefineContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#ClassDefine.
+    def exitClassDefine(self, ctx:NyarParser.ClassDefineContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#interface_Statement.
+    def enterInterface_Statement(self, ctx:NyarParser.Interface_StatementContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#interface_Statement.
+    def exitInterface_Statement(self, ctx:NyarParser.Interface_StatementContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#template_Statement.
+    def enterTemplate_Statement(self, ctx:NyarParser.Template_StatementContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#template_Statement.
+    def exitTemplate_Statement(self, ctx:NyarParser.Template_StatementContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#macro_Statement.
+    def enterMacro_Statement(self, ctx:NyarParser.Macro_StatementContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#macro_Statement.
+    def exitMacro_Statement(self, ctx:NyarParser.Macro_StatementContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#IfSingle.
+    def enterIfSingle(self, ctx:NyarParser.IfSingleContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#IfSingle.
+    def exitIfSingle(self, ctx:NyarParser.IfSingleContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#IfNested.
+    def enterIfNested(self, ctx:NyarParser.IfNestedContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#IfNested.
+    def exitIfNested(self, ctx:NyarParser.IfNestedContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#SwitchStatement.
+    def enterSwitchStatement(self, ctx:NyarParser.SwitchStatementContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#SwitchStatement.
+    def exitSwitchStatement(self, ctx:NyarParser.SwitchStatementContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#MatchStatement.
+    def enterMatchStatement(self, ctx:NyarParser.MatchStatementContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#MatchStatement.
+    def exitMatchStatement(self, ctx:NyarParser.MatchStatementContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#ConditionStatement.
+    def enterConditionStatement(self, ctx:NyarParser.ConditionStatementContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#ConditionStatement.
+    def exitConditionStatement(self, ctx:NyarParser.ConditionStatementContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#ElseStatement.
+    def enterElseStatement(self, ctx:NyarParser.ElseStatementContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#ElseStatement.
+    def exitElseStatement(self, ctx:NyarParser.ElseStatementContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#ElseIfStatement.
+    def enterElseIfStatement(self, ctx:NyarParser.ElseIfStatementContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#ElseIfStatement.
+    def exitElseIfStatement(self, ctx:NyarParser.ElseIfStatementContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#try_statement.
+    def enterTry_statement(self, ctx:NyarParser.Try_statementContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#try_statement.
+    def exitTry_statement(self, ctx:NyarParser.Try_statementContext):
         pass
 
 
@@ -350,21 +611,39 @@ class NyarListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by NyarParser#tupleLiteral.
-    def enterTupleLiteral(self, ctx:NyarParser.TupleLiteralContext):
+    # Enter a parse tree produced by NyarParser#ForLoop.
+    def enterForLoop(self, ctx:NyarParser.ForLoopContext):
         pass
 
-    # Exit a parse tree produced by NyarParser#tupleLiteral.
-    def exitTupleLiteral(self, ctx:NyarParser.TupleLiteralContext):
+    # Exit a parse tree produced by NyarParser#ForLoop.
+    def exitForLoop(self, ctx:NyarParser.ForLoopContext):
         pass
 
 
-    # Enter a parse tree produced by NyarParser#single.
-    def enterSingle(self, ctx:NyarParser.SingleContext):
+    # Enter a parse tree produced by NyarParser#ForInLoop.
+    def enterForInLoop(self, ctx:NyarParser.ForInLoopContext):
         pass
 
-    # Exit a parse tree produced by NyarParser#single.
-    def exitSingle(self, ctx:NyarParser.SingleContext):
+    # Exit a parse tree produced by NyarParser#ForInLoop.
+    def exitForInLoop(self, ctx:NyarParser.ForInLoopContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#WhileLoop.
+    def enterWhileLoop(self, ctx:NyarParser.WhileLoopContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#WhileLoop.
+    def exitWhileLoop(self, ctx:NyarParser.WhileLoopContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#DoLoop.
+    def enterDoLoop(self, ctx:NyarParser.DoLoopContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#DoLoop.
+    def exitDoLoop(self, ctx:NyarParser.DoLoopContext):
         pass
 
 
@@ -386,6 +665,15 @@ class NyarListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by NyarParser#key_valid.
+    def enterKey_valid(self, ctx:NyarParser.Key_validContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#key_valid.
+    def exitKey_valid(self, ctx:NyarParser.Key_validContext):
+        pass
+
+
     # Enter a parse tree produced by NyarParser#listLiteral.
     def enterListLiteral(self, ctx:NyarParser.ListLiteralContext):
         pass
@@ -401,6 +689,24 @@ class NyarListener(ParseTreeListener):
 
     # Exit a parse tree produced by NyarParser#element.
     def exitElement(self, ctx:NyarParser.ElementContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#indexLiteral.
+    def enterIndexLiteral(self, ctx:NyarParser.IndexLiteralContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#indexLiteral.
+    def exitIndexLiteral(self, ctx:NyarParser.IndexLiteralContext):
+        pass
+
+
+    # Enter a parse tree produced by NyarParser#index_valid.
+    def enterIndex_valid(self, ctx:NyarParser.Index_validContext):
+        pass
+
+    # Exit a parse tree produced by NyarParser#index_valid.
+    def exitIndex_valid(self, ctx:NyarParser.Index_validContext):
         pass
 
 
