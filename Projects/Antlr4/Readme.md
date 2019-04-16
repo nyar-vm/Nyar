@@ -4,7 +4,8 @@
 
 | File          | Note             |
 | :------------ | :--------------- |
-| Nyar          | Core Grammar     |
+| Nyar          | Inline Grammar     |
+| NyarSource          | Core Grammar     |
 | NyarFeature   | Unused Tokens    |
 | NyarKeywords  | Ascii Tokens     |
 | NyarOperators | Non Ascii Tokens |
