@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 cd .. && ls -l
 alias antlr4py='java -jar Scripts/antlr-4.7.2-complete.jar'
 alias antlr4ts='java -jar node_modules/antlr4ts-cli/target/antlr4-typescript-4.7.3-SNAPSHOT-complete.jar'

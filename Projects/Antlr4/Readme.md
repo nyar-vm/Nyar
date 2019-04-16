@@ -1,9 +1,10 @@
 # Nyar ANTLR
 
+- version: 0.2.0
 
-|File | Note |
-|--|--|
-|Nyar| |
-|NyarFeature||
-|NyarKeywords||
-|NyarOperators||
+| File          | Note             |
+| :------------ | :--------------- |
+| Nyar          | Core Grammar     |
+| NyarFeature   | Unused Tokens    |
+| NyarKeywords  | Ascii Tokens     |
+| NyarOperators | Non Ascii Tokens |
