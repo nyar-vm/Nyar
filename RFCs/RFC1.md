@@ -6,7 +6,7 @@ RFC1: Lambda Fuction
 
 ## Motivation
 
-## Details
+## References
 
 参考如下语言的设计:
 
@@ -20,8 +20,8 @@ Python 语言使用 lambda 作为关键词, : 界定参数, 接着到结尾为�
 
 ```python
 Y = lambda b:((lambda f:b(lambda *x:f(f)(*x)))((lambda f:b(lambda *x:f(f)(*x)))))
-factorialY = lambda f: lambda n: (1 if n<2 else n*f(n-1))
-fibonacciY = lambda f: lambda n: 0 if n == 0 else (1 if n == 1 else f(n-1) + f(n-2))
+factorialY = Y(lambda f: lambda n: (1 if n<2 else n*f(n-1)))
+fibonacciY = Y(lambda f: lambda n: 0 if n == 0 else (1 if n == 1 else f(n-1) + f(n-2)))
 ```
 
 #### 缺点:
@@ -37,14 +37,24 @@ fibonacciY = lambda f: lambda n: 0 if n == 0 else (1 if n == 1 else f(n-1) + f(n
 
 第二种 arrow 形式
 
+```
+(x, y) => { return x + y; }
+```
+
+
 
 #### 范例:
 
 ```javascript
 var Y = f => (x => x(x))(y => f(x => y(y)(x)));
-var factorialY = Y(f => n => n > 1 ? n * f(n-1) : 1);
-var fibonacciY = Y(f => n => n == 0 || n == 1 ? 1 : f(n-1) + f(n-2));
+var factorialY = Y(f => n => n == 1 ? n * f(n-1) : 1);
+var fibonacciY = Y(f => n => n <= 1 ? 1 : f(n-1) + f(n-2));
 ```
+
+#### 缺点:
+ - 需要显式 return
+ - 不支持 params => {object:literal} 的写法
+ - 由于 ASI 机制, 参数和 `=>` 之间不能换行
 
 ### Scala Style
 
@@ -57,8 +67,8 @@ def Y[A,B](f: (A=>B)=>(A=>B)) = {
 	val g: W=>A=>B = w => f(w(w))(_)
 	g(W(g))
 }
-val factorialY = Y[Int, Int](f => i => if (i <= 0) 1 else f(i - 1) * i)
-val fibonacciY = Y[Int, Int](f => i => if (i < 2) i else f(i - 1) + f(i - 2))
+val factorialY = Y[Int, Int](f => i => if (i == 1) 1 else f(i - 1) * i)
+val fibonacciY = Y[Int, Int](f => i => if (i <= 1) i else f(i - 1) + f(i - 2))
 ```
 
 ### Wolfram Style
@@ -79,13 +89,16 @@ factorialY = Y[Function[f, If[# < 1, 1, # f[# - 1]]&]];
 fibonacciY = Y[Function[f, If[# < 2, #, f[# - 1] + f[# - 2]]&]];
 (*Without Y-Combinator*)
 factorial = If[#==1,1,# #0[#-1]]&;
-fibonacci = If[#==0||#==1,1,#0[#-1]+#0[#-2]]&;
+fibonacci = If[#<=1,1,#0[#-1]+#0[#-2]]&;
 ```
 
 ### Racket Style
 
 ```racket
 (define Y (λ(f)((λ(x)(f (x x)))(λ(x)(f (x x))))))
-(define factorialY (Y (λ(f) (λ(n) (if (zero? n) 1 (* n (f (- n 1))))))))
+(define factorialY (Y (λ(f) (λ(n) (if (== n 1) 1 (* n (f (- n 1))))))))
 (define fibonacciY (Y (λ(f) (λ(n) (if (<= n 1) n (+ (f (- n 1)) (f (- n 2))))))))
 ```
+
+
+## Design
