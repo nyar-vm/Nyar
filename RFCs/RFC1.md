@@ -12,9 +12,13 @@ RFC1: Lambda Fuction
 
 ### Python Style
 
-`python` 使用 lambda 作为关键词, : 界定参数, 接着到结尾为止都是表达式.
+Python 语言中只有一种匿名函数表示法.
 
-```
+Python 语言使用 lambda 作为关键词, : 界定参数, 接着到结尾为止都是表达式.
+
+#### 范例:
+
+```python
 Y = lambda b:((lambda f:b(lambda *x:f(f)(*x)))((lambda f:b(lambda *x:f(f)(*x)))))
 factorialY = lambda f: lambda n: (1 if n<2 else n*f(n-1))
 fibonacciY = lambda f: lambda n: 0 if n == 0 else (1 if n == 1 else f(n-1) + f(n-2))
@@ -25,17 +29,25 @@ fibonacciY = lambda f: lambda n: 0 if n == 0 else (1 if n == 1 else f(n-1) + f(n
 
 ### ECAMScript Style
 
-`ECAMScript` 中有三种使用匿名函数的方式
+`ECAMScript` 中有三种匿名函数表示法.
 
-第一种
+第一种 function 形式
 
+
+
+第二种 arrow 形式
+
+
+#### 范例:
 
 ```javascript
 var Y = f => (x => x(x))(y => f(x => y(y)(x)));
-var fac = Y(f => n => n > 1 ? n * f(n-1) : 1);
+var factorialY = Y(f => n => n > 1 ? n * f(n-1) : 1);
+var fibonacciY = Y(f => n => n == 0 || n == 1 ? 1 : f(n-1) + f(n-2));
 ```
 
 ### Scala Style
+
 
 ```scala
 def Y[A,B](f: (A=>B)=>(A=>B)) = {
@@ -49,23 +61,17 @@ val factorialY = Y[Int, Int](f => i => if (i <= 0) 1 else f(i - 1) * i)
 val fibonacciY = Y[Int, Int](f => i => if (i < 2) i else f(i - 1) + f(i - 2))
 ```
 
-### Racket Style
-
-```racket
-(define Y (λ(f)((λ(x)(f (x x)))(λ(x)(f (x x))))))
-```
-
 ### Wolfram Style
 
+Wolfram 语言中有三种匿名函数表示法.
 
-
-
+#### 范例:
 
 ```mathematica
 Y = Function[f,#[#]&[Function[g,[g[g][##]&]]]];
 ```
 
-`wolfram` 中可以使用 #0 代表自身, 不需要使用 Y 组合子
+`wolfram` 中可以使用 #0 代表自身, 不需要使用 Y 组合子来匿名递归.
 
 ```mathematica
 (*With Y-Combinator*)
@@ -74,4 +80,12 @@ fibonacciY = Y[Function[f, If[# < 2, #, f[# - 1] + f[# - 2]]&]];
 (*Without Y-Combinator*)
 factorial = If[#==1,1,# #0[#-1]]&;
 fibonacci = If[#==0||#==1,1,#0[#-1]+#0[#-2]]&;
+```
+
+### Racket Style
+
+```racket
+(define Y (λ(f)((λ(x)(f (x x)))(λ(x)(f (x x))))))
+(define factorialY (Y (λ(f) (λ(n) (if (zero? n) 1 (* n (f (- n 1))))))))
+(define fibonacciY (Y (λ(f) (λ(n) (if (<= n 1) n (+ (f (- n 1)) (f (- n 2))))))))
 ```
