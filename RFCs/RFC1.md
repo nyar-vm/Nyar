@@ -14,34 +14,33 @@ RFC1: Lambda Fuction
 
 Python 语言中只有一种匿名函数表示法.
 
-Python 语言使用 lambda 作为关键词, : 界定参数, 接着到结尾为止都是表达式.
+Python 语言使用 `lambda` 作为关键词, `:` 界定参数, 接着到结尾为止都是表达式.
 
 #### 范例:
 
 ```python
 Y = lambda b:((lambda f:b(lambda *x:f(f)(*x)))((lambda f:b(lambda *x:f(f)(*x)))))
-factorialY = Y(lambda f: lambda n: (1 if n<2 else n*f(n-1)))
+factorialY = Y(lambda f: lambda n: (1 if n < 2 else n * f(n-1)))
 fibonacciY = Y(lambda f: lambda n: 0 if n == 0 else (1 if n == 1 else f(n-1) + f(n-2)))
 ```
 
 #### 缺点:
  - 不能换行
+ - lambda 太长太啰嗦
+ - 奇怪的运算优先级
+ - 奇怪的参数表达法
 
 ### ECAMScript Style
 
-`ECAMScript` 中有三种匿名函数表示法.
+ECAMScript 中只有一种匿名函数表示法.
 
-第一种 function 形式
-
-
-
-第二种 arrow 形式
-
-```
+```javascript
 (x, y) => { return x + y; }
 ```
 
+当箭头函数的函数体只有一个 `return` 语句时，可以省略 `return` 关键字和方法体的花括号
 
+当只有一个参数时，圆括号也可以去掉, 没有参数的函数直接用一对圆括号表示.
 
 #### 范例:
 
@@ -52,11 +51,26 @@ var fibonacciY = Y(f => n => n <= 1 ? 1 : f(n-1) + f(n-2));
 ```
 
 #### 缺点:
- - 需要显式 return
  - 不支持 params => {object:literal} 的写法
  - 由于 ASI 机制, 参数和 `=>` 之间不能换行
 
 ### Scala Style
+
+Scala 有两种匿名函数表示法.
+
+第一种箭头函数, 与 `ECAMScript` 类似
+
+
+```scala
+(x:Int) => {x + 1}
+```
+
+第二种是 
+
+```scala
+_  * 2 
+```
+
 
 
 ```scala
@@ -71,9 +85,20 @@ val factorialY = Y[Int, Int](f => i => if (i == 1) 1 else f(i - 1) * i)
 val fibonacciY = Y[Int, Int](f => i => if (i <= 1) i else f(i - 1) + f(i - 2))
 ```
 
+#### 优点:
+ - `_` 非常简洁
+#### 缺点:
+ - 奇怪的类型系统
+
 ### Wolfram Style
 
 Wolfram 语言中有三种匿名函数表示法.
+
+- 插槽函数: `#^2 &`
+
+- 箭头函数: `x ⟼ x^2`
+
+- 前缀函数: `Function[x, x^2]`
 
 #### 范例:
 
