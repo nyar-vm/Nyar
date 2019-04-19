@@ -2,9 +2,15 @@ RFC1: Lambda Fuction
 ====================
 
 - 提出时间: 2019-04-15
-- 当前状态: Stage0
+- 当前状态: Stage-0
 
 ## Motivation
+
+- 精简代码
+
+- 减少命名空间污染
+
+- 实现闭包
 
 ## References
 
@@ -60,19 +66,17 @@ Scala 有两种匿名函数表示法.
 
 第一种箭头函数, 与 `ECAMScript` 类似
 
-
 ```scala
 (x:Int) => {x + 1}
 ```
 
-第二种是 
+第二种是下划线函数
 
-```scala
-_  * 2 
-```
+- `_ * 2` 表示 `x => 2 * x`
 
+- `_ + _` 表示 `(x, y) => x + y`
 
-
+#### 范例:
 ```scala
 def Y[A,B](f: (A=>B)=>(A=>B)) = {
 	case class W(wf: W=>A=>B) {
@@ -87,7 +91,9 @@ val fibonacciY = Y[Int, Int](f => i => if (i <= 1) i else f(i - 1) + f(i - 2))
 
 #### 优点:
  - `_` 非常简洁
+
 #### 缺点:
+ - `_` 的运算优先级很低
  - 奇怪的类型系统
 
 ### Wolfram Style
@@ -106,7 +112,7 @@ Wolfram 语言中有三种匿名函数表示法.
 Y = Function[f,#[#]&[Function[g,[g[g][##]&]]]];
 ```
 
-`wolfram` 中可以使用 #0 代表自身, 不需要使用 Y 组合子来匿名递归.
+Wolfram 中可以使用 #0 代表自身, 不需要使用 Y 组合子来匿名递归.
 
 ```mathematica
 (*With Y-Combinator*)
@@ -119,11 +125,26 @@ fibonacci = If[#<=1,1,#0[#-1]+#0[#-2]]&;
 
 ### Racket Style
 
+以下给出 `lisp` 中的表达:
+
 ```racket
 (define Y (λ(f)((λ(x)(f (x x)))(λ(x)(f (x x))))))
 (define factorialY (Y (λ(f) (λ(n) (if (== n 1) 1 (* n (f (- n 1))))))))
 (define fibonacciY (Y (λ(f) (λ(n) (if (<= n 1) n (+ (f (- n 1)) (f (- n 2))))))))
 ```
 
-
 ## Design
+
+计划实现三种匿名函数表示法.
+
+### 箭头函数
+
+类似 ES 中的箭头函数 `() => { }`
+
+### 定域性插槽函数
+
+类似 Scala 中的 `_`
+
+### 非定域插槽函数
+
+类似 Wolfram 的 `#/&` 机制
