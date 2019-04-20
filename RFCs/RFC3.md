@@ -72,3 +72,39 @@ default 表示官方源, 等价于不写 `@`.
 ### 网络路径
 
 当使用 `ftp://`, `https://` 等开头时表示网络路径
+
+
+### 伪代码
+
+以上解析过程可以用以下代码表示:
+
+```ts
+function resolve(input:: String) {
+    switch (true) {
+        case input.isExist("://"):
+            scheme = in.split("://")[1];
+            url = input
+        case Regex("[a-zA-Z]").det(input[1]):
+            scheme = "package";
+            url = "package://default/" + input.replace("." -> "/")
+        case input.isStart("@"):
+            scheme = "package";
+            url = "package://" + input[2:]
+        case input.isStart("../"):
+            scheme = "here";
+            url = getDirectory("..")
+        case input.isStart("./"):
+            scheme = "here";
+            url = getDirectory()
+        case input.isStart("!"):
+            scheme = "ws";
+            url = "ws://" + input[2:]
+        case input.isStart("~/"):
+            scheme = "user";
+            url = "user://" + input[3:]
+        case*:
+            raise@InputError()
+    }
+    return@schemeHandler(scheme, url);
+}
+```
