@@ -1,0 +1,16 @@
+RFC0: Number
+============
+
+- 提出时间: 2019-04-15
+- 当前状态: Document
+- 语言实现: Valkyrie, Vanilla
+
+## Introduction
+
+模块 `Object::Number` 定义了所有基本的数值类型.
+
+还有同名的抽象类
+
+
+
+都有向上转义的 *methods*, 但是没有同级转换的 *methods*
