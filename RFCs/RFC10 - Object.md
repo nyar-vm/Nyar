@@ -15,17 +15,61 @@ Vanilla 并不是一个纯的 OOP 语言, Vanilla 中并非一切皆对象.
 
 ## Reference
 
+### Scala 
 
-
-
+### Rust
 
 
 ## Details
 
+顶级关键词有 trait 和 class, 另外 let 语义中有 structural 和 interface 的语法糖.
+
+没有类似 scala 的 objcet, 匿名对象可以直接在字典上挂函数实现, 匿名类可以靠函数返回一个字典实现.
+
+```nyar
+class CustomObject extend SomeObject act SomeTrait AnotherTrait{
+    public static modifier custom module::modifier symbol;
+    modifier custom module::modifier symbol;
+
+}
+```
+
+## Extend
+
+可以简写成
+
+class CustomObject(SomeObject) ~SomeTrait
+
+可以进一步简写成:
+
+class CustomObject(SomeObject, SomeTrait, AnotherTrait)
+
+只有首个 Object 是继承, 其他都是实现.
+
+## Modifier
+
+最后一个符号为 symbol, 其他全是 modifier
+
+可以有任意多的修饰符, 修饰符是无序的, 并按照某种规则排序解析, 以解决冲突问题.
+
+无法作为修饰符的符号有: class trait let for while 
+
+### Trait
+
+Trait封装method和field的定义。
+
+class只能继承一个class，但可以实现多个 trait。
+
+Trait用来定义object类型支持的method.
+
+Trait可以部分实现，没有构造函数.
 
 
+### Inherit
 
-在 Vanilla 中没有什么意义, 因为出于性能等考虑,
+在 Vanilla 中真实父类没有什么意义, 因为出于性能等考虑
+
+一般都是直接在 structural 上挂载 trait 然后规定 `__super__` 实现的
 
 `is-a`
 `is-from`
@@ -44,11 +88,6 @@ Vanilla 并不是一个纯的 OOP 语言, Vanilla 中并非一切皆对象.
 
 
 Object::
-
-
-
-
-
 
 
 - Object
@@ -76,7 +115,6 @@ let structure A { }
 这两种语法效果是类似的
 
 Nyar 中你得用
-
 
 
 
