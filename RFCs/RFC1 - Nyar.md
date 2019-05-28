@@ -1,5 +1,5 @@
-RFC1 - Nyar
-===========
+RFC1: Nyar
+==========
 
 Nyar Language 是一种基于计算图的混合式编程语言.
 
