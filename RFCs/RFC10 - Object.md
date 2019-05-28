@@ -1,7 +1,7 @@
 RFC10: Object
 =============
 
-- 提出时间: 2019-04-15
+- 提出时间: 2019-05-20
 - 当前状态: Stage-0
 - 语言实现: Valkyrie, Vanilla
 
@@ -9,14 +9,30 @@ RFC10: Object
 
 Vanilla 并不是一个纯的 OOP 语言, Vanilla 中并非一切皆对象.
 
-但只要看上去像是对象, 用起来也像是对象就够了, 可以说 Vanilla 是一种 duck object.
+但只要看上去像是对象, 用起来也像是对象就够了, 可以说 Vanilla 是一种 duck object oriented language.
+
+`Object` 是名义上所有类的基类, 也是创建新的类时默认继承的类.
+
+## Reference
+
+
+
+
+
+
+## Details
 
 
 
 
 在 Vanilla 中没有什么意义, 因为出于性能等考虑,
 
-继承树不能反应真实关系, 模块关系才是适用方法检索的依据.
+`is-a`
+`is-from`
+
+是两回事
+
+继承树不能反应真实关系, .
 
 
 字段 `__super__` 记录的并不是真实的父类, 而是,
@@ -25,24 +41,13 @@ Vanilla 并不是一个纯的 OOP 语言, Vanilla 中并非一切皆对象.
 
 对于内置对象, 大多数情况下
 
-真名 姓氏
-
-
-`Object` 是名义上所有类的基类, 也是创建新的类时默认继承的类.
-
-
-
-
-
-真名 ::
 
 
 Object::
 
 
 
-`is-a`
-`is-from`
+
 
 
 
