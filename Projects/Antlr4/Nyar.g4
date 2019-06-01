@@ -51,23 +51,41 @@ expression
     | expression BitAnd                                                 # SlotCatch;
 /* | left = number right = expression                                  # SpaceExpression*/
 /*====================================================================================================================*/
-assign_statement
-    : op = assign_modifier id = assign_lhs expr = assignable # AssignStatement;
-assignable: (expression | LL statement+ RL);
-assign_lhs
-    : Identifier                                       # AssignValue
-    | Identifier (DOT Identifier)+                     # AssignAttribute
-    | Identifier LS Identifier RS                      # AssignFunction
-    | LS (assign_pass (COMMA assign_pass)*)? COMMA? RS # AssignPair
-    | Identifier LM Integer RM                         # AssignWithList;
-assign_pass: Tilde | symbol;
-assign_ops
-    : Assign
-    | PlusTo
-    | MinusFrom
-    | LetAssign
-    | FinalAssign; //@Inline
-assign_modifier: Let | Final; //@Inline
+// $antlr-format alignColons hanging;
+assignStatment
+    : Val assignLHS assignRHS                                               # AssignValue
+    | Var assignLHS assignRHS                                               # AssignVariable
+    | Def assignLHS assignRHS                                               # AssignDefer
+    | Def symbol '(' parameter (Comma parameter)* ')' typeSuffix? assignRHS # AssignFunction
+    | symbol '(' parameter (Comma parameter)* ')' typeSuffix? Set assignRHS # AssignFunction
+    | assignLHS Set assignRHS                                               # AssignValue
+    | assignLHS Flexible assignRHS                                          # AssignVariable
+    | assignLHS Delay assignRHS                                             # AssignDefer;
+assignLHS
+    : symbol typeSuffix?               # LHSSingle
+    | maybeSymbol (Comma maybeSymbol)* # LHSTuple
+    | symbols                          # LHSMaybeSetter
+    | symbols index                    # LHSMaybeIndex;
+assignRHS
+    : expression                  # RHSExpression
+    | Colon expression            # RHSExpression
+    | '{' statement* '}'          # RHSStatement
+    | Colon statement* End        # RHSStatement
+    | expressionStatement         # RHSTuple
+    | '(' expressionStatement ')' # RHSTuple
+    | statement                   # RHSStatement;
+maybeSymbol: symbols typeSuffix? | head = Tilde;
+symbols: (symbol | symbolName) (Dot symbol)*;
+symbolName: symbol (Name symbol)*;
+// $antlr-format alignColons trailing;
+Val      : 'val';
+Var      : 'var';
+Let      : 'let';
+Def      : 'def';
+Set      : '=';
+Flexible : '.=' | '\u2250'; //U+2250 ≐
+Name     : '::' | '\u2237'; //U+2237 ∷
+Delay    : ':=' | '\u2254'; //U+2254 ≔
 /*====================================================================================================================*/
 module_statement
     : Using module = symbol module_controller?      # ModuleInclude

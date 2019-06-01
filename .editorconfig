@@ -22,3 +22,8 @@ indent_size = 4
 charset = utf-8
 indent_style = space
 indent_size = 4
+
+[*.{md, markdown}]
+charset = utf-8
+indent_style = tab
+indent_size = 4
