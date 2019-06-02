@@ -1,3 +1,5 @@
+RFC15: Type System
+==================
 
 
 
@@ -5,39 +7,32 @@
 
 
 
-为什么不用 : 是因为
 
-为什么不用空格是因为, 词法分析困难
+## 特殊类型
 
+### 顶类型(Top Type)
 
+- Object
 
+顶类型包含所有值, 是所有类的父类
 
-```nyar
-String(raw)
-Converter::toString(raw)
-raw.toString()
-```
+### 底类型(Bottom Type)
 
+- Never
 
+底类型不包含任何值, 是所有类的子类
 
+一般表示程序不终止、异常
 
-## 顶类型(Top Type)
+### 动态类型(Dynamic Type)
 
-Object
+- Any
 
-
-## 底类型(Bottom Type)
-
-Never
-
-## 单元类型(Unit Type)
+表示运行时动态类型
 
 
-## 动态类型(Dynamic Type)
+### 单元类型(Unit Type)
 
-Any
-
-
-
+表示正常返回
 
 
