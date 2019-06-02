@@ -1,4 +1,4 @@
-grammar NyarNew;
+grammar Nyar;
 // $antlr-format columnLimit 128;
 // $antlr-format useTab false ;reflowComments false;
 // $antlr-format alignColons hanging;
@@ -21,11 +21,30 @@ Separate       : ';;';
 Semicolon      : ';' | '\uFF1B'; //U+FF1B ；
 /*====================================================================================================================*/
 // $antlr-format alignColons hanging;
-blockStatement: '{' statement* '}' | Colon expression | Colon statement* End;
-blockNonEnd: '{' statement* '}' | statement*;
+importStatement
+    : Using name = moduleName mod = (Star | Power)?  # ModuleModify
+    | Using name = moduleName As symbol              # ModuleAlias
+    | Using name = moduleName With? symbol           # ModuleSymbol
+    | Using name = moduleName (With | Dot)? idTuples # ModuleSymbols
+    | Using dict                                     # ModuleResolve;
+moduleName: string | symbol | moduleLanguage? moduleScope? symbols;
+moduleLanguage: Suffix symbol Slash;
+moduleScope: Prefix symbol Slash;
+exportStatment: Expose symbol;
 // $antlr-format alignColons trailing;
-End   : 'end';
-Colon : ':' | '\uFF1A'; //U+FF1A ：
+idTuples : '{' symbol (Comma symbol)* '}';
+As       : 'as';
+Using    : 'using';
+Expose   : 'expose';
+Divide   : Slash | '\u00F7'; //U+00F7 ÷
+Multiply : Star | '\u00D7'; //U+00D7 ×
+Star     : '*';
+Slash    : '/';
+/*====================================================================================================================*/
+blockStatement : '{' statement* '}' | Colon expression;
+blockNonEnd    : '{' statement* '}' | Colon? statement+;
+Colon          : ':' | '\uFF1A'; //U+FF1A ：
+Name           : '::' | '\u2237'; //U+2237 ∷
 /*====================================================================================================================*/
 // $antlr-format alignColons hanging;
 expressionStatement: expression (Comma expression)*;
