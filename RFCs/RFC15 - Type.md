@@ -19,3 +19,25 @@ raw.toString()
 ```
 
 
+
+
+## 顶类型(Top Type)
+
+Object
+
+
+## 底类型(Bottom Type)
+
+Never
+
+## 单元类型(Unit Type)
+
+
+## 动态类型(Dynamic Type)
+
+Any
+
+
+
+
+
