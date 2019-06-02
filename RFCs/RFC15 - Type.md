@@ -35,27 +35,32 @@ RFC15: Type System
 
 只有一个实例的类型, 表示正常返回
 
+### Boolean
+
+只有两个实例的类型, 一个定义被为 true, 另一个被定义为 false..
+
+### Void
+
 ### Null
 
+### Nothing
+
 ## 类型运算
-
-
 
 ### Nullable
 
 类型后加 `?` 表示 Nullable, 该值可为 Null.
 
+### Union Types
+
+用 | 表示
+
+
+### Intersection Types
+
+用 & 表示
+
 ### Product Types
-
-
-## 基本类型
-
-### Boolean
-
-只有两个实例的类型, 一个定义为 true, 另一个定义为 false
-
-
-
 
 
 
