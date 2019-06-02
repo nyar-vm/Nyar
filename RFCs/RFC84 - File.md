@@ -5,11 +5,21 @@ RFC84: File Object
 
 
 
+
+
+
+
 ```nyar
 class File {
+
 	path: String;
-	@(String path){
+	format: String;
+	
+	
+	
+	@(String path,String format:"text"){
 		self.path = path
+		self.format = format
 	}
 	
 	
