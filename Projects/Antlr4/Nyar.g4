@@ -1,18 +1,24 @@
-grammar Nyar;
-import NyarKeywords, NyarOperators;
+grammar NyarNew;
+// $antlr-format columnLimit 128;
 // $antlr-format useTab false ;reflowComments false;
 // $antlr-format alignColons hanging;
 program: statement* EOF;
 statement
-    : empty_statement
-    | block_statement eos?
-    | expression_statement eos?
-    | assign_statement eos?
-    | branch_statement eos?
-    | try_statement eos?
-    | module_statement eos?
-    | class_statement eos?
-    | loop_statement eos?;
+    : emptyStatement
+    | (importStatement | exportStatment) eos?
+    | (letStatment | assignStatment) eos?
+    | (switchStatment | ifStatment | matchStatment | forStatement | whileStatment) eos?
+    | (typeStatement | traitStatement | classStatement) eos?
+    | (interfaceStatement | structureStatement | enumerateStatement) eos?
+    | tryStatement eos?
+    | expression eos?
+    | data eos?;
+/*====================================================================================================================*/
+// $antlr-format alignColons trailing;
+emptyStatement : eos | Separate;
+eos            : Semicolon;
+Separate       : ';;';
+Semicolon      : ';' | '\uFF1B'; //U+FF1B ；
 /*====================================================================================================================*/
 // $antlr-format alignColons hanging;
 blockStatement: '{' statement* '}' | Colon expression | Colon statement* End;
@@ -20,11 +26,6 @@ blockNonEnd: '{' statement* '}' | statement*;
 // $antlr-format alignColons trailing;
 End   : 'end';
 Colon : ':' | '\uFF1A'; //U+FF1A ：
-/*====================================================================================================================*/
-empty_statement: eos # EmptyStatement;
-eos: Semicolon;
-symbol: Identifier (DOT Identifier)*;
-global: Section Identifier (DOT Identifier)*;
 /*====================================================================================================================*/
 // $antlr-format alignColons hanging;
 expressionStatement: expression (Comma expression)*;
