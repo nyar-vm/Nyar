@@ -35,4 +35,19 @@ RFC15: Type System
 
 表示正常返回
 
+### Null
+
+## 类型运算
+
+### Union
+
+### Nullable
+
+类型后加 `?` 表示 Nullable, 该值可为 Null.
+
+
+
+
+
+
 
