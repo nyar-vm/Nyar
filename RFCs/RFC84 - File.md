@@ -4,7 +4,7 @@ RFC84: File Object
 
 
 
-
+## 
 
 
 
@@ -21,7 +21,8 @@ class File {
 		self.path = path
 		self.format = format
 	}
-	
+	import(kvs**){
+	}
 	
 	
 }
